@@ -1,0 +1,1639 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Propiedad | NÉORA Inmobiliaria</title>
+    <meta name="description" content="Mirá esta propiedad en NÉORA Inmobiliaria. Venta, alquiler y permutas de casas, departamentos y terrenos en Corrientes Capital." />
+    <meta name="author" content="NÉORA Inmobiliaria" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="es-AR" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Propiedad | NÉORA Inmobiliaria" />
+    <meta property="og:description" content="Mirá esta propiedad en NÉORA Inmobiliaria. Venta, alquiler y permutas de casas, departamentos y terrenos en Corrientes Capital." />
+    <meta property="og:image" content="https://neora-inmobiliaria.pages.dev/neora-logo.png" />
+    <meta property="og:image:width" content="751" />
+    <meta property="og:image:height" content="245" />
+    <meta property="og:site_name" content="NÉORA Inmobiliaria" />
+    <meta property="og:locale" content="es_AR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Propiedad | NÉORA Inmobiliaria" />
+    <meta name="twitter:description" content="Mirá esta propiedad en NÉORA Inmobiliaria. Venta, alquiler y permutas en Corrientes Capital." />
+    <meta name="twitter:image" content="https://neora-inmobiliaria.pages.dev/neora-logo.png" />
+
+    <link rel="icon" type="image/png" href="/neora-logo.png" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        background: #f7f7f5;
+        color: #222;
+      }
+
+      .detalle-header {
+        background: #ffffff;
+        border-bottom: 1px solid #e8e8e8;
+      }
+
+      .detalle-header-wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 18px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .detalle-marca {
+        text-decoration: none;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        line-height: 1;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 6px;
+      }
+
+      .detalle-marca .marca-nombre {
+        color: #c11b36;
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .detalle-marca .marca-sub {
+        color: #888;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .detalle-volver-top {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 18px;
+        border: 1px solid #e2e2e2;
+        border-radius: 10px;
+        background: #fff;
+        color: #111;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .detalle-volver-top:hover {
+        border-color: #c11b36;
+        color: #c11b36;
+        background: #fff8fa;
+      }
+
+      .contenedor {
+        max-width: 1350px;
+
+        margin: 32px auto;
+        background: #ffffff;
+        padding: 24px;
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(17, 17, 17, 0.05);
+        border: 1px solid #eeeeee;
+        color: #111;
+      }
+
+     .galeria-principal { 
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #111;
+        height: 100%;
+      }
+
+      .galeria-wrap {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        gap: 4px;
+        margin-bottom: 28px;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 480px;
+        align-items: stretch;
+      }
+
+      .galeria-grid-derecha {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 4px;
+        height: 480px;
+      }
+      .galeria-grid-derecha img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        display: block;
+        background: #111;
+      }
+      .imagen {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+        display: block;
+        background: #111;
+      }
+
+      .miniaturas {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        overflow-y: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        height: 400px;
+      }
+
+      .miniaturas::-webkit-scrollbar {
+        display: none;
+      }
+
+      .miniatura {
+        width: 100%;
+        height: 72px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        background: #eee;
+        transition: 0.2s;
+        opacity: 0.85;
+        flex-shrink: 0;
+      }
+
+      .miniatura:hover {
+        opacity: 1;
+      }
+
+      .miniatura.activa {
+        border-color: #c11b36;
+        opacity: 1;
+      }
+
+      .nav-galeria {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border: none;
+        border-radius: 999px;
+        background: rgba(17, 17, 17, 0.75);
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-galeria.izq {
+        left: 14px;
+      }
+
+      .nav-galeria.der {
+        right: 14px;
+      }
+
+      .contador-galeria {
+        position: absolute;
+        bottom: 14px;
+        right: 14px;
+        background: rgba(17, 17, 17, 0.75);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 13px;
+      }
+
+      .miniaturas {
+        display: flex;
+        gap: 10px;
+        margin: 14px 0 26px;
+        overflow-x: auto;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+      }
+
+      .miniaturas::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+      }
+
+      .miniatura {
+        width: 98px;
+        height: 72px;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        background: #eee;
+        transition: 0.2s;
+        opacity: 0.92;
+      }
+
+      .miniatura:hover {
+        opacity: 1;
+      }
+
+      .miniatura.activa {
+        border-color: #000;
+      }
+
+      .miniatura:hover {
+        opacity: 1;
+      }
+
+      .miniatura.activa {
+        border-color: #111;
+        opacity: 1;
+      }
+      .tipo {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        background: #c11b36;
+        color: #fff;
+        letter-spacing: 0.4px;
+      }
+
+      .tipo.alquiler {
+        background: #1f5ea8;
+        color: #fff;
+      }
+
+      h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 38px;
+        line-height: 1.1;
+        color: #111;
+      }
+
+      .precio {
+        font-size: 36px;
+        font-weight: 700;
+        margin: 10px 0 16px;
+        color: #111;
+      }
+
+      .acciones {
+        flex-direction: column;
+      }
+
+      .ubicacion {
+        font-size: 18px;
+        margin-bottom: 18px;
+        color: #555;
+        font-weight: 500;
+      }
+
+      .datos {
+        grid-template-columns: 1fr;
+      }
+
+      .similares-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .datos {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ececec;
+        border-radius: 12px;
+        overflow: hidden;
+        margin: 20px 0 24px;
+      }
+
+      .dato {
+        flex: 1;
+        padding: 16px;
+        text-align: center;
+        background: #fff;
+        border-right: 1px solid #ececec;
+      }
+
+      .dato:last-child {
+        border-right: none;
+      }
+
+      .dato-label {
+        font-size: 11px;
+        color: #777;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        margin-bottom: 6px;
+      }
+
+      .dato-valor {
+        font-size: 22px;
+        font-weight: 700;
+        color: #111;
+      }
+
+      .extras {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 0 0 24px;
+      }
+
+      .extra {
+        background: #f0faf4;
+        color: #1a7a3f;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 500;
+        border: 1px solid #b8e8cb;
+      }
+
+      .extra-destacada {
+        background: #fff3f5;
+        color: #c11b36;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        border: 1px solid #f5c5ce;
+      }
+
+      .descripcion-titulo {
+        margin-bottom: 10px;
+      }
+
+      .descripcion {
+        line-height: 1.7;
+        color: #444;
+        font-size: 16px;
+      }
+
+      .acciones {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 0;
+      }
+
+      .detalle-layout {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 32px;
+        align-items: start;
+        margin-top: 24px;
+      }
+
+      @media (max-width: 900px) {
+        .detalle-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .detalle-panel {
+          width: 100%;
+          box-sizing: border-box;
+        }
+      }
+
+      .detalle-panel {
+        border: 1px solid #eeeeee;
+        border-radius: 16px;
+        padding: 24px;
+        background: #fff;
+        box-shadow: 0 4px 16px rgba(17, 17, 17, 0.06);
+        position: sticky;
+        top: 20px;
+      }
+
+      .detalle-panel-precio {
+        font-size: 26px;
+        font-weight: 700;
+        color: #111;
+        margin: 0 0 4px;
+        letter-spacing: -0.5px;
+      }
+
+      .detalle-panel-ciudad {
+        font-size: 13px;
+        color: #555;
+        margin: 0 0 20px;
+      }
+
+      .acciones-secundarias {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 2px;
+      }
+
+      .accion-link {
+        background: transparent;
+        border: none;
+        padding: 0;
+        color: #666;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .accion-link:hover {
+        color: #c11b36;
+      }
+
+      .boton {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 50px;
+        width: 100%;
+        padding: 0 24px;
+        background: #25d366;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 15px;
+        border: 1.5px solid #25d366;
+        box-sizing: border-box;
+        transition: background 0.15s;
+      }
+
+      .boton:hover {
+        background: #1da851;
+        border-color: #1da851;
+      }
+
+      .boton-secundario {
+        background: #fff;
+        color: #333;
+        border-color: #e0e0e0;
+        font-weight: 500;
+      }
+
+      .boton-secundario:hover {
+        background: #fff5f7;
+        color: #c11b36;
+        border-color: #c11b36;
+      }
+
+      .mensaje {
+        text-align: center;
+        padding: 30px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+      }
+
+      .visor-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.88);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        padding: 20px;
+      }
+
+      .visor-overlay.activo {
+        display: flex;
+      }
+
+      .visor-imagen {
+        max-width: 95vw;
+        max-height: 90vh;
+        border-radius: 10px;
+        object-fit: contain;
+        background: #111;
+      }
+
+      .visor-cerrar {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        width: 42px;
+        height: 42px;
+        border: none;
+        border-radius: 999px;
+        background: white;
+        color: #111;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .visor-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 46px;
+        height: 46px;
+        border: none;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.92);
+        color: #111;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .visor-nav.izq {
+        left: 18px;
+      }
+
+      .visor-nav.der {
+        right: 18px;
+      }
+
+      .imagen {
+        cursor: zoom-in;
+      }
+
+      #miniaturas-strip {
+        display: none;
+      }
+
+      .similares {
+        margin-top: 50px;
+      }
+
+      .similares h3 {
+        margin-bottom: 18px;
+        font-size: 28px;
+        color: #111;
+      }
+
+      .similares-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        gap: 16px;
+        padding-bottom: 8px;
+      }
+
+      .similares-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .similar-card {
+        min-width: 280px;
+        max-width: 280px;
+        flex-shrink: 0;
+      }
+
+      .similar-card {
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(17, 17, 17, 0.05);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .similar-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(17, 17, 17, 0.1);
+        border-color: #c11b36;
+      }
+
+      .similar-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        display: block;
+        background: #eee;
+      }
+
+      .similar-card-contenido {
+        padding: 14px;
+      }
+
+      .similar-card h4 {
+        margin: 0 0 4px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #333;
+      }
+
+      .similar-precio {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 2px 0 6px;
+        color: #111;
+        letter-spacing: -0.3px;
+      }
+
+      .similar-meta {
+        font-size: 13px;
+        color: #888;
+        margin-bottom: 12px;
+      }
+
+      .similar-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        background: #c11b36;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 13px;
+        border: 1px solid #c11b36;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .similar-link:hover {
+        background: #a3152d;
+        border-color: #a3152d;
+      }
+
+      @media (max-width: 700px) {
+        .contenedor {
+          margin: 0;
+          padding: 0;
+          border-radius: 0;
+          box-shadow: none;
+          border: none;
+        }
+        .galeria-wrap {
+          grid-template-columns: 1fr;
+          height: auto;
+          margin: 0;
+          border-radius: 0;
+        }
+        .galeria-grid-derecha {
+          display: none;
+        }
+        .galeria-principal {
+          border-radius: 0;
+          margin: 0;
+          width: 100vw;
+        }
+        .galeria-principal .imagen {
+          height: 260px;
+          border-radius: 0;
+          width: 100vw;
+          display: block;
+        }
+        .imagen {
+          height: 260px;
+          border-radius: 0;
+          width: 100vw;
+        }
+        .contador-galeria {
+          bottom: 10px;
+          left: 12px;
+          right: auto;
+        }
+        .detalle-header-wrap {
+          padding: 12px 16px;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .detalle-marca {
+          font-size: 20px;
+        }
+        .detalle-volver-top {
+          min-height: 36px;
+          padding: 0 12px;
+          font-size: 12px;
+          white-space: nowrap;
+        }
+        .detalle-izquierda,
+        .similares {
+          padding: 0 16px;
+          box-sizing: border-box;
+        }
+        .tipo,
+        h2,
+        .precio,
+        .ubicacion,
+        .datos,
+        .extras,
+        .descripcion-titulo,
+        .descripcion {
+          padding-left: 16px;
+          padding-right: 16px;
+          box-sizing: border-box;
+        }
+        .acciones {
+          flex-direction: column;
+        }
+        .boton,
+        .boton-secundario,
+        .similar-link {
+          width: 100%;
+          box-sizing: border-box;
+        }
+        .similares-grid {
+          grid-template-columns: 1fr;
+        }
+        .miniaturas {
+          gap: 8px;
+        }
+        .miniatura {
+          width: 78px;
+          height: 60px;
+        }
+        .nav-galeria {
+          width: 38px;
+          height: 38px;
+          font-size: 18px;
+        }
+        h2 {
+          font-size: 30px;
+          line-height: 1.12;
+        }
+        .precio {
+          font-size: 26px;
+        }
+        .acciones-secundarias {
+          justify-content: center;
+        }
+        .accion-link {
+          font-size: 15px;
+        }
+        .ubicacion {
+          font-size: 16px;
+        }
+        #miniaturas-strip {
+          display: flex !important;
+        }
+        .detalle-panel {
+          display: none;
+        }
+        .detalle-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 700px) {
+        footer > div > div:first-child {
+          grid-template-columns: 1fr !important;
+          gap: 24px !important;
+        }
+        .grilla-caracteristicas {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+  </head>
+  <body>
+    <header class="detalle-header">
+      <div class="detalle-header-wrap">
+        <a class="detalle-marca" href="/index.html"
+          ><span class="marca-nombre">NÉORA</span
+          ><span class="marca-sub">Inmobiliaria</span></a
+        >
+        <a class="detalle-volver-top" href="/index.html"
+          >Volver a propiedades</a
+        >
+      </div>
+    </header>
+
+    <div class="contenedor" id="contenido">
+      <div class="mensaje">Cargando propiedad...</div>
+    </div>
+
+    <div id="visor-overlay" class="visor-overlay">
+      <button id="visor-cerrar" class="visor-cerrar" type="button">×</button>
+      <button id="visor-anterior" class="visor-nav izq" type="button">‹</button>
+      <button id="visor-siguiente" class="visor-nav der" type="button">
+        ›
+      </button>
+      <img
+        id="visor-imagen"
+        class="visor-imagen"
+        src=""
+        alt="Imagen ampliada"
+      />
+    </div>
+
+    <footer style="background: #111; margin-top: 0; padding: 40px 24px 24px">
+      <div style="max-width: 1200px; margin: 0 auto">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 36px;
+          "
+        >
+          <div>
+            <div
+              style="
+                display: flex;
+                align-items: baseline;
+                gap: 6px;
+                margin-bottom: 12px;
+              "
+            >
+              <span style="font-size: 22px; font-weight: 700; color: #c11b36"
+                >NÉORA</span
+              >
+              <span style="font-size: 13px; color: #888; font-weight: 500"
+                >Inmobiliaria</span
+              >
+            </div>
+            <p
+              style="
+                margin: 0 0 16px;
+                font-size: 13px;
+                color: #888;
+                line-height: 1.7;
+              "
+            >
+              Tu inmobiliaria de confianza en Corrientes y Chaco. Encontrá la
+              propiedad ideal para vos.
+            </p>
+            <div style="display: flex; gap: 10px">
+              <a
+                href="https://wa.me/5493794026276"
+                target="_blank"
+                style="
+                  width: 36px;
+                  height: 36px;
+                  border-radius: 8px;
+                  background: #25d366;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  text-decoration: none;
+                "
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.facebook.com/pedro.guiglioni"
+                target="_blank"
+                style="
+                  width: 36px;
+                  height: 36px;
+                  border-radius: 8px;
+                  background: #1877f2;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  text-decoration: none;
+                  font-weight: 700;
+                  color: #fff;
+                  font-size: 18px;
+                "
+                >f</a
+              >
+              <a
+                href="https://www.instagram.com/neorainmobiliaria"
+                target="_blank"
+                style="
+                  width: 36px;
+                  height: 36px;
+                  border-radius: 8px;
+                  background: linear-gradient(
+                    45deg,
+                    #f09433,
+                    #e6683c,
+                    #dc2743,
+                    #cc2366,
+                    #bc1888
+                  );
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  text-decoration: none;
+                "
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <p
+              style="
+                margin: 0 0 14px;
+                font-size: 13px;
+                font-weight: 600;
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Propiedades
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <a
+                href="/index.html"
+                style="font-size: 13px; color: #888; text-decoration: none"
+                >Comprar</a
+              >
+              <a
+                href="/index.html"
+                style="font-size: 13px; color: #888; text-decoration: none"
+                >Alquilar</a
+              >
+              <a
+                href="/index.html"
+                style="font-size: 13px; color: #888; text-decoration: none"
+                >Temporal</a
+              >
+              <a
+                href="/index.html"
+                style="font-size: 13px; color: #888; text-decoration: none"
+                >Permutar</a
+              >
+              <a
+                href="/index.html"
+                style="font-size: 13px; color: #888; text-decoration: none"
+                >De pozo</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <p
+              style="
+                margin: 0 0 14px;
+                font-size: 13px;
+                font-weight: 600;
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Contacto
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-size: 13px; color: #888">Corrientes</span>
+              <span style="font-size: 13px; color: #888">Chaco</span>
+              <span style="font-size: 13px; color: #888"
+                >+54 9 379 402-6276</span
+              >
+            </div>
+          </div>
+
+          <div>
+            <p
+              style="
+                margin: 0 0 14px;
+                font-size: 13px;
+                font-weight: 600;
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Legal
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-size: 13px; color: #888"
+                >Términos y condiciones</span
+              >
+              <span style="font-size: 13px; color: #888"
+                >Política de privacidad</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <span style="font-size: 12px; color: #555"
+            >© 2026 NÉORA Inmobiliaria. Todos los derechos reservados.</span
+          >
+          <span style="font-size: 12px; color: #555">Corrientes · Chaco</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+      const SUPABASE_URL = "https://ocgtrdzokkeekjaybrzg.supabase.co";
+      const SUPABASE_KEY =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9jZ3RyZHpva2tlZWtqYXlicnpnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxMDY0NDYsImV4cCI6MjA4ODY4MjQ0Nn0.yhxGPR_5jBTfIjp5spa_Js8HMulfMwOIeyxbO2Q_JIQ";
+
+      const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+
+      const contenido = document.getElementById("contenido");
+
+      if (id) incrementarVisitas(id);
+
+      let imagenesActuales = [];
+      let indiceActual = 0;
+
+      const visorOverlay = document.getElementById("visor-overlay");
+      const visorImagen = document.getElementById("visor-imagen");
+      const visorCerrar = document.getElementById("visor-cerrar");
+      const visorAnterior = document.getElementById("visor-anterior");
+      const visorSiguiente = document.getElementById("visor-siguiente");
+
+      function abrirVisor(indice) {
+        if (!imagenesActuales.length) return;
+        indiceActual = indice;
+        visorImagen.src = imagenesActuales[indiceActual];
+        visorOverlay.classList.add("activo");
+      }
+
+      function cerrarVisor() {
+        visorOverlay.classList.remove("activo");
+      }
+
+      function visorAnteriorImagen() {
+        if (!imagenesActuales.length) return;
+        indiceActual =
+          (indiceActual - 1 + imagenesActuales.length) %
+          imagenesActuales.length;
+        visorImagen.src = imagenesActuales[indiceActual];
+      }
+
+      function visorSiguienteImagen() {
+        if (!imagenesActuales.length) return;
+        indiceActual = (indiceActual + 1) % imagenesActuales.length;
+        visorImagen.src = imagenesActuales[indiceActual];
+      }
+
+      visorCerrar.addEventListener("click", cerrarVisor);
+      visorAnterior.addEventListener("click", visorAnteriorImagen);
+      visorSiguiente.addEventListener("click", visorSiguienteImagen);
+
+      document.addEventListener("keydown", (e) => {
+        if (!visorOverlay.classList.contains("activo")) return;
+        if (e.key === "Escape") cerrarVisor();
+        if (e.key === "ArrowLeft") visorAnteriorImagen();
+        if (e.key === "ArrowRight") visorSiguienteImagen();
+      });
+
+      visorOverlay.addEventListener("click", (e) => {
+        if (e.target === visorOverlay) cerrarVisor();
+      });
+
+     async function incrementarVisitas(id) {
+        try {
+          const { data: actual } = await db
+            .from("propiedades")
+            .select("visitas")
+            .eq("id", id)
+            .single();
+          const nuevasVisitas = (actual?.visitas || 0) + 1;
+          await db
+            .from("propiedades")
+            .update({ visitas: nuevasVisitas })
+            .eq("id", id);
+        } catch (e) {
+          console.log("Error incrementando visitas:", e);
+        }
+      }
+
+      async function cargarPropiedad() {
+        if (!id) {
+          contenido.innerHTML = `<div class="mensaje">No se indicó una propiedad.</div>`;
+          return;
+        }
+
+        const { data: propiedad, error } = await db
+          .from("propiedades")
+          .select("*")
+          .eq("id", Number(id))
+          .single();
+
+        if (error || !propiedad) {
+          contenido.innerHTML = `<div class="mensaje">No se encontró la propiedad.</div>`;
+          return;
+        }
+
+        const { data: imagenesExtra } = await db
+          .from("propiedad_imagenes")
+          .select("url, orden")
+          .eq("propiedad_id", id)
+          .order("orden", { ascending: true });
+
+        let imagenes = [];
+        if (imagenesExtra && imagenesExtra.length > 0) {
+          imagenes = imagenesExtra.map((img) => img.url);
+        } else if (propiedad.imagen) {
+          imagenes = [propiedad.imagen];
+        }
+
+        imagenesActuales = imagenes;
+
+        let indiceImagenActual = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        contenido.innerHTML = `
+                    <div class="galeria-wrap">
+                    <div class="galeria-principal">
+                      <img
+                        id="imagen-principal"
+                        class="imagen"
+                        src="${imagenes[0] || "https://via.placeholder.com/1200x700?text=Sin+imagen"}"
+                        alt="${propiedad.titulo}"
+                      />
+                      ${
+                        imagenes.length > 1
+                          ? `
+                        <button class="nav-galeria izq" id="anterior" type="button">‹</button>
+                        <button class="nav-galeria der" id="siguiente" type="button">›</button>
+                        <div class="contador-galeria" id="contador-galeria">1 / ${imagenes.length}</div>
+                      `
+                          : ""
+                      }
+                    </div>
+              <div class="galeria-grid-derecha">
+                ${imagenes
+                    .slice(1, 5)
+                    .map(
+                      (img, i) => `
+                    <img src="${img}" data-index="${i + 1}" onclick="window.actualizarImagen(${i + 1})" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;background:#111;" />
+                  `
+                    )
+                    .join("")}
+                </div>
+               </div>
+                ${
+                  imagenes.length > 1
+                    ? `
+                    <div id="miniaturas-strip" style="display:${window.innerWidth <= 700 ? "flex" : "none"};gap:8px;overflow-x:auto;scrollbar-width:none;padding:10px 16px;background:#fff;border-bottom:1px solid #eee;">
+                     ${imagenes
+                        .map(
+                          (img, i) => `
+                        <img
+                          src="${img}"
+                          data-index="${i}"
+                          id="mini-${i}"
+                          onclick="window.actualizarImagen(${i})"
+                          loading="lazy"
+                          decoding="async"
+                          style="width:72px;height:54px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid ${i === 0 ? "#c11b36" : "transparent"};flex-shrink:0;opacity:${i === 0 ? "1" : "0.75"};"
+                        />
+                      `,
+                        )
+                        .join("")}
+                    </div>
+      `
+                    : ""
+                }
+
+                          <p style="margin:0 0 8px;font-size:14px;color:#888;font-weight:500;">
+                        ${propiedad.categoria || ""}${propiedad.categoria ? " · " : ""}${(propiedad.tipo || "venta").charAt(0).toUpperCase() + (propiedad.tipo || "venta").slice(1)}
+                      </p>
+
+                          <h2>${propiedad.titulo || "Sin título"}</h2>
+
+                         <div class="precio">
+          ${
+            propiedad.precio
+              ? propiedad.moneda === "ARS"
+                ? "$ " + Number(propiedad.precio).toLocaleString("es-AR")
+                : "USD " + Number(propiedad.precio).toLocaleString("es-AR")
+              : "Consultar"
+          }
+          </div>
+
+                         <div class="detalle-layout">
+                  <div class="detalle-izquierda">
+                    <div class="ubicacion">${propiedad.ciudad || "Sin ciudad"}</div>
+                    <div style="display:flex;gap:20px;padding:10px 0;margin-top:8px;border-top:0.5px solid #f0f0f0;font-size:12px;color:#888;">
+                      <span style="display:inline-flex;align-items:center;gap:5px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        ${propiedad.visitas || 0} ${(propiedad.visitas || 0) === 1 ? "visualización" : "visualizaciones"}
+                      </span>
+                    </div>
+
+                    <h3 style="margin:0 0 12px;font-size:14px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:1px;">Características</h3>
+<div class="grilla-caracteristicas" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:24px;">
+  <div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;">
+    <div style="width:34px;height:34px;border-radius:8px;background:#fff3f5;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </div>
+    <div><div style="font-size:11px;color:#888;">Dormitorios</div><div style="font-size:15px;font-weight:600;color:#111;">${propiedad.dormitorios ?? 0}</div></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;">
+    <div style="width:34px;height:34px;border-radius:8px;background:#fff3f5;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.5"><path d="M4 12h16M4 12a2 2 0 01-2-2V6h20v4a2 2 0 01-2 2M4 12v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg>
+    </div>
+    <div><div style="font-size:11px;color:#888;">Baños</div><div style="font-size:15px;font-weight:600;color:#111;">${propiedad.banos ?? 0}</div></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;">
+    <div style="width:34px;height:34px;border-radius:8px;background:#fff3f5;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.5"><path d="M21 3H3v18h18V3z"/><path d="M9 3v18M3 9h18"/></svg>
+    </div>
+    <div><div style="font-size:11px;color:#888;">Superficie</div><div style="font-size:15px;font-weight:600;color:#111;">${propiedad.m2 ?? 0} m²</div></div>
+  </div>
+  ${propiedad.garage ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div><div style="font-size:11px;color:#888;">Garage</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.quincho ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/></svg></div><div><div style="font-size:11px;color:#888;">Quincho</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.piscina ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><path d="M2 12h20M2 12c0 5.5 4.5 8 10 8s10-2.5 10-8"/><path d="M6 12c0-3 1.5-6 6-6s6 3 6 6"/></svg></div><div><div style="font-size:11px;color:#888;">Piscina</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.jardin ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><path d="M12 22V12M12 12C12 12 7 9 7 5a5 5 0 0110 0c0 4-5 7-5 7z"/></svg></div><div><div style="font-size:11px;color:#888;">Jardín</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.terraza ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><path d="M3 21h18M3 11l9-9 9 9M5 21V11M19 21V11"/></svg></div><div><div style="font-size:11px;color:#888;">Terraza</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.balcon ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><path d="M4 21V10M20 21V10M2 10h20M12 10V3M8 3h8"/></svg></div><div><div style="font-size:11px;color:#888;">Balcón</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.lavadero ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="2"/></svg></div><div><div style="font-size:11px;color:#888;">Lavadero</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.bodega ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div><div><div style="font-size:11px;color:#888;">Bodega</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.seguridad_24hs ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div style="font-size:11px;color:#888;">Seguridad 24hs</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.portero ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div><div style="font-size:11px;color:#888;">Portero</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.barrio_cerrado ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><div><div style="font-size:11px;color:#888;">Barrio cerrado</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.amoblado ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><path d="M20 9V7a2 2 0 00-2-2H6a2 2 0 00-2 2v2M4 9h16M4 9a2 2 0 00-2 2v6h20v-6a2 2 0 00-2-2M2 17v2M22 17v2"/></svg></div><div><div style="font-size:11px;color:#888;">Amoblado</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.apto_mascotas ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div><div style="font-size:11px;color:#888;">Apto mascotas</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.calefaccion ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><path d="M12 2v6M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/></svg></div><div><div style="font-size:11px;color:#888;">Calefacción</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.aire_acondicionado ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><rect x="2" y="3" width="20" height="7" rx="2"/><path d="M12 10v11M8 14l4-4 4 4"/></svg></div><div><div style="font-size:11px;color:#888;">Aire acondicionado</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.deposito ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><div><div style="font-size:11px;color:#888;">Depósito</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+  ${propiedad.estacionamiento ? `<div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;"><div style="width:34px;height:34px;border-radius:8px;background:#eaf3de;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8zM5 16v2M19 16v2"/></svg></div><div><div style="font-size:11px;color:#888;">Estacionamiento</div><div style="font-size:15px;font-weight:600;color:#1a7a3f;">Sí</div></div></div>` : ""}
+</div>
+
+<h3 style="margin:0 0 12px;font-size:14px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:1px;">Condiciones</h3>
+<div class="extras">
+  ${propiedad.financia ? `<span class="extra">✓ Financiación</span>` : ""}
+  ${propiedad.apto_credito ? `<span class="extra">✓ Apto crédito</span>` : ""}
+  ${propiedad.destacado ? `<span class="extra-destacada">⭐ Destacada</span>` : ""}
+  ${propiedad.permuta ? `<span class="extra-destacada" style="background:#fff3f5;color:#c11b36;border-color:#f5c5ce;">🔄 Acepta permuta</span>` : ""}
+</div>
+
+                    
+
+                          <h3 class="descripcion-titulo">Descripción</h3>
+                      <div class="descripcion">${propiedad.descripcion || "Sin descripción"}</div>
+
+                      ${
+                        propiedad.latitud && propiedad.longitud
+                          ? `
+                      <div style="margin-top:24px;">
+                        <h3 style="margin-bottom:8px;">Ubicación</h3>
+                        <p style="font-size:13px;color:#888;margin-bottom:10px;">📍 ${propiedad.ciudad || ""}</p>
+                        <div id="mapa-leaflet" style="height:280px;border-radius:12px;overflow:hidden;border:1px solid #e0e0e0;"></div>
+                      </div>
+                      `
+                          : ""
+                      }
+
+                         </div>
+                    <div class="detalle-panel">
+                      <p style="margin:0 0 2px;font-size:12px;color:#888;">${propiedad.categoria || ""}${propiedad.categoria && propiedad.tipo ? " · " : ""}${(propiedad.tipo || "venta").charAt(0).toUpperCase() + (propiedad.tipo || "venta").slice(1)}</p>
+                  <p style="margin:0 0 4px;font-size:15px;font-weight:700;color:#111;line-height:1.3;">${propiedad.titulo || ""}</p>
+                <div class="detalle-panel-precio">
+                    ${
+                      propiedad.precio
+                        ? propiedad.moneda === "ARS"
+                          ? "$ " +
+                            Number(propiedad.precio).toLocaleString("es-AR")
+                          : "USD " +
+                            Number(propiedad.precio).toLocaleString("es-AR")
+                        : "Consultar"
+                    }
+                  </div>
+                  <p class="detalle-panel-ciudad">${propiedad.ciudad || "Sin ciudad"}</p>
+                <div class="acciones">
+                  <div style="display:flex;gap:8px;align-items:center;">
+                  <a class="boton" style="flex:1;" href="https://wa.me/5493794026276?text=${encodeURIComponent(
+                    `Hola, me interesa esta propiedad:
+          Título: ${propiedad.titulo || "Sin título"}
+          Ciudad: ${propiedad.ciudad || "Sin ciudad"}
+          Precio: ${
+            propiedad.precio
+              ? propiedad.moneda === "ARS"
+                ? "$ " + Number(propiedad.precio).toLocaleString("es-AR")
+                : "USD " + Number(propiedad.precio).toLocaleString("es-AR")
+              : "Consultar"
+          }
+          Link: ${window.location.origin}/propiedad.html?id=${propiedad.id}`,
+                  )}"
+              target="_blank"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Consultar por WhatsApp
+      </a>
+      <div style="position:relative;flex-shrink:0;">
+          <button type="button" class="boton boton-secundario" onclick="document.getElementById('share-menu-${propiedad.id}').style.display = document.getElementById('share-menu-${propiedad.id}').style.display === 'block' ? 'none' : 'block'" style="display:flex;align-items:center;justify-content:center;width:50px;height:50px;padding:0;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <div id="share-menu-${propiedad.id}" style="display:none;position:absolute;bottom:54px;right:0;left:auto;min-width:160px;background:#fff;border:1px solid #e0e0e0;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.1);z-index:100;overflow:hidden;">
+            <a onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('Link copiado');document.getElementById('share-menu-${propiedad.id}').style.display='none'})" style="display:flex;align-items:center;gap:10px;padding:12px 16px;font-size:14px;color:#111;text-decoration:none;cursor:pointer;border-bottom:1px solid #f0f0f0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copiar link
+            </a>
+            <a href="https://wa.me/?text=${encodeURIComponent(`Mirá esta propiedad:\n${propiedad.titulo || ""}\n${window.location.origin}/propiedad.html?id=${propiedad.id}`)}" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;font-size:14px;color:#111;text-decoration:none;border-bottom:1px solid #f0f0f0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${window.location.origin}/propiedad.html?id=${propiedad.id}`)}" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;font-size:14px;color:#111;text-decoration:none;border-bottom:1px solid #f0f0f0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Facebook
+            </a>
+            <a href="mailto:?subject=${encodeURIComponent(`Propiedad: ${propiedad.titulo || ""}`)}&body=${encodeURIComponent(`Mirá esta propiedad:\n${window.location.origin}/propiedad.html?id=${propiedad.id}`)}" style="display:flex;align-items:center;gap:10px;padding:12px 16px;font-size:14px;color:#111;text-decoration:none;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Mail
+            </a>
+          </div>
+        </div>
+        </div>
+
+        <div style="height:1px;background:#f0f0f0;margin:4px 0;"></div>
+
+        <div style="display:flex;align-items:center;gap:10px;padding:4px 0;">
+          <div style="width:38px;height:38px;border-radius:50%;background:#c11b36;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;flex-shrink:0;">N</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:#111;">NÉORA Inmobiliaria</div>
+            <div style="font-size:11px;color:#888;">+54 9 379 402-6276</div>
+          </div>
+        </div>
+          </div>
+                    </div>
+                    </div>
+
+                    <div class="similares" id="similares">
+                            <h3>Propiedades similares</h3>
+                            <div class="similares-grid" id="similares-grid"></div>
+                          </div>
+                        `;
+
+        const imagenPrincipal = document.getElementById("imagen-principal");
+        const miniaturas = document.querySelectorAll(".miniatura");
+        const contador = document.getElementById("contador-galeria");
+        const btnAnterior = document.getElementById("anterior");
+        const btnSiguiente = document.getElementById("siguiente");
+
+        window.actualizarImagen = function (index) {
+          indiceImagenActual = index;
+          imagenPrincipal.src = imagenes[index];
+
+          miniaturas.forEach((mini) => mini.classList.remove("activa"));
+          if (miniaturas[index]) miniaturas[index].classList.add("activa");
+
+          if (contador)
+            contador.textContent = `${index + 1} / ${imagenes.length}`;
+
+          const strip = document.getElementById("miniaturas-strip");
+          if (strip) {
+            strip.querySelectorAll("img").forEach((img, i) => {
+              img.style.border =
+                i === index ? "2px solid #c11b36" : "2px solid transparent";
+              img.style.opacity = i === index ? "1" : "0.75";
+            });
+          }
+        };
+
+        miniaturas.forEach((mini) => {
+          mini.addEventListener("click", () => {
+            actualizarImagen(Number(mini.dataset.index));
+          });
+        });
+
+        if (btnAnterior) {
+          btnAnterior.addEventListener("click", () => {
+            const nuevo =
+              (indiceImagenActual - 1 + imagenes.length) % imagenes.length;
+            actualizarImagen(nuevo);
+          });
+        }
+
+        if (btnSiguiente) {
+          btnSiguiente.addEventListener("click", () => {
+            const nuevo = (indiceImagenActual + 1) % imagenes.length;
+            actualizarImagen(nuevo);
+          });
+        }
+
+        if (imagenPrincipal) {
+          imagenPrincipal.addEventListener("click", () => {
+            abrirVisor(indiceImagenActual);
+          });
+
+          imagenPrincipal.addEventListener("touchstart", (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+          });
+
+          imagenPrincipal.addEventListener("touchend", (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diferencia = touchEndX - touchStartX;
+
+            if (Math.abs(diferencia) > 50 && imagenes.length > 1) {
+              if (diferencia > 0) {
+                const nuevo =
+                  (indiceImagenActual - 1 + imagenes.length) % imagenes.length;
+                actualizarImagen(nuevo);
+              } else {
+                const nuevo = (indiceImagenActual + 1) % imagenes.length;
+                actualizarImagen(nuevo);
+              }
+            }
+          });
+        }
+
+        await cargarSimilares(propiedad);
+
+        console.log(
+          "latitud:",
+          propiedad.latitud,
+          "longitud:",
+          propiedad.longitud,
+        );
+        if (propiedad.latitud && propiedad.longitud) {
+          setTimeout(() => {
+            const mapaEl = document.getElementById("mapa-leaflet");
+            if (!mapaEl) return;
+            
+            const mapa = new mapboxgl.Map({
+              container: 'mapa-leaflet',
+              style: 'mapbox://styles/mapbox/streets-v12',
+              center: [parseFloat(propiedad.longitud), parseFloat(propiedad.latitud)],
+              zoom: 15
+            });
+            const color = propiedad.tipo === 'alquiler' ? '#1f5ea8' : '#c11b36';
+            const el = document.createElement('div');
+            el.style.cssText = `width:22px;height:22px;background:${color};border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.4);cursor:pointer;`;
+            new mapboxgl.Marker({ element: el })
+              .setLngLat([parseFloat(propiedad.longitud), parseFloat(propiedad.latitud)])
+              .setPopup(new mapboxgl.Popup().setHTML(`<b>${propiedad.titulo || ''}</b><br>${propiedad.ciudad || ''}`))
+              .addTo(mapa);
+            mapa.addControl(new mapboxgl.NavigationControl());
+          }, 300);
+        }
+
+        if (window.innerWidth <= 700) {
+          const barra = document.getElementById("barra-wpp-mobile");
+          if (barra) {
+            barra.style.display = "flex";
+            const link = document.getElementById("barra-wpp-link");
+            if (link) {
+              link.href = `https://wa.me/5493794026276?text=${encodeURIComponent(`Hola, me interesa esta propiedad:\nTítulo: ${propiedad.titulo || ""}\nCiudad: ${propiedad.ciudad || ""}\nLink: ${window.location.origin}/propiedad.html?id=${propiedad.id}`)}`;
+            }
+          }
+        }
+      }
+
+      async function cargarSimilares(propiedadActual) {
+        const { data: similares } = await db
+          .from("propiedades")
+          .select("*")
+          .neq("id", propiedadActual.id)
+          .eq("tipo", propiedadActual.tipo)
+          .limit(3);
+
+        const grid = document.getElementById("similares-grid");
+        if (!grid) return;
+
+        if (!similares || similares.length === 0) {
+          grid.innerHTML = `<div class="mensaje">No hay propiedades similares disponibles.</div>`;
+          return;
+        }
+
+        grid.innerHTML = similares
+          .map(
+            (p) => `
+                  <div class="similar-card" style="cursor:pointer;" onclick="window.location='/propiedad.html?id=${p.id}'">
+                    <img src="${p.imagen || "https://via.placeholder.com/600x400?text=Sin+imagen"}" alt="${p.titulo || "Propiedad"}" loading="lazy" decoding="async" />
+                   <div class="similar-card-contenido">
+                        <p style="margin:0 0 4px;font-size:13px;color:#888;font-weight:500;">${(p.tipo || "venta").charAt(0).toUpperCase() + (p.tipo || "venta").slice(1)}</p>
+                        <div class="similar-precio">
+                        ${p.precio ? (p.moneda === "ARS" ? "$ " + Number(p.precio).toLocaleString("es-AR") : "USD " + Number(p.precio).toLocaleString("es-AR")) : "Consultar"}
+                      </div>
+                      <h4>${p.titulo || "Sin título"}</h4>
+                      <div class="similar-meta">${p.ciudad || "Sin ciudad"}</div>
+                      <div class="similar-meta">${p.dormitorios ?? 0} dorm. · ${p.banos ?? 0} baños · ${p.m2 ?? 0} m²</div>
+
+                    </div>
+                  </div>
+                `,
+          )
+          .join("");
+      }
+
+      function copiarLinkPropiedad() {
+        const url = `${window.location.origin}/propiedad.html?id=${propiedad.id}`;
+        navigator.clipboard.writeText(url);
+        alert("Link copiado");
+      }
+
+      cargarPropiedad();
+
+      if (window.innerWidth <= 700) {
+        const barra = document.getElementById("barra-wpp-mobile");
+        if (barra) barra.style.display = "flex";
+      }
+    </script>
+    <div
+      id="barra-wpp-mobile"
+      style="
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: 1px solid #eee;
+        padding: 10px 16px;
+        z-index: 9999;
+        gap: 10px;
+        align-items: center;
+        box-sizing: border-box;
+      "
+    >
+      <a
+        id="barra-wpp-link"
+        href="#"
+        style="
+          flex: 1;
+          background: #25d366;
+          color: #fff;
+          border-radius: 10px;
+          height: 46px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px;
+          font-weight: 600;
+          gap: 8px;
+          text-decoration: none;
+        "
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+          />
+        </svg>
+        Consultar por WhatsApp
+      </a>
+      <div
+        style="
+          width: 46px;
+          height: 46px;
+          background: #fff;
+          border: 1px solid #e0e0e0;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 2px;
+          cursor: pointer;
+        "
+        onclick="navigator.share ? navigator.share({title:'NÉORA Inmobiliaria',url:window.location.href}) : navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copiado'))"
+      >
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#555"
+          stroke-width="2"
+        >
+          <circle cx="18" cy="5" r="3" />
+          <circle cx="6" cy="12" r="3" />
+          <circle cx="18" cy="19" r="3" />
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+        </svg>
+        <span style="font-size: 9px; color: #555">Compartir</span>
+      </div>
+    </div>
+  </body>
+</html>

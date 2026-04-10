@@ -1,0 +1,3034 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>NÉORA Inmobiliaria | Venta y alquiler en Corrientes Capital</title>
+    <meta name="description" content="Tu inmobiliaria de confianza en Corrientes Capital. Venta, alquiler y permutas de casas, departamentos, terrenos y más. Publicación profesional y atención personalizada." />
+    <meta name="keywords" content="inmobiliaria corrientes, propiedades corrientes capital, venta casas corrientes, alquiler departamentos corrientes, permuta propiedades, terrenos corrientes, NÉORA inmobiliaria" />
+    <meta name="author" content="NÉORA Inmobiliaria" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="es-AR" />
+    <link rel="canonical" href="https://neora-inmobiliaria.pages.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NÉORA Inmobiliaria | Venta y alquiler en Corrientes Capital" />
+    <meta property="og:description" content="Tu inmobiliaria de confianza en Corrientes Capital. Venta, alquiler y permutas de casas, departamentos, terrenos y más. Publicación profesional y atención personalizada." />
+    <meta property="og:image" content="https://neora-inmobiliaria.pages.dev/neora-logo.png" />
+    <meta property="og:image:width" content="751" />
+    <meta property="og:image:height" content="245" />
+    <meta property="og:url" content="https://neora-inmobiliaria.pages.dev/" />
+    <meta property="og:site_name" content="NÉORA Inmobiliaria" />
+    <meta property="og:locale" content="es_AR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NÉORA Inmobiliaria | Venta y alquiler en Corrientes Capital" />
+    <meta name="twitter:description" content="Tu inmobiliaria de confianza en Corrientes Capital. Venta, alquiler y permutas de casas, departamentos, terrenos y más." />
+    <meta name="twitter:image" content="https://neora-inmobiliaria.pages.dev/neora-logo.png" />
+
+    <link rel="icon" type="image/png" href="/neora-logo.png" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        background: #ffffff;
+        color: #222;
+      }
+
+      header {
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      .contenedor {
+        max-width: 1350px;
+        margin: 0 auto;
+        background: transparent;
+        border-radius: 0;
+        padding: 40px 24px;
+        box-shadow: none;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(17, 17, 17, 0.07);
+        transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 40px rgba(17, 17, 17, 0.13);
+        border-color: #c11b36;
+      }
+
+      .card img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        background: #eee;
+        display: block;
+      }
+
+      .card-contenido {
+        padding: 18px 18px 16px;
+      }
+
+      .badges {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+      .badge-destacado {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: bold;
+        background: #c8a96b;
+        color: #111;
+      }
+
+      .precio {
+        font-size: 22px;
+        font-weight: 700;
+        color: #111;
+        margin: 4px 0 8px;
+      }
+      .tipo {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #fff;
+        background: #c11b36;
+        letter-spacing: 0.3px;
+      }
+
+      .tipo.alquiler {
+        background: #1976d2;
+      }
+
+      .boton-admin {
+        display: inline-block;
+        margin-top: 0;
+        padding: 13px 16px;
+        background: #c11b36;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+
+      .filtros {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(160px, 1fr));
+        gap: 12px;
+        align-items: end;
+        background: #ffffff;
+        padding: 16px;
+        border-radius: 10px;
+        border: 1px solid #e5e5e5;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        margin: 0;
+      }
+
+      .filtros select,
+      .filtros input,
+      .filtros button {
+        width: 100%;
+        height: 44px;
+        padding: 0 12px;
+        border-radius: 8px;
+        border: 1px solid #d9d9d9;
+        font-size: 14px;
+        box-sizing: border-box;
+        background: #fff;
+        color: #111;
+      }
+
+      .filtros select,
+      .filtros input {
+        outline: none;
+      }
+
+      .filtros select:focus,
+      .filtros input:focus {
+        border-color: #c11b36;
+      }
+
+      .filtros button {
+        background: #c11b36;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+      }
+
+      .filtros button:hover {
+        background: #a3152d;
+      }
+
+      .filtros input::placeholder {
+        color: #888;
+      }
+
+      @media (max-width: 1100px) {
+        .filtros {
+          grid-template-columns: repeat(2, minmax(160px, 1fr));
+        }
+      }
+
+      @media (max-width: 700px) {
+        .filtros {
+          grid-template-columns: 1fr;
+          padding: 14px;
+        }
+      }
+
+      header {
+        background: transparent;
+        color: inherit;
+        text-align: left;
+        padding: 0;
+      }
+
+      .hero {
+        background: #f7f7f7;
+        border-bottom: 1px solid #e6e6e6;
+        padding: 0;
+      }
+
+      .topbar {
+      max-width: 1350px;
+        margin: 0 auto;
+        padding: 14px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        background: #fff;
+      }
+
+      .topbar-marca {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+      }
+
+      .topbar-logo {
+        font-size: 28px;
+        font-weight: 700;
+        color: #111;
+        letter-spacing: 0.5px;
+      }
+
+      .topbar-sub {
+        font-size: 14px;
+        color: #666;
+        font-weight: 500;
+      }
+
+      .topbar-nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .topbar-nav a {
+        color: #111;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .topbar-nav a:hover {
+        color: #c11b36;
+      }
+
+      .topbar-acciones {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .topbar-link-admin {
+        display: inline-block;
+        padding: 10px 14px;
+        background: #c11b36;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .topbar-link-admin:hover {
+        background: #a3152d;
+      }
+
+      .hero-buscador {
+      max-width: 1350px;
+        margin: 0 auto;
+        padding: 48px 24px 56px;
+      }
+
+      .hero-buscador h1 {
+        margin: 0 0 18px;
+        font-size: 42px;
+        line-height: 1.15;
+        color: #111;
+        font-weight: 700;
+        text-align: left;
+      }
+
+      .filtros.filtros-hero {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(180px, 1fr));
+        gap: 12px;
+        align-items: end;
+        background: #fff;
+        padding: 18px;
+        border-radius: 12px;
+        border: 1px solid #e5e5e5;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+        margin: 0 auto;
+        max-width: 1120px;
+      }
+
+      .filtros.filtros-hero select,
+      .filtros.filtros-hero input,
+      .filtros.filtros-hero button {
+        width: 100%;
+        height: 44px;
+        padding: 0 12px;
+        border-radius: 8px;
+        border: 1px solid #d9d9d9;
+        font-size: 14px;
+        box-sizing: border-box;
+        background: #fff;
+        color: #111;
+      }
+
+      .filtros.filtros-hero button {
+        background: #c11b36;
+        color: #fff;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .filtros.filtros-hero button:hover {
+        background: #a3152d;
+      }
+
+      .encabezado-listado {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 24px;
+      }
+
+      .titulo-seccion-label {
+        margin: 0 0 6px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #c11b36;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      .filtros-rapidos {
+        display: flex;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+
+      .filtro-rapido {
+        height: 36px;
+        padding: 0 14px;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        background: #fff;
+        color: #555;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+
+      .filtro-rapido:hover {
+        border-color: #c11b36;
+        color: #c11b36;
+      }
+
+      .filtro-rapido.activo {
+        background: #c11b36;
+        border-color: #c11b36;
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .filtro-rapido-permuta {
+        border-color: #f5c5ce !important;
+        background: #fff8fa !important;
+        color: #c11b36 !important;
+        font-weight: 500;
+      }
+
+      .filtro-rapido-permuta.activo {
+        background: #c11b36 !important;
+        border-color: #c11b36 !important;
+        color: #fff !important;
+      }
+
+      .chip-categoria {
+        height: 30px;
+        padding: 0 12px;
+        border-radius: 6px;
+        border: 1px solid #e0e0e0;
+        background: #fff;
+        color: #555;
+        font-size: 12px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+
+      .chip-categoria:hover {
+        border-color: #c11b36;
+        color: #c11b36;
+      }
+
+      .chip-categoria.activo {
+        background: #c11b36;
+        border-color: #c11b36;
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .chip-ver-mas {
+        background: #f8f8f8;
+        color: #888;
+        font-style: italic;
+      }
+
+      .chip-extra.oculto {
+        display: none;
+      }
+
+      @keyframes skeleton-shimmer {
+        0% { background-position: -1000px 0; }
+        100% { background-position: 1000px 0; }
+      }
+
+      .skeleton {
+        background: linear-gradient(90deg, #f0f0f0 0%, #f8f8f8 50%, #f0f0f0 100%);
+        background-size: 1000px 100%;
+        animation: skeleton-shimmer 1.5s ease-in-out infinite;
+        border-radius: 6px;
+      }
+
+      .skeleton-card {
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .skeleton-img {
+        width: 100%;
+        height: 180px;
+      }
+
+      .skeleton-body {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .skeleton-line {
+        height: 12px;
+        border-radius: 4px;
+      }
+
+      .skeleton-line-short { width: 40%; }
+      .skeleton-line-medium { width: 60%; }
+      .skeleton-line-long { width: 85%; }
+      .skeleton-line-full { width: 100%; }
+
+      .skeleton-line-precio {
+        height: 22px;
+        width: 50%;
+        margin-bottom: 4px;
+      }
+
+      .skeleton-btn {
+        height: 44px;
+        border-radius: 10px;
+        margin-top: 8px;
+      }
+
+      .acciones-card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .acciones-card a {
+        text-decoration: none;
+      }
+
+      .boton-admin,
+      .boton-whatsapp {
+        display: block;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .boton-whatsapp {
+        margin-top: 0;
+        padding: 13px 16px;
+        background: #ffffff;
+        color: #111;
+        text-decoration: none;
+        border: 1px solid #dddddd;
+        border-radius: 10px;
+        font-weight: 500;
+      }
+
+      .boton-whatsapp:hover {
+        border-color: #c11b36;
+        color: #c11b36;
+        background: #fff8fa;
+      }
+
+      @media (max-width: 1100px) {
+        .filtros.filtros-hero {
+          grid-template-columns: repeat(2, minmax(180px, 1fr));
+        }
+      }
+
+      @media (max-width: 900px) {
+        .topbar,
+        .hero-buscador {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .encabezado-listado {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .topbar-nav {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        .hero-buscador h1 {
+          font-size: 28px;
+        }
+
+        .filtros.filtros-hero {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .categorias-home {
+        background: #fff;
+        padding: 14px 0 6px;
+      }
+
+      .categorias-wrap {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .categoria-item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 0 16px;
+        border: 1px solid #e3e3e3;
+        border-radius: 999px;
+        background: #fff;
+        color: #111;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+      }
+
+      .categoria-item:hover {
+        border-color: #c11b36;
+        color: #c11b36;
+        background: #fff8fa;
+      }
+
+      @media (max-width: 700px) {
+        .categorias-wrap {
+          padding: 0 16px;
+          gap: 10px;
+        }
+
+        .categoria-item {
+          font-size: 13px;
+          padding: 0 14px;
+        }
+      }
+
+      header {
+        background: transparent;
+        color: inherit;
+        text-align: left;
+        padding: 0;
+      }
+
+      .hero {
+        position: relative;
+        background:
+          linear-gradient(rgba(10, 15, 25, 0.45), rgba(10, 15, 25, 0.30)),
+          url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=80");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-bottom: 1px solid #e7e7e7;
+        padding: 0;
+      }
+
+      .topbar {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 18px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        background: rgba(255, 255, 255, 0.94);
+        border-radius: 0 0 14px 14px;
+      }
+
+      .topbar-izq {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      .marca-neora {
+        color: #111;
+        text-decoration: none;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 6px;
+      }
+
+      .marca-neora .marca-nombre {
+        color: #c11b36;
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .marca-neora .marca-sub {
+        color: #888;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .menu-principal {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .menu-item {
+        color: #222;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        padding-bottom: 2px;
+        border-bottom: 2px solid transparent;
+        transition: 0.2s ease;
+      }
+
+      .menu-item:hover,
+      .menu-item.activo {
+        color: #c11b36;
+        border-bottom-color: #c11b36;
+      }
+
+      .link-admin-top {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 0 16px;
+        border-radius: 10px;
+        background: #ffffff;
+        color: #111;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .link-admin-top:hover {
+        background: #f4f4f4;
+      }
+
+      .hero-centro {
+      max-width: 1350px;
+        margin: 0 auto;
+        padding: 60px 24px 68px;
+      }
+
+      .hero-centro h1 {
+        margin: 0 0 18px;
+        font-size: 44px;
+        line-height: 1.08;
+        color: #fff;
+        font-weight: 700;
+        max-width: 900px;
+        white-space: nowrap;
+      }
+
+      .tabs-operacion {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+      }
+
+      .tab-op {
+        min-height: 42px;
+        padding: 0 16px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        backdrop-filter: blur(6px);
+      }
+
+      .tab-op:hover,
+      .tab-op.activo {
+        background: #fff;
+        color: #111;
+        border-color: #fff;
+      }
+
+      .filtros.filtros-hero {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(180px, 1fr));
+        gap: 12px;
+        align-items: end;
+        background: #fff;
+        padding: 18px;
+        border-radius: 18px;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+        margin: 0;
+        max-width: 1120px;
+      }
+
+      .filtros.filtros-hero select,
+      .filtros.filtros-hero input,
+      .filtros.filtros-hero button {
+        width: 100%;
+        height: 48px;
+        padding: 0 14px;
+        border-radius: 12px;
+        border: 1px solid #dddddd;
+        font-size: 14px;
+        box-sizing: border-box;
+        background: #fff;
+        color: #111;
+      }
+
+      .filtros.filtros-hero select:focus,
+      .filtros.filtros-hero input:focus {
+        outline: none;
+        border-color: #c11b36;
+      }
+
+      .filtros.filtros-hero button {
+        background: #c11b36;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+      }
+
+      .filtros.filtros-hero button:hover {
+        background: #a3152d;
+      }
+
+      .hero + .categorias-home {
+        margin-top: 0;
+      }
+
+      .categorias-home {
+        background: #fff;
+        border-bottom: 1px solid #ececec;
+        padding: 14px 0;
+      }
+
+      .categorias-wrap {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .categoria-item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        padding: 0 15px;
+        border: 1px solid #e4e4e4;
+        border-radius: 999px;
+        background: #fff;
+        color: #111;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .categoria-item:hover {
+        border-color: #c11b36;
+        color: #c11b36;
+        background: #fff8fa;
+      }
+
+      @media (max-width: 1100px) {
+        .filtros.filtros-hero {
+          grid-template-columns: repeat(2, minmax(180px, 1fr));
+        }
+      }
+
+      @media (max-width: 900px) {
+        .topbar,
+        .hero-centro,
+        .categorias-wrap {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .hero-centro h1 {
+          font-size: 38px;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .topbar {
+          align-items: flex-start;
+        }
+
+        .topbar-izq {
+          gap: 16px;
+        }
+
+        .menu-principal {
+          gap: 12px;
+        }
+
+        .hero-centro {
+          padding: 30px 16px 34px;
+        }
+
+        .hero-centro h1 {
+          font-size: 30px;
+        }
+
+        .tabs-operacion {
+          gap: 8px;
+        }
+
+        .tab-op {
+          min-height: 38px;
+          padding: 0 12px;
+          font-size: 13px;
+        }
+
+        .filtros.filtros-hero {
+          grid-template-columns: 1fr;
+          padding: 14px;
+          border-radius: 14px;
+        }
+
+        .categoria-item {
+          font-size: 13px;
+        }
+      }
+
+      .card-contenido h3 {
+        margin: 0 0 6px;
+        font-size: 17px;
+        line-height: 1.3;
+        font-weight: 600;
+      }
+
+      .card-contenido h3 a {
+        color: #111;
+        text-decoration: none;
+      }
+
+      .card-contenido h3 a:hover {
+        color: #c11b36;
+        text-decoration: none;
+      }
+
+      .descripcion-card {
+        font-size: 14px;
+        line-height: 1.45;
+        color: #555;
+        margin-top: 2px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 40px;
+      }
+
+      .meta-card {
+        font-size: 15px;
+        color: #444;
+        margin: 0;
+      }
+
+      .datos-card {
+        font-size: 14px;
+        color: #666;
+        margin: 0 0 4px;
+        line-height: 1.4;
+      }
+
+      .subcategorias-operacion {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0 0 18px;
+      }
+
+      .subcat-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 38px;
+        padding: 0 14px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        backdrop-filter: blur(6px);
+      }
+
+      .subcat-btn:hover,
+      .subcat-btn.activo {
+        background: #fff;
+        color: #111;
+        border-color: #fff;
+      }
+
+      .mega-menu {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        position: relative;
+      }
+
+      .mega-item {
+        position: relative;
+      }
+
+      .mega-item .menu-item {
+        display: inline-flex;
+        align-items: center;
+        min-height: 42px;
+      }
+
+      .mega-panel {
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+        min-width: 920px;
+        display: none;
+        grid-template-columns: repeat(4, minmax(160px, 1fr));
+        gap: 28px;
+        padding: 22px 24px;
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        border-radius: 18px;
+        box-shadow: 0 24px 60px rgba(17, 17, 17, 0.14);
+        z-index: 50;
+      }
+
+      .mega-item:hover .mega-panel {
+        display: grid;
+      }
+
+      .mega-col {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .mega-col h4 {
+        margin: 0 0 4px;
+        font-size: 14px;
+        font-weight: 700;
+        color: #111;
+      }
+
+      .mega-col a {
+        color: #4a4a4a;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 1.35;
+      }
+
+      .mega-col a:hover {
+        color: #c11b36;
+      }
+
+      @media (max-width: 1100px) {
+        .mega-panel {
+          min-width: 760px;
+          grid-template-columns: repeat(3, minmax(160px, 1fr));
+        }
+      }
+
+      @media (max-width: 900px) {
+        .mega-menu {
+          display: none;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .topbar-izq {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .menu-principal {
+          display: none;
+        }
+      }
+
+
+      
+
+      .mega-col a.activo {
+        color: #c11b36;
+        font-weight: 600;
+      }
+
+
+      .mobile-menu-btn {
+        display: none;
+        min-height: 42px;
+        padding: 0 14px;
+        border: 1px solid #e1e1e1;
+        border-radius: 10px;
+        background: #fff;
+        color: #111;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .mobile-menu-panel {
+        display: none;
+      }
+
+      @media (max-width: 900px) {
+        .mobile-menu-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .mobile-menu-panel {
+          display: none;
+          max-width: 1280px;
+          margin: 0 auto;
+          padding: 0 16px 14px;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .mobile-menu-panel.abierto {
+          display: flex;
+        }
+
+        .mobile-menu-link {
+          min-height: 44px;
+          padding: 0 14px;
+          border: 1px solid #e4e4e4;
+          border-radius: 10px;
+          background: #fff;
+          color: #111;
+          font-size: 14px;
+          font-weight: 500;
+          text-align: left;
+          cursor: pointer;
+        }
+
+        .mobile-menu-link:hover {
+          border-color: #c11b36;
+          color: #c11b36;
+        }
+      }
+
+
+      @media (max-width: 900px) {
+        .topbar-der {
+          display: none;
+        }
+
+        .tabs-operacion,
+        .subcategorias-operacion {
+          display: none;
+        }
+
+        .hero-centro {
+          padding: 20px 16px 18px;
+        }
+
+        .hero-centro h1 {
+          margin: 0 0 14px;
+          font-size: 22px;
+          line-height: 1.15;
+          max-width: 100%;
+          white-space: normal;
+        }
+
+        .filtros.filtros-hero {
+          margin-top: 6px;
+        }
+      }
+
+
+
+      @media (max-width: 900px) {
+        .topbar-der,
+        .tabs-operacion,
+        .subcategorias-operacion {
+          display: none !important;
+        }
+      }
+
+     .filtros-principales {
+        display: grid;
+        grid-template-columns: 140px 160px 140px minmax(280px, 1fr) 120px 120px;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .filtros-principales #busquedaTexto {
+        min-width: 0;
+      }
+      
+
+        .filtros-extra {
+          display: none;
+          grid-template-columns: 170px 170px 170px 170px 140px;
+          gap: 12px;
+          margin-top: 14px;
+          align-items: center;
+        }
+
+      .filtros-extra.abierto {
+        display: grid;
+      }
+
+      .btn-filtros-extra {
+        background: #fff !important;
+        color: #111 !important;
+        border: 1px solid #dcdcdc !important;
+      }
+
+      .btn-filtros-extra:hover {
+        border-color: #c11b36 !important;
+        color: #c11b36 !important;
+        background: #fff8fa !important;
+      }
+
+      @media (max-width: 900px) {
+        .filtros-principales {
+          grid-template-columns: 1fr;
+        }
+
+        .filtros-extra {
+          grid-template-columns: 1fr;
+        }
+      }
+
+
+      @media (max-width: 900px) {
+        .topbar-der,
+        .tabs-operacion,
+        .subcategorias-operacion {
+          display: none !important;
+        }
+
+        .hero-centro {
+          padding: 20px 16px 18px;
+        }
+
+        .hero-centro h1 {
+          margin: 0 0 14px;
+          font-size: 28px;
+          line-height: 1.1;
+          max-width: 320px;
+        }
+
+        .filtros.filtros-hero {
+          margin-top: 6px;
+        }
+      }
+
+
+      @media (max-width: 1100px) {
+        .filtros-principales {
+          grid-template-columns: repeat(2, minmax(180px, 1fr));
+        }
+
+        .filtros-extra {
+          grid-template-columns: repeat(2, minmax(180px, 1fr));
+        }
+      }
+
+      @media (max-width: 900px) {
+        .filtros-principales,
+        .filtros-extra {
+          grid-template-columns: 1fr;
+        }
+      }
+
+
+      @media (min-width: 901px) {
+        .tabs-operacion,
+        .subcategorias-operacion,
+        .topbar-der {
+          display: none !important;
+        }
+      }
+      
+      .filtros.filtros-hero {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .filtros-principales,
+      .filtros-extra {
+        width: 100%;
+      }
+
+      .filtros-principales #busquedaTexto {
+        width: 100%;
+        min-width: 0;
+      }
+
+
+      @media (min-width: 901px) {
+        .topbar-der {
+          display: none !important;
+        }
+      }
+
+      .filtros-extra {
+        display: none !important;
+      }
+
+      .filtros-extra.abierto {
+        display: grid !important;
+      }
+
+
+      .filtros-extra {
+        display: none !important;
+      }
+
+      .filtros-extra.abierto {
+        display: grid !important;
+      }
+
+      .permuta-cta {
+        margin-top: 0;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 16px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        box-shadow: none;
+      }
+
+      .permuta-cta-texto h3 {
+        margin: 6px 0 6px;
+        font-size: 22px;
+        line-height: 1.15;
+        color: #111;
+      }
+
+      .permuta-cta-texto p {
+        margin: 0;
+        font-size: 14px;
+        color: #555;
+        line-height: 1.5;
+      }
+
+      .permuta-etiqueta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 24px;
+        padding: 0 10px;
+        border-radius: 999px;
+        background: #fff8fa;
+        color: #c11b36;
+        border: 1px solid #f1ccd5;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .permuta-cta-acciones {
+        flex-shrink: 0;
+      }
+
+      .permuta-boton {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 18px;
+        border-radius: 10px;
+        background: #c11b36;
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        border: 1px solid #c11b36;
+      }
+
+      .permuta-boton:hover {
+        background: #a3152d;
+        border-color: #a3152d;
+      }
+
+      @media (max-width: 900px) {
+        .permuta-cta {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 16px;
+        }
+        .permuta-cta-texto h3 {
+          font-size: 20px;
+        }
+        .permuta-cta-acciones {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+        }
+        .permuta-boton {
+          width: 100%;
+          box-sizing: border-box;
+          text-align: center;
+          margin-left: 0 !important;
+        }
+      }
+
+
+      .permuta-seccion {
+        padding: 40px 0;
+        background: #ffffff;
+      }
+
+      .permuta-wrap {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+
+      .card-pro {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-pro-media {
+        position: relative;
+        overflow: hidden;
+        background: #f3f3f3;
+      }
+
+      .card-pro-media a {
+        display: block;
+      }
+
+      .card-pro-media img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+
+      .card:hover .card-pro-media img {
+        transform: scale(1.03);
+      }
+
+      .card-pro-tipo {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 26px;
+        padding: 0 10px;
+        border-radius: 6px;
+        background: #c11b36;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        box-shadow: none;
+      }
+
+      .card-pro-tipo.alquiler {
+        background: #1f5ea8;
+        box-shadow: none;
+      }
+
+      .card-pro-body {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        flex: 1;
+      }
+
+      .card-pro-destacada {
+        display: inline-flex;
+        align-items: center;
+        align-self: flex-start;
+        height: 24px;
+        padding: 0 10px;
+        border-radius: 6px;
+        background: #fff3f5;
+        color: #c11b36;
+        border: 1px solid #f5c5ce;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        margin-bottom: 2px;
+      }
+
+      .card-pro-tipo-texto {
+        margin: 0;
+        font-size: 13px;
+        color: #888;
+        font-weight: 500;
+      }
+
+
+      
+
+      .card-pro-titulo {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.25;
+        font-weight: 600;
+      }
+
+      .card-pro-titulo a {
+        color: #111;
+        text-decoration: none;
+      }
+
+      .card-pro-titulo a:hover {
+        color: #c11b36;
+      }
+
+      .card-pro-ubicacion {
+        margin: 0;
+        color: #777;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .card-pro-meta {
+        margin: 0;
+        color: #999;
+        font-size: 13px;
+      }
+
+      .card-divider {
+        height: 1px;
+        background: #f0f0f0;
+        margin: 4px 0;
+      }
+
+      .card-pro-precio {
+        font-size: 21px;
+        font-weight: 700;
+        color: #111;
+        letter-spacing: -0.5px;
+      }
+
+      .card-pro-desc {
+        margin: 0;
+        color: #999;
+        font-size: 13px;
+        line-height: 1.45;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .card-pro-extras {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 2px;
+      }
+
+      .card-pro-chip {
+        display: inline-flex;
+        align-items: center;
+        height: 26px;
+        padding: 0 10px;
+        border-radius: 6px;
+        background: #f6f6f6;
+        color: #555;
+        font-size: 12px;
+        font-weight: 500;
+        border: 1px solid #e8e8e8;
+      }
+
+      .card-pro-acciones {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: auto;
+        padding-top: 12px;
+      }
+
+      .card-pro-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 44px;
+        padding: 0 16px;
+        border-radius: 10px;
+        background: #c11b36;
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        border: 1.5px solid #c11b36;
+        box-sizing: border-box;
+        transition: background 0.15s, border-color 0.15s;
+      }
+
+      .card-pro-btn:hover {
+        background: #a3152d;
+        border-color: #a3152d;
+        color: #fff;
+      }
+
+      .card-pro-btn-sec {
+        background: #fff;
+        color: #333;
+        border-color: #e0e0e0;
+        font-weight: 500;
+      }
+
+      .card-pro-btn-sec:hover {
+        background: #fff5f7;
+        color: #c11b36;
+        border-color: #c11b36;
+      }
+
+      .card-pro-btn-wa {
+        gap: 8px;
+      }
+
+      .wa-icon {
+        font-size: 15px;
+        line-height: 1;
+      }
+
+
+      
+
+      @media (max-width: 900px) {
+        .card-pro-media img {
+          height: 220px;
+        }
+
+        .card-pro-body {
+          padding: 16px;
+        }
+
+        .card-pro-titulo {
+          font-size: 21px;
+        }
+
+        .card-pro-precio {
+          font-size: 26px;
+        }
+
+        .card-pro-btn {
+          min-height: 52px;
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 700px) {
+        footer > div > div:first-child {
+          grid-template-columns: 1fr !important;
+          gap: 24px !important;
+        }
+      }
+
+
+
+
+      
+      
+      
+    </style>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="topbar">
+        <div class="topbar-izq">
+          <a class="marca-neora" href="/"><span class="marca-nombre">NÉORA</span><span class="marca-sub">Inmobiliaria</span></a>
+
+          <nav class="menu-principal mega-menu">
+            <div class="mega-item">
+              <a
+                href="#"
+                class="menu-item activo"
+                onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op'));"
+                >Comprar</a
+              >
+              <div class="mega-panel">
+                <div class="mega-col">
+                  <h4>Viviendas</h4>
+                    <a
+                      href="#"
+                      <a href="#" onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Casas', this);">Casas</a><Casas</a 
+                    >
+                    <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Departamentos', this);"
+                    >Departamentos</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('PH', this);"
+                    >PH</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Dúplex', this);"
+                    >Dúplex</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Monoambientes', this);"
+                    >Monoambientes</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Quintas', this);"
+                    >Quintas</a
+                  >
+                </div>
+
+                <div class="mega-col">
+                  <h4>Terrenos y rural</h4>
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Lotes / Terrenos', this);"
+                    >Lotes / Terrenos</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Campos', this);"
+                    >Campos</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Chacras', this);"
+                    >Chacras</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Fracciones', this);"
+                    >Fracciones</a
+                  >
+                </div>
+
+                <div class="mega-col">
+                  <h4>Comercial</h4>
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Oficinas', this);"
+                    >Oficinas</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Locales', this);"
+                    >Locales</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Consultorios', this);"
+                    >Consultorios</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Fondos de comercio', this);"
+                    >Fondos de comercio</a
+                  >
+                </div>
+
+                <div class="mega-col">
+                  <h4>Otros</h4>
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Cocheras', this);"
+                    >Cocheras</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Galpones / Depósitos', this);"
+                    >Galpones / Depósitos</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); aplicarSubcategoria('Edificios', this);"
+                    >Edificios</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="mega-item">
+              <a
+                href="#"
+                class="menu-item"
+                onclick="event.preventDefault(); setOperacion('alquilar','alquiler', document.querySelectorAll('.tabs-operacion .tab-op')[1]);"
+                >Alquilar</a
+              >
+              <div class="mega-panel">
+                <div class="mega-col">
+                  <h4>Viviendas</h4>
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('alquilar','alquiler', document.querySelectorAll('.tabs-operacion .tab-op')[1]); aplicarSubcategoria('Casas', this);"
+                    >Casas</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('alquilar','alquiler', document.querySelectorAll('.tabs-operacion .tab-op')[1]); aplicarSubcategoria('Departamentos', this);"
+                    >Departamentos</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('alquilar','alquiler', document.querySelectorAll('.tabs-operacion .tab-op')[1]); aplicarSubcategoria('PH', this);"
+                    >PH</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('alquilar','alquiler', document.querySelectorAll('.tabs-operacion .tab-op')[1]); aplicarSubcategoria('Dúplex', this);"
+                    >Dúplex</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('alquilar','alquiler', document.querySelectorAll('.tabs-operacion .tab-op')[1]); aplicarSubcategoria('Monoambientes', this);"
+                    >Monoambientes</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('alquilar','alquiler', document.querySelectorAll('.tabs-operacion .tab-op')[1]); aplicarSubcategoria('Quintas', this);"
+                    >Quintas</a
+                  >
+                </div>
+
+                <div class="mega-col">
+                  <h4>Comercial</h4>
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('alquilar','alquiler', document.querySelectorAll('.tabs-operacion .tab-op')[1]); aplicarSubcategoria('Oficinas', this);"
+                    >Oficinas</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('alquilar','alquiler', document.querySelectorAll('.tabs-operacion .tab-op')[1]); aplicarSubcategoria('Locales', this);"
+                    >Locales</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('alquilar','alquiler', document.querySelectorAll('.tabs-operacion .tab-op')[1]); aplicarSubcategoria('Consultorios', this);"
+                    >Consultorios</a
+                  >
+                </div>
+
+                <div class="mega-col">
+                  <h4>Otros</h4>
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('alquilar','alquiler', document.querySelectorAll('.tabs-operacion .tab-op')[1]); aplicarSubcategoria('Cocheras', this);"
+                    >Cocheras</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('alquilar','alquiler', document.querySelectorAll('.tabs-operacion .tab-op')[1]); aplicarSubcategoria('Galpones / Depósitos', this);"
+                    >Galpones / Depósitos</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="mega-item">
+              <a
+                href="#"
+                class="menu-item"
+                onclick="event.preventDefault(); setOperacion('temporal','', document.querySelectorAll('.tabs-operacion .tab-op')[2]);"
+                >Temporal</a
+              >
+              <div class="mega-panel">
+                <div class="mega-col">
+                  <h4>Viviendas temporarias</h4>
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('temporal','', document.querySelectorAll('.tabs-operacion .tab-op')[2]); aplicarSubcategoria('Casas temporarias', this);"
+                    >Casas temporarias</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('temporal','', document.querySelectorAll('.tabs-operacion .tab-op')[2]); aplicarSubcategoria('Departamentos temporarios', this);"
+                    >Departamentos temporarios</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('temporal','', document.querySelectorAll('.tabs-operacion .tab-op')[2]); aplicarSubcategoria('Quintas temporarias', this);"
+                    >Quintas temporarias</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('temporal','', document.querySelectorAll('.tabs-operacion .tab-op')[2]); aplicarSubcategoria('Cabañas', this);"
+                    >Cabañas</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('temporal','', document.querySelectorAll('.tabs-operacion .tab-op')[2]); aplicarSubcategoria('Monoambientes temporarios', this);"
+                    >Monoambientes temporarios</a
+                  >
+                </div>
+
+                <div class="mega-col">
+                  <h4>Extras</h4>
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('temporal','', document.querySelectorAll('.tabs-operacion .tab-op')[2]); aplicarSubcategoria('Amoblados', this);"
+                    >Amoblados</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('temporal','', document.querySelectorAll('.tabs-operacion .tab-op')[2]); aplicarSubcategoria('Con pileta', this);"
+                    >Con pileta</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('temporal','', document.querySelectorAll('.tabs-operacion .tab-op')[2]); aplicarSubcategoria('Fin de semana', this);"
+                    >Fin de semana</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('temporal','', document.querySelectorAll('.tabs-operacion .tab-op')[2]); aplicarSubcategoria('Por día / semana / mes', this);"
+                    >Por día / semana / mes</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="mega-item">
+              <a
+                href="#"
+                class="menu-item"
+                onclick="event.preventDefault(); setOperacion('emprendimientos','', document.querySelectorAll('.tabs-operacion .tab-op')[3]);"
+                >De pozo / Emprendimientos</a
+              >
+              <div class="mega-panel">
+                <div class="mega-col">
+                  <h4>Proyectos</h4>
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('emprendimientos','', document.querySelectorAll('.tabs-operacion .tab-op')[3]); aplicarSubcategoria('Departamentos en pozo', this);"
+                    >Departamentos en pozo</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('emprendimientos','', document.querySelectorAll('.tabs-operacion .tab-op')[3]); aplicarSubcategoria('Edificios en construcción', this);"
+                    >Edificios en construcción</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('emprendimientos','', document.querySelectorAll('.tabs-operacion .tab-op')[3]); aplicarSubcategoria('Preventa', this);"
+                    >Preventa</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('emprendimientos','', document.querySelectorAll('.tabs-operacion .tab-op')[3]); aplicarSubcategoria('Desarrollos nuevos', this);"
+                    >Desarrollos nuevos</a
+                  >
+                  <a
+                    href="#"
+                    onclick="event.preventDefault(); setOperacion('emprendimientos','', document.querySelectorAll('.tabs-operacion .tab-op')[3]); aplicarSubcategoria('Barrios cerrados', this);"
+                    >Barrios cerrados</a
+                  >
+                </div>
+              </div>
+            </div>
+          </nav>
+         </div>
+
+
+        <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()">Menú</button>
+        
+        <div class="topbar-der">
+          <a class="link-admin-top" href="/admin.html">Admin</a>
+        </div>
+      </div>
+
+
+      <div id="mobileMenuPanel" class="mobile-menu-panel">
+        <button type="button" class="mobile-menu-link" onclick="setOperacion('comprar','venta', document.querySelector('.tabs-operacion .tab-op')); toggleMobileMenu()">Comprar</button>
+        <button type="button" class="mobile-menu-link" onclick="setOperacion('alquilar','alquiler', document.querySelectorAll('.tabs-operacion .tab-op')[1]); toggleMobileMenu()">Alquilar</button>
+        <button type="button" class="mobile-menu-link" onclick="setOperacion('temporal','', document.querySelectorAll('.tabs-operacion .tab-op')[2]); toggleMobileMenu()">Temporal</button>
+        <button type="button" class="mobile-menu-link" onclick="setOperacion('emprendimientos','', document.querySelectorAll('.tabs-operacion .tab-op')[3]); toggleMobileMenu()">De pozo / Emprendimientos</button>
+      </div>
+
+      
+      <div class="hero-centro">
+        <h1>Encontrá tu próxima propiedad</h1>
+
+        <div class="tabs-operacion">
+          <button
+            type="button"
+            class="tab-op activo"
+            onclick="setOperacion('comprar','venta', this)"
+          >
+            Comprar
+          </button>
+          <button
+            type="button"
+            class="tab-op"
+            onclick="setOperacion('alquilar','alquiler', this)"
+          >
+            Alquilar
+          </button>
+          <button
+            type="button"
+            class="tab-op"
+            onclick="setOperacion('temporal','', this)"
+          >
+            Temporal
+          </button>
+          <button
+            type="button"
+            class="tab-op"
+            onclick="setOperacion('emprendimientos','', this)"
+          >
+            De pozo / Emprendimientos
+          </button>
+        </div>
+        <div id="subcategoriasOperacion" class="subcategorias-operacion"></div>
+
+      <div class="filtros filtros-hero">
+        <div class="filtros-principales">
+          <select id="filtroTipo">
+            <option value="">Tipo operación</option>
+            <option value="venta">Venta</option>
+            <option value="alquiler">Alquiler</option>
+            <option value="temporal">Temporal</option>
+            <option value="emprendimiento">Emprendimientos</option>
+          </select>
+
+         <select id="filtroCategoria">
+            <option value="">Categoría</option>
+            <option value="Casa">Casa</option>
+            <option value="Departamento">Departamento</option>
+            <option value="PH">PH</option>
+            <option value="Monoambiente">Monoambiente</option>
+            <option value="Quinta">Quinta</option>
+            <option value="Lote/Terreno">Lote/Terreno</option>
+            <option value="Local">Local</option>
+            <option value="Oficina">Oficina</option>
+            <option value="Consultorio">Consultorio</option>
+            <option value="Campo">Campo</option>
+          </select>
+
+          <select id="filtroCiudad">
+            <option value="">Ciudad</option>
+            <option value="corrientes">Corrientes</option>
+            <option value="resistencia">Resistencia</option>
+          </select>
+
+          <input
+            type="text"
+            id="busquedaTexto"
+            placeholder="Buscar por título, ciudad o descripción"
+          />
+
+          <button type="button" class="btn-filtros-extra" onclick="toggleFiltrosExtra()">
+            Más filtros
+          </button>
+
+          <button onclick="aplicarFiltros()">Buscar</button>
+        </div>
+
+        <div id="filtrosExtra" class="filtros-extra">
+          <select id="filtroDormitorios">
+            <option value="">Dormitorios</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3+</option>
+          </select>
+
+          <input
+            type="number"
+            id="filtroPrecioMin"
+            placeholder="Precio mínimo"
+          />
+
+          <input
+            type="number"
+            id="filtroPrecioMax"
+            placeholder="Precio máximo"
+          />
+
+          <select id="ordenar">
+            <option value="">Ordenar</option>
+            <option value="precio_asc">Precio menor a mayor</option>
+            <option value="precio_desc">Precio mayor a menor</option>
+            <option value="nuevos">Más recientes</option>
+          </select>
+
+          <button type="button" onclick="limpiarFiltros()">Limpiar</button>
+        </div>     
+      </div>
+    </header>
+
+    <section style="background:#ffffff;padding:40px 0;">
+          <div style="max-width:1350px;margin:0 auto;padding:0 40px;">
+        <div class="permuta-cta">
+          <div class="permuta-cta-texto">
+            <span class="permuta-etiqueta">Nuevo</span>
+            <h3>¿Querés permutar tu propiedad?</h3>
+            <p>
+              Publicá oportunidades de permuta de forma simple y profesional.
+            </p>
+          </div>
+
+          <div class="permuta-cta-acciones">
+            <a class="permuta-boton" href="#" onclick="event.preventDefault(); filtrarPermutas();">
+              Ver propiedades en permuta
+            </a>
+            <a class="permuta-boton" style="background:#fff;color:#c11b36;border:1.5px solid #c11b36;" href="https://wa.me/5493794026276?text=${encodeURIComponent('Hola, quiero consultar sobre permutar mi propiedad.')}" target="_blank">
+              Quiero permutar mi propiedad
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+          <div style="background:#f5f5f5;width:100%;padding:40px 0;">
+            <div class="contenedor" id="destacadas-seccion" style="margin-bottom:0;border-radius:0;padding-top:40px;padding-bottom:40px;">
+      <p class="titulo-seccion-label">Propiedades destacadas</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+        <h2 class="titulo-seccion" style="margin:0;">Las mejores oportunidades</h2>
+        <div style="display:flex;gap:8px;">
+          <button type="button" id="carrusel-prev" style="width:38px;height:38px;border-radius:50%;border:1px solid #e0e0e0;background:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;">‹</button>
+          <button type="button" id="carrusel-next" style="width:38px;height:38px;border-radius:50%;border:1px solid #e0e0e0;background:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;">›</button>
+        </div>
+      </div>
+          <div style="padding:4px;margin:-4px;">
+            <div id="carrusel-track" style="display:flex;gap:12px;">
+        </div>
+      </div>
+          <div id="carrusel-dots" style="display:flex;justify-content:center;gap:6px;margin-top:16px;"></div>
+          </div>
+          </div>
+
+
+    
+
+
+    
+    <div class="contenedor" id="propiedades">
+      <div class="encabezado-listado">
+        <div>
+          <p class="titulo-seccion-label">Propiedades disponibles</p>
+          <h2 class="titulo-seccion">Encontrá tu próximo hogar</h2>
+          <p class="subtitulo-seccion">Casas, departamentos, terrenos y más en Corrientes y Chaco.</p>
+        </div>
+        <div class="filtros-rapidos">
+          <button type="button" class="filtro-rapido activo" onclick="filtroRapido('', this)">Todos</button>
+          <button type="button" class="filtro-rapido" onclick="filtroRapido('venta', this)">Venta</button>
+          <button type="button" class="filtro-rapido" onclick="filtroRapido('alquiler', this)">Alquiler</button>
+          <button type="button" class="filtro-rapido" onclick="filtroRapido('temporal', this)">Temporal</button>
+          <button type="button" class="filtro-rapido" onclick="filtroRapido('emprendimiento', this)">Emprendimientos</button>
+          <button type="button" class="filtro-rapido filtro-rapido-permuta" onclick="filtroRapidoPermuta(this)">🔄 Permutas</button>
+        </div>
+      </div>
+
+    <div class="filtros-categoria" style="margin-bottom:16px;padding-top:14px;border-top:1px solid #f0f0f0;">
+        <p style="margin:0 0 8px;font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Filtrar por categoría:</p>
+        <div class="filtros-categoria-chips" style="display:flex;gap:6px;flex-wrap:wrap;">
+          <button type="button" class="chip-categoria activo" onclick="filtroCategoria('', this)">Todas</button>
+          <button type="button" class="chip-categoria" onclick="filtroCategoria('Casa', this)">Casa</button>
+          <button type="button" class="chip-categoria" onclick="filtroCategoria('Departamento', this)">Departamento</button>
+          <button type="button" class="chip-categoria" onclick="filtroCategoria('PH', this)">PH</button>
+          <button type="button" class="chip-categoria" onclick="filtroCategoria('Monoambiente', this)">Monoambiente</button>
+          <button type="button" class="chip-categoria" onclick="filtroCategoria('Quinta', this)">Quinta</button>
+          <button type="button" class="chip-categoria" onclick="filtroCategoria('Lote/Terreno', this)">Lote/Terreno</button>
+          <button type="button" class="chip-categoria" onclick="filtroCategoria('Local', this)">Local</button>
+          <button type="button" class="chip-categoria" onclick="filtroCategoria('Oficina', this)">Oficina</button>
+          <button type="button" class="chip-categoria" onclick="filtroCategoria('Consultorio', this)">Consultorio</button>
+          <button type="button" class="chip-categoria" onclick="filtroCategoria('Campo', this)">Campo</button>
+        </div>
+      </div>
+
+      <div id="contador-propiedades" style="font-size:14px;color:#888;margin-bottom:16px;"></div>
+      <div id="lista" class="grid"></div>
+    </div>
+
+      <footer style="background:#111;margin-top:0;padding:40px 24px 24px;">
+      <div style="max-width:1280px;margin:0 auto;">
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px;">
+
+          <div>
+            <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:12px;">
+              <span style="font-size:22px;font-weight:700;color:#c11b36;">NÉORA</span>
+              <span style="font-size:13px;color:#888;font-weight:500;">Inmobiliaria</span>
+            </div>
+            <p style="margin:0 0 16px;font-size:13px;color:#888;line-height:1.7;">Tu inmobiliaria de confianza en Corrientes y Chaco. Encontrá la propiedad ideal para vos.</p>
+            <div style="display:flex;gap:10px;">
+              <a href="https://wa.me/5493794026276" target="_blank" style="width:36px;height:36px;border-radius:8px;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+              <a href="https://www.facebook.com/pedro.guiglioni" target="_blank" style="width:36px;height:36px;border-radius:8px;background:#1877f2;display:flex;align-items:center;justify-content:center;text-decoration:none;font-weight:700;color:#fff;font-size:18px;">f</a>
+              <a href="https://www.instagram.com/neorainmobiliaria" target="_blank" style="width:36px;height:36px;border-radius:8px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;align-items:center;justify-content:center;text-decoration:none;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin:0 0 14px;font-size:13px;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:1px;">Propiedades</p>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <a href="#" onclick="setOperacion('comprar','venta',document.querySelector('.tabs-operacion .tab-op'));return false;" style="font-size:13px;color:#888;text-decoration:none;">Comprar</a>
+              <a href="#" onclick="setOperacion('alquilar','alquiler',document.querySelectorAll('.tabs-operacion .tab-op')[1]);return false;" style="font-size:13px;color:#888;text-decoration:none;">Alquilar</a>
+              <a href="#" onclick="setOperacion('temporal','',document.querySelectorAll('.tabs-operacion .tab-op')[2]);return false;" style="font-size:13px;color:#888;text-decoration:none;">Temporal</a>
+              <a href="#" onclick="filtrarPermutas();return false;" style="font-size:13px;color:#888;text-decoration:none;">Permutar</a>
+              <a href="#" onclick="setOperacion('emprendimientos','',document.querySelectorAll('.tabs-operacion .tab-op')[3]);return false;" style="font-size:13px;color:#888;text-decoration:none;">De pozo</a>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin:0 0 14px;font-size:13px;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:1px;">Contacto</p>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <span style="font-size:13px;color:#888;">Corrientes</span>
+              <span style="font-size:13px;color:#888;">Chaco</span>
+              <span style="font-size:13px;color:#888;">+54 9 379 402-6276</span>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin:0 0 14px;font-size:13px;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:1px;">Legal</p>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <span style="font-size:13px;color:#888;">Términos y condiciones</span>
+              <span style="font-size:13px;color:#888;">Política de privacidad</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="border-top:1px solid #222;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <span style="font-size:12px;color:#555;">© 2026 NÉORA Inmobiliaria. Todos los derechos reservados.</span>
+          <span style="font-size:12px;color:#555;">Corrientes · Chaco</span>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+      const SUPABASE_URL = "https://ocgtrdzokkeekjaybrzg.supabase.co";
+      const SUPABASE_KEY =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9jZ3RyZHpva2tlZWtqYXlicnpnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxMDY0NDYsImV4cCI6MjA4ODY4MjQ0Nn0.yhxGPR_5jBTfIjp5spa_Js8HMulfMwOIeyxbO2Q_JIQ";
+      const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+      const PROPIEDADES_POR_PAGINA = 20;
+      let paginaActual = 0;
+      let totalPropiedades = 0;
+      let modoActual = "propiedades";
+
+      const SUBCATEGORIAS = {
+        comprar: [
+          "Casas",
+          "Departamentos",
+          "Lotes / Terrenos",
+          "Campos",
+          "Oficinas",
+          "Locales",
+          "Cocheras",
+          "Quintas",
+        ],
+        alquilar: [
+          "Casas",
+          "Departamentos",
+          "Oficinas",
+          "Locales",
+          "Cocheras",
+          "Quintas",
+        ],
+        temporal: [
+          "Casas temporarias",
+          "Departamentos temporarios",
+          "Quintas temporarias",
+          "Cabañas",
+        ],
+        emprendimientos: [
+          "Departamentos en pozo",
+          "Edificios en construcción",
+          "Preventa",
+          "Desarrollos nuevos",
+          "Barrios cerrados",
+        ],
+      };
+
+      function renderSubcategorias(operacion) {
+        const contenedor = document.getElementById("subcategoriasOperacion");
+        if (!contenedor) return;
+
+        const items = SUBCATEGORIAS[operacion] || [];
+
+        contenedor.innerHTML = items
+          .map(
+            (item) => `
+          <button type="button" class="subcat-btn" onclick="aplicarSubcategoria('${item.replace(/'/g, "\\'")}', this)">
+            ${item}
+          </button>
+        `,
+          )
+          .join("");
+      }
+
+      function setOperacion(operacion, tipoValor, btn) {
+        document.querySelectorAll(".tab-op").forEach((b) => b.classList.remove("activo"));
+        if (btn) btn.classList.add("activo");
+
+        document.querySelectorAll(".mega-menu .menu-item").forEach((a) => a.classList.remove("activo"));
+
+        if (operacion === "comprar") {
+          const item = document.querySelectorAll(".mega-menu .menu-item")[0];
+          if (item) item.classList.add("activo");
+        }
+
+        if (operacion === "alquilar") {
+          const item = document.querySelectorAll(".mega-menu .menu-item")[1];
+          if (item) item.classList.add("activo");
+        }
+
+        if (operacion === "temporal") {
+          const item = document.querySelectorAll(".mega-menu .menu-item")[2];
+          if (item) item.classList.add("activo");
+          tipoValor = "temporal";
+        }
+
+        if (operacion === "emprendimientos") {
+          const item = document.querySelectorAll(".mega-menu .menu-item")[3];
+          if (item) item.classList.add("activo");
+          tipoValor = "emprendimiento";
+        }
+
+        document.getElementById("filtroTipo").value = tipoValor || "";
+        document.getElementById("busquedaTexto").value = "";
+
+        renderSubcategorias(operacion);
+        cargarPropiedades();
+      }
+
+      function aplicarSubcategoria(texto, btn) {
+        document
+          .querySelectorAll(".subcat-btn")
+          .forEach((b) => b.classList.remove("activo"));
+        document
+          .querySelectorAll(".mega-col a")
+          .forEach((a) => a.classList.remove("activo"));
+
+        if (btn) btn.classList.add("activo");
+
+        document.getElementById("busquedaTexto").value = texto;
+        cargarPropiedades();
+      }
+      function toggleMobileMenu() {
+        const panel = document.getElementById("mobileMenuPanel");
+        if (!panel) return;
+        panel.classList.toggle("abierto");
+      }
+
+
+      function toggleFiltrosExtra() {
+        const bloque = document.getElementById("filtrosExtra");
+        if (!bloque) return;
+        bloque.classList.toggle("abierto");
+      }
+
+      
+     function aplicarFiltros() {
+        cargarPropiedades();
+        document.getElementById("propiedades").scrollIntoView({ behavior: "smooth" });
+      }
+
+    function filtroRapido(tipo, btn) {
+        document.querySelectorAll(".filtro-rapido").forEach(b => b.classList.remove("activo"));
+        btn.classList.add("activo");
+        document.getElementById("filtroTipo").value = tipo;
+        document.getElementById("filtroCategoria").value = "";
+        document.getElementById("filtroCiudad").value = "";
+        document.getElementById("busquedaTexto").value = "";
+        document.getElementById("filtroDormitorios").value = "";
+        document.getElementById("filtroPrecioMin").value = "";
+        document.getElementById("filtroPrecioMax").value = "";
+        cargarPropiedades();
+      }
+
+      function filtroRapidoPermuta(btn) {
+        document.querySelectorAll(".filtro-rapido").forEach(b => b.classList.remove("activo"));
+        btn.classList.add("activo");
+        document.getElementById("filtroTipo").value = "";
+        document.getElementById("filtroCategoria").value = "";
+        document.getElementById("filtroCiudad").value = "";
+        document.getElementById("busquedaTexto").value = "";
+        document.getElementById("filtroDormitorios").value = "";
+        document.getElementById("filtroPrecioMin").value = "";
+        document.getElementById("filtroPrecioMax").value = "";
+        cargarPermutas();
+      }
+
+      function filtroCategoria(categoria, btn) {
+        document.querySelectorAll(".chip-categoria").forEach(b => b.classList.remove("activo"));
+        if (btn) btn.classList.add("activo");
+        document.getElementById("filtroCategoria").value = categoria;
+        cargarPropiedades();
+      }
+
+      
+
+     function limpiarFiltros() {
+        document.getElementById("filtroTipo").value = "";
+        document.getElementById("filtroCategoria").value = "";
+        document.getElementById("filtroCiudad").value = "";
+        document.getElementById("filtroDormitorios").value = "";
+        document.getElementById("filtroPrecioMin").value = "";
+        document.getElementById("filtroPrecioMax").value = "";
+        document.getElementById("busquedaTexto").value = "";
+        cargarPropiedades();
+      }
+
+    
+
+
+
+
+      
+    function mostrarAmenitiesDe(id) {
+        const arr = window['__amen_' + id] || [];
+        const html = arr.map(a => '<span style="display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#333;padding:8px 12px;background:#f6f6f6;border-radius:8px;margin:4px;">' + a.icon + a.label + '</span>').join('');
+        const modal = document.createElement('div');
+        modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+        modal.onclick = (e) => { if(e.target === modal) modal.remove(); };
+        const inner = document.createElement('div');
+        inner.style.cssText = 'background:#fff;border-radius:14px;padding:24px;max-width:500px;width:100%;max-height:80vh;overflow-y:auto;';
+        inner.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;"><h3 style="margin:0;font-size:18px;font-weight:500;color:#111;">Características</h3><button type="button" style="background:none;border:none;font-size:28px;cursor:pointer;color:#888;line-height:1;">&times;</button></div><div style="display:flex;flex-wrap:wrap;">' + html + '</div>';
+        inner.querySelector('button').onclick = () => modal.remove();
+        modal.appendChild(inner);
+        document.body.appendChild(modal);
+      }
+
+      function mostrarAmenities(html) {
+        const modal = document.createElement('div');
+        modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+        modal.onclick = (e) => { if(e.target === modal) modal.remove(); };
+        modal.innerHTML = '<div style="background:#fff;border-radius:14px;padding:24px;max-width:500px;width:100%;max-height:80vh;overflow-y:auto;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;"><h3 style="margin:0;font-size:18px;font-weight:500;color:#111;">Características</h3><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:none;border:none;font-size:24px;cursor:pointer;color:#888;">&times;</button></div><div style="display:flex;flex-wrap:wrap;">' + html + '</div></div>';
+        document.body.appendChild(modal);
+      }
+
+      async function cargarPropiedades(esCargaInicial = true) {
+        const lista = document.getElementById("lista");
+
+        if (esCargaInicial) {
+          paginaActual = 0;
+          modoActual = "propiedades";
+
+          let skeletonHtml = "";
+          for (let i = 0; i < 8; i++) {
+            skeletonHtml += `
+              <div class="skeleton-card">
+                <div class="skeleton skeleton-img"></div>
+                <div class="skeleton-body">
+                  <div class="skeleton skeleton-line skeleton-line-short"></div>
+                  <div class="skeleton skeleton-line skeleton-line-precio"></div>
+                  <div class="skeleton skeleton-line skeleton-line-long"></div>
+                  <div class="skeleton skeleton-line skeleton-line-medium"></div>
+                  <div class="skeleton skeleton-line skeleton-line-full"></div>
+                  <div class="skeleton skeleton-btn"></div>
+                </div>
+              </div>
+            `;
+          }
+          lista.innerHTML = skeletonHtml;
+
+          const wrapperViejo = document.getElementById("cargar-mas-wrapper");
+          if (wrapperViejo) wrapperViejo.remove();
+        }
+
+        const tipo = document.getElementById("filtroTipo").value;
+        const categoria = document.getElementById("filtroCategoria").value;
+        const ciudad = document.getElementById("filtroCiudad").value;
+        const dormitorios = document.getElementById("filtroDormitorios").value;
+        const precioMin = document.getElementById("filtroPrecioMin").value;
+        const precioMax = document.getElementById("filtroPrecioMax").value;
+
+        const ordenar = document.getElementById("ordenar").value;
+        const busquedaTexto = document
+          .getElementById("busquedaTexto")
+          .value.trim();
+
+       let query = db.from("propiedades").select("*", { count: "exact" });
+
+       if (tipo) {
+          query = query.eq("tipo", tipo);
+        }
+
+        if (categoria) {
+          query = query.eq("categoria", categoria);
+        }
+
+        if (ciudad) {
+          query = query.ilike("ciudad", `%${ciudad}%`);
+        }
+
+        if (dormitorios === "1") {
+          query = query.eq("dormitorios", 1);
+        }
+
+        if (dormitorios === "2") {
+          query = query.eq("dormitorios", 2);
+        }
+
+        if (dormitorios === "3") {
+          query = query.gte("dormitorios", 3);
+        }
+
+        if (precioMin) {
+          query = query.gte("precio", Number(precioMin));
+        }
+
+        if (precioMax) {
+          query = query.lte("precio", Number(precioMax));
+        }
+
+        if (busquedaTexto) {
+          query = query.or(
+            `titulo.ilike.%${busquedaTexto}%,ciudad.ilike.%${busquedaTexto}%,descripcion.ilike.%${busquedaTexto}%`,
+          );
+        }
+
+        if (ordenar === "precio_asc") {
+          query = query.order("precio", { ascending: true });
+        }
+
+        if (ordenar === "precio_desc") {
+          query = query.order("precio", { ascending: false });
+        }
+
+        if (!ordenar) {
+          query = query
+            .order("destacado", { ascending: false })
+            .order("id", { ascending: false });
+        }
+
+        const desde = paginaActual * PROPIEDADES_POR_PAGINA;
+        const hasta = desde + PROPIEDADES_POR_PAGINA - 1;
+        query = query.range(desde, hasta);
+
+        const { data, error, count } = await query;
+
+        if (error) {
+          lista.innerHTML = `
+          <div class="mensaje">
+            Error al cargar propiedades: ${error.message}
+          </div>
+        `;
+          return;
+        }
+
+       if ((!data || data.length === 0) && esCargaInicial) {
+          lista.innerHTML = `
+            <div class="mensaje">
+              No se encontraron propiedades con esos filtros.
+            </div>
+          `;
+          return;
+        }
+
+        if (esCargaInicial) {
+          lista.innerHTML = "";
+        }
+
+        const wrapperViejo = document.getElementById("cargar-mas-wrapper");
+        if (wrapperViejo) wrapperViejo.remove();
+
+        const contador = document.getElementById("contador-propiedades");
+       if (contador && esCargaInicial) {
+          contador.textContent = `${count} ${count === 1 ? "propiedad disponible" : "propiedades disponibles"}`;
+        }
+
+        data.forEach((p) => {
+          const card = document.createElement("div");
+          card.className = "card";
+          if (p.destacado) {
+            card.style.border = "1px solid #e8e8e8";
+          }
+          card.style.cursor = "pointer";
+          card.onclick = (e) => {
+            if (e.target.closest('.btn-mas-amenities')) return;
+            window.location = "/propiedad.html?id=" + p.id;
+          };
+          console.log("imagen:", p.imagen);
+
+       const listaAmenities = [
+            { key: "garage", label: "Garage", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M5 17h14M5 17l1-5h12l1 5M5 17v3M19 17v3M7 12V8a2 2 0 012-2h6a2 2 0 012 2v4"/><circle cx="8" cy="17" r="1.5" fill="#c11b36"/><circle cx="16" cy="17" r="1.5" fill="#c11b36"/></svg>' },
+            { key: "piscina", label: "Piscina", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M2 16c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M2 20c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M6 12V6a2 2 0 014 0v6M14 12V6a2 2 0 014 0v6"/></svg>' },
+            { key: "quincho", label: "Quincho", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M8 16c0-2 1-3 4-3s4 1 4 3M12 13V8M9 5l3-2 3 2M6 19h12M5 21h14"/><circle cx="12" cy="6" r="1" fill="#c11b36"/></svg>' },
+            { key: "jardin", label: "Jardín", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M12 22V14M9 22h6M8 14a4 4 0 014-4 4 4 0 014 4M12 10V6M9 6a3 3 0 013-3 3 3 0 013 3"/></svg>' },
+            { key: "terraza", label: "Terraza", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M3 21h18M5 21V11l7-7 7 7v10M9 21v-6h6v6"/></svg>' },
+            { key: "balcon", label: "Balcón", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><rect x="4" y="4" width="16" height="16"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="8" y1="4" x2="8" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="16" y1="4" x2="16" y2="20"/></svg>' },
+            { key: "seguridad_24hs", label: "Seguridad 24hs", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>' },
+            { key: "barrio_cerrado", label: "Barrio cerrado", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M3 21h18M3 21V10l9-7 9 7v11M8 21v-6h8v6"/></svg>' },
+            { key: "aire_acondicionado", label: "Aire ac.", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg>' },
+            { key: "calefaccion", label: "Calefacción", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M12 2c-3 0-5 3-5 6s2 6 5 6 5-3 5-6-2-6-5-6zM7 18l5-4 5 4M5 22l7-5 7 5"/></svg>' },
+            { key: "amoblado", label: "Amoblado", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M3 18v-3a2 2 0 012-2h14a2 2 0 012 2v3M5 13V9a3 3 0 013-3h8a3 3 0 013 3v4M7 18v2M17 18v2"/></svg>' },
+            { key: "apto_mascotas", label: "Apto mascotas", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><circle cx="8" cy="9" r="2"/><circle cx="16" cy="9" r="2"/><circle cx="6" cy="14" r="1.5"/><circle cx="18" cy="14" r="1.5"/><path d="M12 13c-3 0-5 2-5 4s1 4 5 4 5-2 5-4-2-4-5-4z"/></svg>' },
+            { key: "portero", label: "Portero", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 22v-2a8 8 0 0116 0v2"/></svg>' },
+            { key: "lavadero", label: "Lavadero", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="13" r="5"/><circle cx="12" cy="13" r="2"/><circle cx="8" cy="6" r="0.5" fill="#c11b36"/></svg>' },
+            { key: "bodega", label: "Bodega", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M3 8l9-5 9 5v10l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v10"/></svg>' },
+            { key: "deposito", label: "Depósito", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><rect x="3" y="6" width="18" height="14" rx="1"/><path d="M3 10h18M7 14h4M7 17h4"/></svg>' },
+            { key: "estacionamiento", label: "Estacionamiento", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><rect x="3" y="11" width="18" height="9" rx="1"/><path d="M7 11V7a2 2 0 014 0v4M13 11V7a2 2 0 014 0v4"/><circle cx="8" cy="17" r="1" fill="#c11b36"/><circle cx="16" cy="17" r="1" fill="#c11b36"/></svg>' }
+          ];
+          const amenitiesActivas = listaAmenities.filter(a => p[a.key]);
+         const amenitiesTop = amenitiesActivas.slice(0, 2);
+          const amenitiesResto = amenitiesActivas.length - amenitiesTop.length;
+          let htmlAmenities = "";
+          if (amenitiesActivas.length > 0) {
+            htmlAmenities = '<div class="card-pro-extras" style="margin-bottom:6px;align-items:center;">';
+            amenitiesTop.forEach(a => {
+              htmlAmenities += '<span class="card-pro-chip" style="display:inline-flex;align-items:center;gap:4px;background:transparent;border:none;padding:4px 6px;">' + a.icon + a.label + '</span>';
+            });
+         if (amenitiesResto > 0) {
+              window['__amen_' + p.id] = amenitiesActivas;
+              const todosLabels = amenitiesActivas.map(a => a.label).join('||');
+              htmlAmenities += '<button type="button" class="card-pro-chip btn-mas-amenities" onclick="event.stopPropagation();event.preventDefault();abrirPopupAmenities(event,\'' + todosLabels + '\')" style="background:transparent;border:none;color:#c11b36;padding:4px 6px;font-weight:500;cursor:pointer;text-decoration:underline;font-size:12px;">+' + amenitiesResto + ' más</button>';
+            }
+            htmlAmenities += '</div>';
+          }
+
+          card.innerHTML = `
+            <div class="card-pro">
+              <div class="card-pro-media">
+                <a href="/propiedad.html?id=${p.id}" onclick="event.stopPropagation()">
+                  <img
+                    src="${p.imagen || "https://via.placeholder.com/600x400?text=Sin+imagen"}"
+                    alt="${p.titulo || "Propiedad"}"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </a>
+              </div>
+
+             <div class="card-pro-body">
+                <p class="card-pro-tipo-texto">
+                  ${(p.tipo || "venta").charAt(0).toUpperCase() + (p.tipo || "venta").slice(1)}${p.categoria ? " · " + p.categoria : ""}
+                </p>
+
+                <div class="card-pro-precio">
+                  ${
+                    p.precio
+                      ? p.moneda === "ARS"
+                        ? "$ " + Number(p.precio).toLocaleString("es-AR")
+                        : "USD " + Number(p.precio).toLocaleString("es-AR")
+                      : "Consultar"
+                  }
+                </div>
+
+               <h3 class="card-pro-titulo">
+                  <a href="/propiedad.html?id=${p.id}" onclick="event.stopPropagation()">
+                    ${p.titulo || "Sin título"}
+                  </a>
+                </h3>
+
+                <p class="card-pro-ubicacion">${p.ciudad || "Sin ciudad"}</p>
+
+                <p class="card-pro-meta">
+                  ${p.m2 ?? 0} m² &nbsp;·&nbsp; ${p.dormitorios ?? 0} dorm. &nbsp;·&nbsp; ${p.banos ?? 0} baños
+                </p>
+
+               ${htmlAmenities}
+
+                <div class="card-pro-extras">
+                  ${p.financia ? `<span class="card-pro-chip">Financiación</span>` : ""}
+                  ${p.apto_credito ? `<span class="card-pro-chip">Apto crédito</span>` : ""}
+                  ${p.permuta ? `<span class="card-pro-chip" style="background:#fff3f5;color:#c11b36;border-color:#f5c5ce;">🔄 Permuta</span>` : ""}
+                </div>
+
+                <div class="card-pro-acciones">
+                  <a
+                    class="card-pro-btn"
+                    href="/propiedad.html?id=${p.id}"
+                    onclick="event.stopPropagation()"
+                  >
+                    Ver propiedad
+                  </a>
+
+                  <a
+  class="card-pro-btn card-pro-btn-sec card-pro-btn-wa"
+  href="https://wa.me/5493794026276?text=${encodeURIComponent(
+    `Hola, me interesa esta propiedad:
+Título: ${p.titulo || "Sin título"}
+Ciudad: ${p.ciudad || "Sin ciudad"}
+Precio: ${
+      p.precio
+        ? p.moneda === "ARS"
+          ? "$ " + Number(p.precio).toLocaleString("es-AR")
+          : "USD " + Number(p.precio).toLocaleString("es-AR")
+        : "Consultar"
+    }
+Link: ${window.location.origin}/propiedad.html?id=${p.id}`
+  )}"
+  target="_blank"
+  onclick="event.stopPropagation()"
+>
+  <span class="wa-icon" style="width:20px;height:20px;display:inline-flex;flex-shrink:0;"><svg viewBox="0 0 24 24" width="20" height="20" fill="#25D366" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+Consultar por WhatsApp
+</a>
+                </div>
+              </div>
+            </div>
+          `;
+
+
+
+
+
+
+
+
+
+
+          
+
+       lista.appendChild(card);
+        });
+
+        if (data && data.length === PROPIEDADES_POR_PAGINA) {
+          const wrapper = document.createElement("div");
+          wrapper.id = "cargar-mas-wrapper";
+          wrapper.style.cssText = "display:flex;justify-content:center;margin:32px 0;grid-column:1/-1;";
+          wrapper.innerHTML = `
+            <button onclick="cargarMasPropiedades()" id="btn-cargar-mas" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border:1.5px solid #c11b36;border-radius:10px;background:#fff;color:#c11b36;cursor:pointer;font-size:14px;font-weight:500;transition:all 0.2s;" onmouseover="this.style.background='#c11b36';this.style.color='#fff';" onmouseout="this.style.background='#fff';this.style.color='#c11b36';">
+              Cargar más propiedades
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </button>
+          `;
+          lista.parentNode.insertBefore(wrapper, lista.nextSibling);
+        }
+      }
+
+      async function cargarMasPropiedades() {
+        const btn = document.getElementById("btn-cargar-mas");
+        if (btn) {
+          btn.innerHTML = "Cargando...";
+          btn.disabled = true;
+        }
+        paginaActual++;
+        if (modoActual === "propiedades") {
+          await cargarPropiedades(false);
+        } else {
+          await cargarPermutas(false);
+        }
+      }
+
+      async function cargarDestacadas() {
+        const track = document.getElementById("carrusel-track");
+        const dotsContainer = document.getElementById("carrusel-dots");
+        if (!track) return;
+
+        const { data, error } = await db
+          .from("propiedades")
+          .select("*")
+          .eq("destacado", true)
+          .order("id", { ascending: false });
+
+        if (error || !data || data.length === 0) {
+          document.getElementById("destacadas-seccion").style.display = "none";
+          return;
+        }
+
+        const wrapper = track.parentElement;
+        wrapper.style.cssText = "overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding:4px;margin:-4px;";
+        track.style.cssText = "display:flex;gap:12px;width:max-content;";
+
+        function getCardWidth() {
+          const first = track.firstElementChild;
+          return first ? first.offsetWidth + 12 : 0;
+        }
+
+              function renderCards() {
+              track.innerHTML = "";
+              data.forEach((p) => {
+                const isMobile = window.innerWidth <= 700;
+                const contenedor = document.getElementById("destacadas-seccion");
+                const w = isMobile ? window.innerWidth - 80 : (contenedor.offsetWidth - 80 - 40) / 3;
+                const card = document.createElement("div");
+                card.style.cssText = `width:${w}px;min-width:${w}px;scroll-snap-align:start;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e8e8e8;flex-shrink:0;cursor:pointer;`;
+              card.onclick = (e) => {
+            if (e.target.closest('.btn-mas-amenities')) return;
+            window.location = "/propiedad.html?id=" + p.id;
+          };
+              card.innerHTML = `
+               <div style="position:relative;">
+                  <img src="${p.imagen || 'https://via.placeholder.com/600x400?text=Sin+imagen'}" loading="lazy" decoding="async" style="width:100%;height:180px;object-fit:cover;display:block;" />
+                  <span style="position:absolute;top:10px;left:10px;background:rgba(255,255,255,0.92);color:#111;font-size:10px;font-weight:600;padding:3px 8px;border-radius:4px;">Destacada</span>
+                  <span style="position:absolute;top:10px;right:10px;background:${p.tipo === 'alquiler' ? '#1f5ea8' : '#c11b36'};color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;">${(p.tipo || 'venta').toUpperCase()}</span>
+                </div>
+                <div style="padding:14px;">
+                  <div style="font-size:18px;font-weight:700;color:#111;margin-bottom:4px;">
+                    ${p.precio ? (p.moneda === 'ARS' ? '$ ' + Number(p.precio).toLocaleString('es-AR') : 'USD ' + Number(p.precio).toLocaleString('es-AR')) : 'Consultar'}
+                  </div>
+                  <div style="font-size:14px;font-weight:600;color:#111;margin-bottom:2px;">${p.titulo || 'Sin título'}</div>
+                  <div style="font-size:13px;color:#777;margin-bottom:8px;">${p.ciudad || 'Sin ciudad'} · ${p.m2 ?? 0}m² · ${p.dormitorios ?? 0} dorm.</div>
+                  <a href="/propiedad.html?id=${p.id}" onclick="event.stopPropagation()" style="display:block;background:#c11b36;color:#fff;text-align:center;padding:10px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Ver propiedad</a>
+                </div>
+              `;
+              track.appendChild(card);
+            });
+          }
+
+        function actualizarDots() {
+          const indice = Math.round(wrapper.scrollLeft / getCardWidth());
+          document.querySelectorAll(".carrusel-dot").forEach((d, i) => {
+            d.style.background = i === indice ? "#c11b36" : "#e0e0e0";
+            d.style.width = i === indice ? "20px" : "8px";
+          });
+        }
+        wrapper.addEventListener("scroll", actualizarDots, { passive: true });
+
+        function renderDots() {
+          dotsContainer.innerHTML = "";
+          data.forEach((_, i) => {
+            const dot = document.createElement("div");
+            dot.className = "carrusel-dot";
+            dot.style.cssText = `height:8px;border-radius:4px;background:${i === 0 ? '#c11b36' : '#e0e0e0'};width:${i === 0 ? '20px' : '8px'};transition:all 0.2s;cursor:pointer;`;
+            dot.onclick = () => { wrapper.scrollTo({ left: i * getCardWidth(), behavior: "smooth" }); };
+            dotsContainer.appendChild(dot);
+          });
+        }
+
+          renderCards();
+          renderDots();
+
+        document.getElementById("carrusel-prev").onclick = () => {
+          wrapper.scrollBy({ left: -getCardWidth(), behavior: "smooth" });
+        };
+        document.getElementById("carrusel-next").onclick = () => {
+          wrapper.scrollBy({ left: getCardWidth(), behavior: "smooth" });
+        };
+
+        window.addEventListener("resize", () => {
+          renderCards();
+        });
+        }
+
+
+
+        function filtrarPermutas() {
+        document.getElementById("filtroTipo").value = "";
+        document.getElementById("filtroCiudad").value = "";
+        document.getElementById("busquedaTexto").value = "";
+        document.getElementById("propiedades").scrollIntoView({ behavior: "smooth" });
+        cargarPermutas();
+      }
+
+     async function cargarPermutas(esCargaInicial = true) {
+        const lista = document.getElementById("lista");
+
+        if (esCargaInicial) {
+          paginaActual = 0;
+          modoActual = "permutas";
+
+          let skeletonHtml = "";
+          for (let i = 0; i < 8; i++) {
+            skeletonHtml += `
+              <div class="skeleton-card">
+                <div class="skeleton skeleton-img"></div>
+                <div class="skeleton-body">
+                  <div class="skeleton skeleton-line skeleton-line-short"></div>
+                  <div class="skeleton skeleton-line skeleton-line-precio"></div>
+                  <div class="skeleton skeleton-line skeleton-line-long"></div>
+                  <div class="skeleton skeleton-line skeleton-line-medium"></div>
+                  <div class="skeleton skeleton-line skeleton-line-full"></div>
+                  <div class="skeleton skeleton-btn"></div>
+                </div>
+              </div>
+            `;
+          }
+          lista.innerHTML = skeletonHtml;
+
+          const wrapperViejo = document.getElementById("cargar-mas-wrapper");
+          if (wrapperViejo) wrapperViejo.remove();
+        }
+
+       const desde = paginaActual * PROPIEDADES_POR_PAGINA;
+        const hasta = desde + PROPIEDADES_POR_PAGINA - 1;
+
+      const { data, error, count } = await db
+          .from("propiedades")
+          .select("*", { count: "exact" })
+          .eq("permuta", true)
+          .order("destacado", { ascending: false })
+          .order("id", { ascending: false })
+          .range(desde, hasta);
+       if (error) {
+          lista.innerHTML = "<div class='mensaje'>Error al cargar permutas: " + error.message + "</div>";
+          return;
+        }
+
+        if ((!data || data.length === 0) && esCargaInicial) {
+          lista.innerHTML = "<div class='mensaje'>No hay propiedades en permuta disponibles.</div>";
+          return;
+        }
+
+        if (esCargaInicial) {
+          lista.innerHTML = "";
+        }
+
+       const wrapperViejoP = document.getElementById("cargar-mas-wrapper");
+        if (wrapperViejoP) wrapperViejoP.remove();
+
+        if (esCargaInicial) {
+          const contador = document.getElementById("contador-propiedades");
+        if (contador) {
+            contador.textContent = `${count} ${count === 1 ? "permuta disponible" : "permutas disponibles"}`;
+          }
+        }
+
+            data.forEach((p) => {
+          const card = document.createElement("div");
+              card.className = "card";
+              if (p.destacado) {
+                card.style.border = "1px solid #e8e8e8";
+              }
+          card.style.cursor = "pointer";
+          card.onclick = () => { window.location = "/propiedad.html?id=" + p.id; };
+
+          const listaAmenities = [
+            { key: "garage", label: "Garage", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M5 17h14M5 17l1-5h12l1 5M5 17v3M19 17v3M7 12V8a2 2 0 012-2h6a2 2 0 012 2v4"/><circle cx="8" cy="17" r="1.5" fill="#c11b36"/><circle cx="16" cy="17" r="1.5" fill="#c11b36"/></svg>' },
+            { key: "piscina", label: "Piscina", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M2 16c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M2 20c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M6 12V6a2 2 0 014 0v6M14 12V6a2 2 0 014 0v6"/></svg>' },
+            { key: "quincho", label: "Quincho", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M8 16c0-2 1-3 4-3s4 1 4 3M12 13V8M9 5l3-2 3 2M6 19h12M5 21h14"/><circle cx="12" cy="6" r="1" fill="#c11b36"/></svg>' },
+            { key: "jardin", label: "Jardín", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M12 22V14M9 22h6M8 14a4 4 0 014-4 4 4 0 014 4M12 10V6M9 6a3 3 0 013-3 3 3 0 013 3"/></svg>' },
+            { key: "terraza", label: "Terraza", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M3 21h18M5 21V11l7-7 7 7v10M9 21v-6h6v6"/></svg>' },
+            { key: "balcon", label: "Balcón", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><rect x="4" y="4" width="16" height="16"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="8" y1="4" x2="8" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="16" y1="4" x2="16" y2="20"/></svg>' },
+            { key: "seguridad_24hs", label: "Seguridad 24hs", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>' },
+            { key: "barrio_cerrado", label: "Barrio cerrado", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M3 21h18M3 21V10l9-7 9 7v11M8 21v-6h8v6"/></svg>' },
+            { key: "aire_acondicionado", label: "Aire ac.", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg>' },
+            { key: "calefaccion", label: "Calefacción", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M12 2c-3 0-5 3-5 6s2 6 5 6 5-3 5-6-2-6-5-6zM7 18l5-4 5 4M5 22l7-5 7 5"/></svg>' },
+            { key: "amoblado", label: "Amoblado", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M3 18v-3a2 2 0 012-2h14a2 2 0 012 2v3M5 13V9a3 3 0 013-3h8a3 3 0 013 3v4M7 18v2M17 18v2"/></svg>' },
+            { key: "apto_mascotas", label: "Apto mascotas", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><circle cx="8" cy="9" r="2"/><circle cx="16" cy="9" r="2"/><circle cx="6" cy="14" r="1.5"/><circle cx="18" cy="14" r="1.5"/><path d="M12 13c-3 0-5 2-5 4s1 4 5 4 5-2 5-4-2-4-5-4z"/></svg>' },
+            { key: "portero", label: "Portero", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 22v-2a8 8 0 0116 0v2"/></svg>' },
+            { key: "lavadero", label: "Lavadero", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="13" r="5"/><circle cx="12" cy="13" r="2"/><circle cx="8" cy="6" r="0.5" fill="#c11b36"/></svg>' },
+            { key: "bodega", label: "Bodega", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><path d="M3 8l9-5 9 5v10l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v10"/></svg>' },
+            { key: "deposito", label: "Depósito", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><rect x="3" y="6" width="18" height="14" rx="1"/><path d="M3 10h18M7 14h4M7 17h4"/></svg>' },
+            { key: "estacionamiento", label: "Estacionamiento", icon: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.8"><rect x="3" y="11" width="18" height="9" rx="1"/><path d="M7 11V7a2 2 0 014 0v4M13 11V7a2 2 0 014 0v4"/><circle cx="8" cy="17" r="1" fill="#c11b36"/><circle cx="16" cy="17" r="1" fill="#c11b36"/></svg>' }
+          ];
+          const amenitiesActivas = listaAmenities.filter(a => p[a.key]);
+          const amenitiesTop = amenitiesActivas.slice(0, 2);
+          const amenitiesResto = amenitiesActivas.length - amenitiesTop.length;
+          let htmlAmenities = "";
+          if (amenitiesActivas.length > 0) {
+            htmlAmenities = '<div class="card-pro-extras" style="margin-bottom:6px;align-items:center;">';
+            amenitiesTop.forEach(a => {
+              htmlAmenities += '<span class="card-pro-chip" style="display:inline-flex;align-items:center;gap:4px;background:transparent;border:none;padding:4px 6px;">' + a.icon + a.label + '</span>';
+            });
+            if (amenitiesResto > 0) {
+              const idModal = 'amen-' + p.id;
+              window['__amen_' + p.id] = amenitiesActivas;
+              htmlAmenities += '<button type="button" class="card-pro-chip" onclick="event.stopPropagation();event.preventDefault();mostrarAmenitiesDe(' + p.id + ')" style="background:transparent;border:none;color:#c11b36;padding:4px 6px;font-weight:500;cursor:pointer;text-decoration:underline;font-size:12px;">+' + amenitiesResto + ' más</button>';
+            }
+            htmlAmenities += '</div>';
+          }
+
+          card.innerHTML = `
+            <div class="card-pro">
+              <div class="card-pro-media">
+                <a href="/propiedad.html?id=${p.id}" onclick="event.stopPropagation()">
+                  <img src="${p.imagen || "https://via.placeholder.com/600x400?text=Sin+imagen"}" alt="${p.titulo || "Propiedad"}" loading="lazy" decoding="async" >
+                </a>
+              </div>
+              <div class="card-pro-body">
+                <p class="card-pro-tipo-texto">
+                  ${(p.tipo || "venta").charAt(0).toUpperCase() + (p.tipo || "venta").slice(1)}${p.categoria ? " · " + p.categoria : ""}
+                </p>
+                <div class="card-pro-precio">
+                  ${p.precio ? p.moneda === "ARS" ? "$ " + Number(p.precio).toLocaleString("es-AR") : "USD " + Number(p.precio).toLocaleString("es-AR") : "Consultar"}
+                </div>
+                <h3 class="card-pro-titulo">
+                  <a href="/propiedad.html?id=${p.id}" onclick="event.stopPropagation()">${p.titulo || "Sin título"}</a>
+                </h3>
+                <p class="card-pro-ubicacion">${p.ciudad || "Sin ciudad"}</p>
+               <p class="card-pro-meta">${p.m2 ?? 0} m² &nbsp;·&nbsp; ${p.dormitorios ?? 0} dorm. &nbsp;·&nbsp; ${p.banos ?? 0} baños</p>
+                ${htmlAmenities}
+                <div class="card-pro-acciones">
+                  <a class="card-pro-btn" href="/propiedad.html?id=${p.id}" onclick="event.stopPropagation()">Ver propiedad</a>
+                  <a class="card-pro-btn card-pro-btn-sec card-pro-btn-wa"
+                    href="https://wa.me/5493794026276?text=${encodeURIComponent(`Hola, me interesa esta propiedad en permuta:\nTítulo: ${p.titulo || "Sin título"}\nLink: ${window.location.origin}/propiedad.html?id=${p.id}`)}"
+                    target="_blank" onclick="event.stopPropagation()">
+                    <span class="wa-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+                    Consultar por WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          `;
+       lista.appendChild(card);
+        });
+
+        if (data && data.length === PROPIEDADES_POR_PAGINA) {
+          const wrapper = document.createElement("div");
+          wrapper.id = "cargar-mas-wrapper";
+          wrapper.style.cssText = "display:flex;justify-content:center;margin:32px 0;grid-column:1/-1;";
+          wrapper.innerHTML = `
+            <button onclick="cargarMasPropiedades()" id="btn-cargar-mas" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border:1.5px solid #c11b36;border-radius:10px;background:#fff;color:#c11b36;cursor:pointer;font-size:14px;font-weight:500;transition:all 0.2s;" onmouseover="this.style.background='#c11b36';this.style.color='#fff';" onmouseout="this.style.background='#fff';this.style.color='#c11b36';">
+              Cargar más permutas
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </button>
+          `;
+          lista.parentNode.insertBefore(wrapper, lista.nextSibling);
+        }
+      }
+
+      renderSubcategorias("comprar");
+      cargarDestacadas();
+      cargarPropiedades();
+    </script>
+    <a href="https://wa.me/5493794026276?text=Hola%2C%20me%20comunico%20desde%20la%20web%20de%20N%C3%89ORA%20Inmobiliaria." target="_blank" style="position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);z-index:9999;text-decoration:none;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+<div id="popup-amenities" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;" onclick="this.style.display='none'">
+  <div style="background:#fff;border-radius:16px;padding:24px;max-width:360px;width:90%;max-height:80vh;overflow-y:auto;" onclick="event.stopPropagation()">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <span style="font-size:15px;font-weight:600;color:#111;">Todas las características</span>
+      <button onclick="document.getElementById('popup-amenities').style.display='none'" style="background:none;border:none;font-size:22px;cursor:pointer;color:#555;">×</button>
+    </div>
+    <div id="popup-amenities-lista" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;"></div>
+  </div>
+</div>
+
+<script>
+function abrirPopupAmenities(e, labelsStr) {
+  e.stopPropagation();
+  e.preventDefault();
+  const labels = labelsStr.split('||');
+  const lista = document.getElementById('popup-amenities-lista');
+  lista.innerHTML = labels.map(l => '<div style="padding:8px 10px;border:1px solid #ececec;border-radius:8px;font-size:13px;color:#111;">' + l + '</div>').join('');
+  const popup = document.getElementById('popup-amenities');
+  popup.style.display = 'flex';
+}
+</script>
+
+
+  </body>
+</html>

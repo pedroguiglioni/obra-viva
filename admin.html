@@ -1,0 +1,889 @@
+<!doctype html>
+<html lang="es">
+  <head>
+   <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Admin | NÉORA Inmobiliaria</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Panel administrativo privado de NÉORA Inmobiliaria." />
+
+    <link rel="icon" type="image/png" href="/neora-logo.png" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f4f4f4;
+        color: #222;
+      }
+
+      header {
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 24px 20px;
+      }
+
+      .contenedor {
+        max-width: 900px;
+        margin: 30px auto;
+        background: white;
+        border-radius: 14px;
+        padding: 24px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      .oculto {
+        display: none;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .campo {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
+      }
+
+      .campo label {
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      .campo input,
+      .campo select,
+      .campo textarea {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 15px;
+      }
+
+      .campo textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      .checks {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 16px 0 24px;
+      }
+
+      .checks label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      button,
+      .link {
+        padding: 14px 20px;
+        border: none;
+        border-radius: 8px;
+        background: #111;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .acciones {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .mensaje {
+        margin-top: 18px;
+        padding: 14px;
+        border-radius: 8px;
+        display: none;
+        white-space: pre-wrap;
+      }
+
+      .ok {
+        background: #e6f6ea;
+        color: #1f6d34;
+      }
+
+      .error {
+        background: #fde8e8;
+        color: #9b1c1c;
+      }
+
+      .galeria-admin {
+        margin-top: 24px;
+      }
+
+      .galeria-admin h3 {
+        margin-bottom: 12px;
+      }
+
+      .galeria-admin-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+      }
+
+      .galeria-admin-item {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .galeria-admin-item img {
+        width: 100%;
+        height: 110px;
+        object-fit: cover;
+        display: block;
+        background: #eee;
+      }
+
+      .galeria-admin-item .texto {
+        padding: 10px;
+        font-size: 13px;
+      }
+
+      @media (max-width: 700px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>NÉORA Inmobiliaria</h2>
+      <p>Panel administrativo</p>
+    </header>
+
+    <div class="contenedor" id="pantalla-login">
+      <h1>Ingresar al admin</h1>
+
+      <div class="campo">
+        <label for="clave-admin">Contraseña</label>
+        <input
+          type="password"
+          id="clave-admin"
+          placeholder="Ingresá tu contraseña"
+        />
+      </div>
+
+      <div class="acciones">
+        <button id="btn-entrar" type="button">Entrar</button>
+        <a class="link" href="/index.html">Volver a la web</a>
+      </div>
+
+      <div id="mensaje-login" class="mensaje"></div>
+    </div>
+
+    <div class="contenedor oculto" id="pantalla-admin">
+      <h1>Cargar nueva propiedad</h1>
+
+      <form id="form-propiedad">
+        <input type="hidden" id="propiedad-id" />
+        <div class="grid">
+          <div class="campo">
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" required />
+          </div>
+
+          <div class="campo">
+            <label for="tipo">Tipo de operación</label>
+            <select id="tipo" required>
+              <option value="venta">Venta</option>
+              <option value="alquiler">Alquiler</option>
+              <option value="temporal">Temporal</option>
+              <option value="emprendimiento">Emprendimientos</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="categoria">Categoría</label>
+            <select id="categoria">
+              <option value="">Seleccionar categoría</option>
+              <option value="Casa">Casa</option>
+              <option value="Departamento">Departamento</option>
+              <option value="PH">PH</option>
+              <option value="Dúplex">Dúplex</option>
+              <option value="Monoambiente">Monoambiente</option>
+              <option value="Quinta">Quinta</option>
+              <option value="Lote/Terreno">Lote/Terreno</option>
+              <option value="Campo">Campo</option>
+              <option value="Chacra">Chacra</option>
+              <option value="Fracción">Fracción</option>
+              <option value="Oficina">Oficina</option>
+              <option value="Local">Local</option>
+              <option value="Consultorio">Consultorio</option>
+              <option value="Fondo de comercio">Fondo de comercio</option>
+              <option value="Cochera">Cochera</option>
+              <option value="Galpón/Depósito">Galpón/Depósito</option>
+              <option value="Edificio">Edificio</option>
+              <option value="Cabaña">Cabaña</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="precio">Precio</label>
+            <input type="number" id="precio" />
+          </div>
+
+          <div class="campo">
+            <label for="moneda">Moneda</label>
+            <select id="moneda">
+              <option value="USD">USD</option>
+              <option value="ARS">ARS</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="ciudad">Ciudad</label>
+            <input type="text" id="ciudad" />
+          </div>
+
+          <div class="campo">
+            <label for="dormitorios">Dormitorios</label>
+            <input type="number" id="dormitorios" />
+          </div>
+
+          <div class="campo">
+            <label for="banos">Baños</label>
+            <input type="number" id="banos" />
+          </div>
+
+          <div class="campo">
+            <label for="m2">Metros cuadrados</label>
+            <input type="number" id="m2" />
+          </div>
+
+          <div class="campo">
+            <label for="latitud">Latitud</label>
+            <input type="text" id="latitud" placeholder="-27.476974" />
+          </div>
+
+          <div class="campo">
+            <label for="longitud">Longitud</label>
+            <input type="text" id="longitud" placeholder="-58.840535" />
+          </div>
+
+          <div class="campo">
+            <label for="imagen">Foto</label>
+            <input type="file" id="imagen" accept="image/*" multiple />
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="descripcion">Descripción</label>
+          <textarea id="descripcion"></textarea>
+        </div>
+
+        <div class="checks">
+          <label><input type="checkbox" id="financia" /> Dueño financia</label>
+          <label
+            ><input type="checkbox" id="apto_credito" /> Apto crédito</label
+          >
+          <label><input type="checkbox" id="destacado" /> Destacado</label>
+         <label><input type="checkbox" id="permuta" /> Acepta permuta</label>
+        </div>
+
+        <div class="checks">
+          <label><input type="checkbox" id="garage" /> Garage</label>
+          <label><input type="checkbox" id="quincho" /> Quincho</label>
+          <label><input type="checkbox" id="piscina" /> Piscina</label>
+          <label><input type="checkbox" id="jardin" /> Jardín</label>
+          <label><input type="checkbox" id="terraza" /> Terraza</label>
+          <label><input type="checkbox" id="balcon" /> Balcón</label>
+          <label><input type="checkbox" id="lavadero" /> Lavadero</label>
+          <label><input type="checkbox" id="bodega" /> Bodega</label>
+          <label><input type="checkbox" id="seguridad_24hs" /> Seguridad 24hs</label>
+          <label><input type="checkbox" id="portero" /> Portero</label>
+          <label><input type="checkbox" id="barrio_cerrado" /> Barrio cerrado</label>
+          <label><input type="checkbox" id="amoblado" /> Amoblado</label>
+          <label><input type="checkbox" id="apto_mascotas" /> Apto mascotas</label>
+          <label><input type="checkbox" id="calefaccion" /> Calefacción</label>
+          <label><input type="checkbox" id="aire_acondicionado" /> Aire acondicionado</label>
+          <label><input type="checkbox" id="deposito" /> Depósito</label>
+          <label><input type="checkbox" id="estacionamiento" /> Estacionamiento</label>
+        </div>
+
+        <div class="acciones">
+          <button type="submit">Guardar propiedad</button>
+          <a class="link" href="/index.html">Ir a la web</a>
+          <button type="button" id="btn-salir">Salir</button>
+        </div>
+
+        <div id="galeria-admin" class="galeria-admin oculto">
+          <h3>Galería actual</h3>
+          <div id="galeria-admin-grid" class="galeria-admin-grid"></div>
+        </div>
+        <div id="lista-admin" style="margin-top: 30px"></div>
+      </form>
+
+      <div id="mensaje" class="mensaje"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+      const SUPABASE_URL = "https://ocgtrdzokkeekjaybrzg.supabase.co";
+      const SUPABASE_KEY =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9jZ3RyZHpva2tlZWtqYXlicnpnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxMDY0NDYsImV4cCI6MjA4ODY4MjQ0Nn0.yhxGPR_5jBTfIjp5spa_Js8HMulfMwOIeyxbO2Q_JIQ";
+      const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+      async function comprimirImagen(file) {
+        const MAX_WIDTH = 1600;
+        const QUALITY = 0.82;
+
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const img = new Image();
+            img.onload = () => {
+              let width = img.width;
+              let height = img.height;
+
+              if (width > MAX_WIDTH) {
+                height = Math.round((height * MAX_WIDTH) / width);
+                width = MAX_WIDTH;
+              }
+
+              const canvas = document.createElement("canvas");
+              canvas.width = width;
+              canvas.height = height;
+              const ctx = canvas.getContext("2d");
+              ctx.drawImage(img, 0, 0, width, height);
+
+              canvas.toBlob(
+                (blob) => {
+                  if (!blob) {
+                    reject(new Error("Error al comprimir la imagen"));
+                    return;
+                  }
+                  const nombreLimpio = file.name.replace(/\.[^/.]+$/, "") + ".jpg";
+                  const archivoOptimizado = new File([blob], nombreLimpio, {
+                    type: "image/jpeg",
+                    lastModified: Date.now(),
+                  });
+                  console.log(
+                    `Imagen comprimida: ${file.name} → ${(file.size / 1024).toFixed(0)}KB → ${(archivoOptimizado.size / 1024).toFixed(0)}KB`
+                  );
+                  resolve(archivoOptimizado);
+                },
+                "image/jpeg",
+                QUALITY
+              );
+            };
+            img.onerror = () => reject(new Error("Error al cargar la imagen"));
+            img.src = e.target.result;
+          };
+          reader.onerror = () => reject(new Error("Error al leer el archivo"));
+          reader.readAsDataURL(file);
+        });
+      }
+
+
+      const CLAVE_ADMIN = "neora2026";
+
+      const pantallaLogin = document.getElementById("pantalla-login");
+      const pantallaAdmin = document.getElementById("pantalla-admin");
+      const claveAdmin = document.getElementById("clave-admin");
+      const btnEntrar = document.getElementById("btn-entrar");
+      const btnSalir = document.getElementById("btn-salir");
+      const mensajeLogin = document.getElementById("mensaje-login");
+
+      const form = document.getElementById("form-propiedad");
+      const mensaje = document.getElementById("mensaje");
+      const galeriaAdmin = document.getElementById("galeria-admin");
+      const galeriaAdminGrid = document.getElementById("galeria-admin-grid");
+
+      function mostrarMensajeLogin(texto, tipo) {
+        mensajeLogin.textContent = texto;
+        mensajeLogin.className = "mensaje " + tipo;
+        mensajeLogin.style.display = "block";
+      }
+
+      function mostrarMensaje(texto, tipo) {
+        mensaje.textContent = texto;
+        mensaje.className = "mensaje " + tipo;
+        mensaje.style.display = "block";
+      }
+
+      function abrirAdmin() {
+        pantallaLogin.classList.add("oculto");
+        pantallaAdmin.classList.remove("oculto");
+        sessionStorage.setItem("admin_neora_ok", "si");
+      }
+
+      function cerrarAdmin() {
+        sessionStorage.removeItem("admin_neora_ok");
+        pantallaAdmin.classList.add("oculto");
+        pantallaLogin.classList.remove("oculto");
+        claveAdmin.value = "";
+      }
+
+      async function cargarGaleriaAdmin(propiedadId) {
+        galeriaAdminGrid.innerHTML = "";
+        galeriaAdmin.classList.add("oculto");
+
+        if (!propiedadId) return;
+
+        const { data, error } = await db
+          .from("propiedad_imagenes")
+          .select("*")
+          .eq("propiedad_id", propiedadId)
+          .order("orden", { ascending: true });
+
+        if (error || !data || data.length === 0) return;
+
+        galeriaAdmin.classList.remove("oculto");
+
+        data.forEach((img, index) => {
+          const item = document.createElement("div");
+          item.className = "galeria-admin-item";
+
+          item.innerHTML = `
+            <img src="${img.url}" alt="Imagen ${index + 1}">
+            <div class="texto">
+              Foto ${index + 1}
+              <br><br>
+              <button type="button" onclick="moverImagenAdmin(${propiedadId}, ${img.id}, 'subir')">Subir</button>
+              <button type="button" onclick="moverImagenAdmin(${propiedadId}, ${img.id}, 'bajar')">Bajar</button>
+              <button type="button" onclick="eliminarImagenAdmin(${img.id}, ${propiedadId})">Eliminar</button>
+            </div>
+          `;
+
+          galeriaAdminGrid.appendChild(item);
+        });
+      }
+
+      function obtenerRutaStorage(url) {
+        const parte = "/storage/v1/object/public/propiedades/";
+        return url.includes(parte) ? url.split(parte)[1] : null;
+      }
+
+      async function actualizarPortada(propiedadId) {
+        const { data: imagenes } = await db
+          .from("propiedad_imagenes")
+          .select("*")
+          .eq("propiedad_id", propiedadId)
+          .order("orden", { ascending: true });
+
+        const nuevaPortada =
+          imagenes && imagenes.length > 0 ? imagenes[0].url : null;
+
+        await db
+          .from("propiedades")
+          .update({ imagen: nuevaPortada })
+          .eq("id", propiedadId);
+      }
+
+      async function moverImagenAdmin(propiedadId, imagenId, direccion) {
+        alert(
+          "moverImagenAdmin " + propiedadId + " " + imagenId + " " + direccion,
+        );
+
+        const { data: imagenes, error } = await db
+          .from("propiedad_imagenes")
+          .select("*")
+          .eq("propiedad_id", propiedadId)
+          .order("orden", { ascending: true });
+
+        if (error || !imagenes || imagenes.length === 0) {
+          alert("Error cargando imágenes");
+          return;
+        }
+
+        const indexActual = imagenes.findIndex((img) => img.id === imagenId);
+        if (indexActual === -1) return;
+
+        let nuevoIndex = indexActual;
+
+        if (direccion === "subir" && indexActual > 0) {
+          nuevoIndex = indexActual - 1;
+        }
+
+        if (direccion === "bajar" && indexActual < imagenes.length - 1) {
+          nuevoIndex = indexActual + 1;
+        }
+
+        if (nuevoIndex === indexActual) return;
+
+        const temp = imagenes[indexActual];
+        imagenes[indexActual] = imagenes[nuevoIndex];
+        imagenes[nuevoIndex] = temp;
+
+        for (let i = 0; i < imagenes.length; i++) {
+          const { error: errorUpdate } = await db
+            .from("propiedad_imagenes")
+            .update({ orden: i + 1 })
+            .eq("id", imagenes[i].id);
+
+          if (errorUpdate) {
+            alert("Error actualizando orden");
+            return;
+          }
+        }
+
+        await actualizarPortada(propiedadId);
+        await cargarGaleriaAdmin(propiedadId);
+        mostrarMensaje("Orden actualizado correctamente", "ok");
+      }
+
+      async function eliminarImagenAdmin(imagenId, propiedadId) {
+        console.log("Eliminar imagen", imagenId, propiedadId);
+
+        const confirmar = confirm("¿Eliminar esta imagen?");
+        if (!confirmar) return;
+
+        const { data: imagenActual, error: errorBuscar } = await db
+          .from("propiedad_imagenes")
+          .select("*")
+          .eq("id", imagenId)
+          .single();
+
+        if (errorBuscar || !imagenActual) {
+          alert("No se pudo encontrar la imagen");
+          return;
+        }
+
+        const url = imagenActual.url;
+
+        const { error } = await db
+          .from("propiedad_imagenes")
+          .delete()
+          .eq("id", imagenId);
+
+        if (error) {
+          alert("Error eliminando imagen");
+          return;
+        }
+
+        const ruta = obtenerRutaStorage(url);
+        if (ruta) {
+          await db.storage.from("propiedades").remove([ruta]);
+        }
+
+        await actualizarPortada(propiedadId);
+        await cargarGaleriaAdmin(propiedadId);
+        mostrarMensaje("Imagen eliminada correctamente", "ok");
+      }
+
+      if (sessionStorage.getItem("admin_neora_ok") === "si") {
+        abrirAdmin();
+      }
+
+      btnEntrar.addEventListener("click", function () {
+        mensajeLogin.style.display = "none";
+
+        if (claveAdmin.value === CLAVE_ADMIN) {
+          abrirAdmin();
+        } else {
+          mostrarMensajeLogin("Contraseña incorrecta", "error");
+        }
+      });
+
+      btnSalir.addEventListener("click", function () {
+        cerrarAdmin();
+      });
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        mensaje.style.display = "none";
+
+        const files = document.getElementById("imagen").files;
+        let imagenUrl = null;
+        let imagenesSubidas = [];
+
+       if (files.length > 0) {
+          mostrarMensaje("Comprimiendo y subiendo imágenes, por favor esperá...", "ok");
+
+          for (let i = 0; i < files.length; i++) {
+            const fileOriginal = files[i];
+
+            let fileOptimizado;
+            try {
+              fileOptimizado = await comprimirImagen(fileOriginal);
+            } catch (errComp) {
+              console.error("Error comprimiendo imagen:", errComp);
+              alert("Error comprimiendo la imagen: " + fileOriginal.name);
+              return;
+            }
+
+            const fileName = Date.now() + "-" + i + "-" + fileOptimizado.name;
+
+            const { error: uploadError } = await db.storage
+              .from("propiedades")
+              .upload(fileName, fileOptimizado);
+
+            if (uploadError) {
+              alert("Error subiendo imagen: " + uploadError.message);
+              return;
+            }
+
+            const { data: publicUrl } = db.storage
+              .from("propiedades")
+              .getPublicUrl(fileName);
+
+            imagenesSubidas.push(publicUrl.publicUrl);
+          }
+
+          imagenUrl = imagenesSubidas[0];
+        }
+        const propiedadId = document.getElementById("propiedad-id").value;
+
+        const payload = {
+          titulo: document.getElementById("titulo").value.trim(),
+          tipo: document.getElementById("tipo").value,
+          precio: document.getElementById("precio").value
+            ? Number(document.getElementById("precio").value)
+            : null,
+          moneda: document.getElementById("moneda").value,
+          ciudad: document.getElementById("ciudad").value.trim() || null,
+          dormitorios: document.getElementById("dormitorios").value
+            ? Number(document.getElementById("dormitorios").value)
+            : 0,
+          banos: document.getElementById("banos").value
+            ? Number(document.getElementById("banos").value)
+            : 0,
+          m2: document.getElementById("m2").value
+            ? Number(document.getElementById("m2").value)
+            : null,
+          descripcion:
+            document.getElementById("descripcion").value.trim() || null,
+          imagen: imagenUrl || undefined,
+          financia: document.getElementById("financia").checked,
+          apto_credito: document.getElementById("apto_credito").checked,
+          destacado: document.getElementById("destacado").checked,
+         permuta: document.getElementById("permuta").checked,
+          garage: document.getElementById("garage").checked,
+          quincho: document.getElementById("quincho").checked,
+          piscina: document.getElementById("piscina").checked,
+          jardin: document.getElementById("jardin").checked,
+          terraza: document.getElementById("terraza").checked,
+          balcon: document.getElementById("balcon").checked,
+          lavadero: document.getElementById("lavadero").checked,
+          bodega: document.getElementById("bodega").checked,
+          seguridad_24hs: document.getElementById("seguridad_24hs").checked,
+          portero: document.getElementById("portero").checked,
+          barrio_cerrado: document.getElementById("barrio_cerrado").checked,
+          amoblado: document.getElementById("amoblado").checked,
+          apto_mascotas: document.getElementById("apto_mascotas").checked,
+          calefaccion: document.getElementById("calefaccion").checked,
+          aire_acondicionado: document.getElementById("aire_acondicionado").checked,
+          deposito: document.getElementById("deposito").checked,
+          estacionamiento: document.getElementById("estacionamiento").checked,
+          categoria: document.getElementById("categoria").value || null,
+          latitud: document.getElementById("latitud").value
+            ? parseFloat(document.getElementById("latitud").value)
+            : null,
+          longitud: document.getElementById("longitud").value
+            ? parseFloat(document.getElementById("longitud").value)
+            : null,
+        };
+
+        let error;
+        let propiedadGuardadaId = propiedadId || null;
+
+        if (propiedadId) {
+          ({ error } = await db
+            .from("propiedades")
+            .update(payload)
+            .eq("id", propiedadId));
+
+          propiedadGuardadaId = propiedadId;
+        } else {
+          const { data: nuevaPropiedad, error: insertError } = await db
+            .from("propiedades")
+            .insert([payload])
+            .select()
+            .single();
+
+          error = insertError;
+
+          if (nuevaPropiedad) {
+            propiedadGuardadaId = nuevaPropiedad.id;
+          }
+        }
+
+        if (error) {
+          mostrarMensaje(
+            "ERROR:\n" +
+              "message: " +
+              (error.message || "") +
+              "\n" +
+              "details: " +
+              (error.details || "") +
+              "\n" +
+              "hint: " +
+              (error.hint || "") +
+              "\n" +
+              "code: " +
+              (error.code || ""),
+            "error",
+          );
+          return;
+        }
+
+        if (propiedadGuardadaId && imagenesSubidas.length > 0) {
+          await db
+            .from("propiedad_imagenes")
+            .delete()
+            .eq("propiedad_id", propiedadGuardadaId);
+
+          const filasImagenes = imagenesSubidas.map((url, i) => ({
+            propiedad_id: Number(propiedadGuardadaId),
+            url: url,
+            orden: i + 1,
+          }));
+
+          const { error: errorGaleria } = await db
+            .from("propiedad_imagenes")
+            .insert(filasImagenes);
+
+          if (errorGaleria) {
+            mostrarMensaje(
+              "La propiedad se guardó, pero hubo un error guardando la galería: " +
+                errorGaleria.message,
+              "error",
+            );
+            return;
+          }
+        }
+
+        mostrarMensaje("Propiedad guardada correctamente", "ok");
+        document.getElementById("propiedad-id").value = "";
+        form.reset();
+        galeriaAdminGrid.innerHTML = "";
+        galeriaAdmin.classList.add("oculto");
+      });
+      async function cargarPropiedadesAdmin() {
+        const contenedor = document.getElementById("lista-admin");
+
+        const { data, error } = await db
+          .from("propiedades")
+          .select("*")
+          .order("id", { ascending: false });
+
+        if (error) {
+          contenedor.innerHTML = "Error cargando propiedades";
+          return;
+        }
+
+        contenedor.innerHTML = "<h2>Propiedades cargadas</h2>";
+
+        data.forEach((p) => {
+          const div = document.createElement("div");
+
+          div.style.border = "1px solid #ddd";
+          div.style.padding = "10px";
+          div.style.margin = "10px 0";
+          div.style.borderRadius = "8px";
+
+          div.innerHTML = `
+                    <strong>${p.titulo}</strong>
+                    <br>
+                    ${p.ciudad || ""}
+                    <br><br>
+
+                    <button onclick="editarPropiedad(${p.id})">
+                      Editar
+                    </button>
+
+                    <button onclick="eliminarPropiedad(${p.id})">
+                      Eliminar
+                    </button>
+                `;
+
+          contenedor.appendChild(div);
+        });
+      }
+      async function editarPropiedad(id) {
+        const { data, error } = await db
+          .from("propiedades")
+          .select("*")
+          .eq("id", id)
+          .single();
+
+        if (error) {
+          alert("Error cargando propiedad");
+          return;
+        }
+
+        document.getElementById("propiedad-id").value = data.id;
+        document.getElementById("titulo").value = data.titulo || "";
+        document.getElementById("tipo").value = data.tipo || "venta";
+        document.getElementById("precio").value = data.precio || "";
+        document.getElementById("moneda").value = data.moneda || "USD";
+        document.getElementById("ciudad").value = data.ciudad || "";
+        document.getElementById("dormitorios").value = data.dormitorios || "";
+        document.getElementById("banos").value = data.banos || "";
+        document.getElementById("m2").value = data.m2 || "";
+        document.getElementById("descripcion").value = data.descripcion || "";
+
+        document.getElementById("financia").checked = data.financia || false;
+        document.getElementById("apto_credito").checked =
+          data.apto_credito || false;
+        document.getElementById("destacado").checked = data.destacado || false;
+       document.getElementById("permuta").checked = data.permuta || false;
+        document.getElementById("garage").checked = data.garage || false;
+        document.getElementById("quincho").checked = data.quincho || false;
+        document.getElementById("piscina").checked = data.piscina || false;
+        document.getElementById("jardin").checked = data.jardin || false;
+        document.getElementById("terraza").checked = data.terraza || false;
+        document.getElementById("balcon").checked = data.balcon || false;
+        document.getElementById("lavadero").checked = data.lavadero || false;
+        document.getElementById("bodega").checked = data.bodega || false;
+        document.getElementById("seguridad_24hs").checked = data.seguridad_24hs || false;
+        document.getElementById("portero").checked = data.portero || false;
+        document.getElementById("barrio_cerrado").checked = data.barrio_cerrado || false;
+        document.getElementById("amoblado").checked = data.amoblado || false;
+        document.getElementById("apto_mascotas").checked = data.apto_mascotas || false;
+        document.getElementById("calefaccion").checked = data.calefaccion || false;
+        document.getElementById("aire_acondicionado").checked = data.aire_acondicionado || false;
+        document.getElementById("deposito").checked = data.deposito || false;
+        document.getElementById("estacionamiento").checked = data.estacionamiento || false;
+        document.getElementById("categoria").value = data.categoria || "";
+        document.getElementById("latitud").value = data.latitud || "";
+        document.getElementById("longitud").value = data.longitud || "";
+
+        await cargarGaleriaAdmin(id);
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      async function eliminarPropiedad(id) {
+        const confirmar = confirm("¿Eliminar esta propiedad?");
+        if (!confirmar) return;
+
+        // 1. borrar imágenes relacionadas
+        const { error: errorImgs } = await db
+          .from("propiedad_imagenes")
+          .delete()
+          .eq("propiedad_id", id);
+
+        if (errorImgs) {
+          alert("Error eliminando imágenes de la propiedad");
+          return;
+        }
+
+        // 2. borrar propiedad
+        const { error } = await db.from("propiedades").delete().eq("id", id);
+
+        if (error) {
+          alert("Error eliminando propiedad");
+          return;
+        }
+
+        alert("Propiedad eliminada");
+
+        cargarPropiedadesAdmin();
+      }
+
+      cargarPropiedadesAdmin();
+    </script>
+  </body>
+</html>
