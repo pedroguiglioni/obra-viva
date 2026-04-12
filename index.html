@@ -1633,14 +1633,121 @@
       <div class="topbar">
   <div class="topbar-izq">
     <a class="marca-neora" href="/"><span class="marca-nombre">OBRA VIVA</span><span class="marca-sub">Arte · Subastas · Coleccionismo</span></a>
-<nav class="menu-principal">
-  <a href="#" class="menu-item activo" onclick="event.preventDefault();filtrarCategoria('pinturas')">Pinturas / Cuadros</a>
-  <a href="#" class="menu-item" onclick="event.preventDefault();filtrarCategoria('esculturas')">Esculturas</a>
-  <a href="#" class="menu-item" onclick="event.preventDefault();filtrarCategoria('orfebreria')">Orfebrería</a>
-  <a href="#" class="menu-item" onclick="event.preventDefault();filtrarCategoria('coleccionables')">Coleccionables</a>
-  <a href="#" class="menu-item" onclick="event.preventDefault();filtrarCategoria('antiguedades')">Antigüedades</a>
-  <a href="#" class="menu-item" onclick="event.preventDefault();filtrarCategoria('artistas')">Artistas</a>
+<nav class="menu-principal" style="display:flex;height:100%;position:relative;">
+
+  <div class="mega-item-nuevo" style="position:relative;height:100%;">
+    <a href="#" class="menu-item" onclick="event.preventDefault();filtrarCategoria('pinturas')" style="display:flex;align-items:center;height:100%;padding:0 14px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#8B1A2A;border-bottom:2px solid #8B1A2A;border-right:1px solid #F0EDE6;border-left:1px solid #F0EDE6;text-decoration:none;">Pinturas</a>
+    <div class="mega-nuevo" style="display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid #E8E6E0;width:420px;padding:20px 24px;display:grid;grid-template-columns:1fr 1fr;gap:20px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:100;">
+      <div>
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;margin:0 0 10px;font-weight:600;">Estilo</p>
+        <a href="#" onclick="event.preventDefault();document.getElementById('filtroCategoria').value='abstracto';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Abstracto</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('filtroCategoria').value='realista';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Realista</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('filtroCategoria').value='contemporaneo';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Contemporáneo</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('filtroCategoria').value='clasico';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;">Clásico</a>
+      </div>
+      <div>
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;margin:0 0 10px;font-weight:600;">Técnica</p>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='óleo';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Óleo</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='acrílico';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Acrílico</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='acuarela';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Acuarela</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='técnica mixta';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;">Técnica mixta</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mega-item-nuevo" style="position:relative;height:100%;">
+    <a href="#" class="menu-item" onclick="event.preventDefault();filtrarCategoria('esculturas')" style="display:flex;align-items:center;height:100%;padding:0 14px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#999;border-right:1px solid #F0EDE6;text-decoration:none;">Esculturas</a>
+    <div class="mega-nuevo" style="display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid #E8E6E0;width:420px;padding:20px 24px;display:grid;grid-template-columns:1fr 1fr;gap:20px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:100;">
+      <div>
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;margin:0 0 10px;font-weight:600;">Material</p>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='bronce';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Bronce</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='mármol';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Mármol</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='madera';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Madera</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='cerámica';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;">Cerámica</a>
+      </div>
+      <div>
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;margin:0 0 10px;font-weight:600;">Formato</p>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='gran formato';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Gran formato</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='mediano';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Mediano</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='pequeño';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;">Pequeño</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mega-item-nuevo" style="position:relative;height:100%;">
+    <a href="#" class="menu-item" onclick="event.preventDefault();filtrarCategoria('orfebreria')" style="display:flex;align-items:center;height:100%;padding:0 14px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#999;border-right:1px solid #F0EDE6;text-decoration:none;">Orfebrería</a>
+    <div class="mega-nuevo" style="display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid #E8E6E0;width:420px;padding:20px 24px;display:grid;grid-template-columns:1fr 1fr;gap:20px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:100;">
+      <div>
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;margin:0 0 10px;font-weight:600;">Material</p>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='plata';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Plata 925</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='oro';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Oro</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='bronce';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Bronce</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='cobre';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;">Cobre</a>
+      </div>
+      <div>
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;margin:0 0 10px;font-weight:600;">Tipo</p>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='anillo';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Anillos</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='collar';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Collares</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='broche';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Broches</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='pieza única';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;">Piezas únicas</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mega-item-nuevo" style="position:relative;height:100%;">
+    <a href="#" class="menu-item" onclick="event.preventDefault();filtrarCategoria('coleccionables')" style="display:flex;align-items:center;height:100%;padding:0 14px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#999;border-right:1px solid #F0EDE6;text-decoration:none;">Coleccionables</a>
+    <div class="mega-nuevo" style="display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid #E8E6E0;width:420px;padding:20px 24px;display:grid;grid-template-columns:1fr 1fr;gap:20px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:100;">
+      <div>
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;margin:0 0 10px;font-weight:600;">Tipo</p>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='edición limitada';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Ediciones limitadas</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='obra única';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Obras únicas</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='serie';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;">Series</a>
+      </div>
+      <div>
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;margin:0 0 10px;font-weight:600;">Origen</p>
+        <a href="#" onclick="event.preventDefault();document.getElementById('filtroCiudad').value='argentina';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Nacional</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('filtroCiudad').value='internacional';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;">Internacional</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mega-item-nuevo" style="position:relative;height:100%;">
+    <a href="#" class="menu-item" onclick="event.preventDefault();filtrarCategoria('antiguedades')" style="display:flex;align-items:center;height:100%;padding:0 14px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#999;border-right:1px solid #F0EDE6;text-decoration:none;">Antigüedades</a>
+    <div class="mega-nuevo" style="display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid #E8E6E0;width:420px;padding:20px 24px;display:grid;grid-template-columns:1fr 1fr;gap:20px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:100;">
+      <div>
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;margin:0 0 10px;font-weight:600;">Época</p>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='siglo XVIII';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">S. XVIII</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='siglo XIX';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">S. XIX</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='siglo XX';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;">S. XX</a>
+      </div>
+      <div>
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;margin:0 0 10px;font-weight:600;">Tipo</p>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='mueble';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Muebles</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='reloj';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Relojes</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='cerámica';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;">Cerámica</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mega-item-nuevo" style="position:relative;height:100%;">
+    <a href="#" class="menu-item" onclick="event.preventDefault();filtrarCategoria('artistas')" style="display:flex;align-items:center;height:100%;padding:0 14px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#999;border-right:1px solid #F0EDE6;text-decoration:none;">Artistas</a>
+    <div class="mega-nuevo" style="display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid #E8E6E0;width:280px;padding:20px 24px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:100;">
+      <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;margin:0 0 10px;font-weight:600;">Ver artistas</p>
+      <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='destacado';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Destacados</a>
+      <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='emergente';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;border-bottom:1px solid #F5F3EE;">Emergentes</a>
+      <a href="#" onclick="event.preventDefault();document.getElementById('busquedaTexto').value='internacional';cargarObras();" style="display:block;padding:5px 0;font-size:12px;color:#444;text-decoration:none;">Internacionales</a>
+    </div>
+  </div>
+
 </nav>
+
+<script>
+document.querySelectorAll('.mega-item-nuevo').forEach(item => {
+  const panel = item.querySelector('.mega-nuevo');
+  item.addEventListener('mouseenter', () => { if(panel) panel.style.display = 'grid'; });
+  item.addEventListener('mouseleave', () => { if(panel) panel.style.display = 'none'; });
+});
+</script>
 </div>
 
 <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()">Menú</button>
