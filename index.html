@@ -1807,8 +1807,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <div id="subcategoriasOperacion" class="subcategorias-operacion"></div>
 
-  <div class="filtros filtros-hero">
-    <div class="filtros-principales">
+  <div style="display:flex;align-items:stretch;border-top:1px solid #E8E6E0;border-bottom:1px solid #E8E6E0;background:#fff;">
+    <div style="display:flex;flex:1;align-items:stretch;">
 
       <select id="filtroTipo">
         <option value="">Tipo de obra</option>
@@ -1846,7 +1846,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <button onclick="aplicarFiltros()" style="background:#8B1A2A;">Buscar</button>
 </div>
 
-<div id="filtrosExtra" class="filtros-extra">
+<div id="filtrosExtra" style="display:none;">
 
   <select id="filtroEstilo">
     <option value="">Estilo</option>
