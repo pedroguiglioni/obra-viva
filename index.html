@@ -2493,7 +2493,6 @@ card.innerHTML = `
 
 async function cargarDestacadas() {
   const track = document.getElementById("carrusel-track");
-  const dotsContainer = document.getElementById("carrusel-dots");
   if (!track) return;
 
   const { data, error } = await db
@@ -2508,86 +2507,36 @@ async function cargarDestacadas() {
   }
 
   const wrapper = track.parentElement;
-  wrapper.style.cssText =
-    "overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding:4px;margin:-4px;";
-
+  wrapper.style.cssText = "overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding:4px;margin:-4px;";
   track.style.cssText = "display:flex;gap:12px;width:max-content;";
+  track.innerHTML = "";
 
-  function getCardWidth() {
-    const first = track.firstElementChild;
-    return first ? first.offsetWidth + 12 : 0;
-  }
+  data.forEach((p) => {
+    const isMobile = window.innerWidth <= 700;
+    const contenedor = document.getElementById("destacadas-seccion");
+    const w = isMobile ? window.innerWidth - 80 : (contenedor.offsetWidth - 80 - 40) / 3;
 
-  function renderCards() {
-    track.innerHTML = "";
+    const card = document.createElement("div");
+    card.style.cssText = "width:" + w + "px;min-width:" + w + "px;scroll-snap-align:start;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e8e8e8;flex-shrink:0;cursor:pointer;";
+    card.onclick = () => { window.location = "/obra.html?id=" + p.id; };
 
-    data.forEach((p) => {
-      const isMobile = window.innerWidth <= 700;
-      const contenedor = document.getElementById("destacadas-seccion");
-      const w = isMobile
-        ? window.innerWidth - 80
-        : (contenedor.offsetWidth - 80 - 40) / 3;
+    const img = document.createElement("img");
+    img.src = p.imagen || "https://via.placeholder.com/600x400?text=Sin+imagen";
+    img.style.cssText = "width:100%;height:180px;object-fit:cover;display:block;";
+    img.loading = "lazy";
 
-      const card = document.createElement("div");
-      card.style.cssText = `
-        width:${w}px;
-        min-width:${w}px;
-        scroll-snap-align:start;
-        background:#fff;
-        border-radius:16px;
-        overflow:hidden;
-        border:1px solid #e8e8e8;
-        flex-shrink:0;
-        cursor:pointer;
-      `;
+    const body = document.createElement("div");
+    body.style.cssText = "padding:14px;";
+    body.innerHTML = "<div style='font-size:18px;font-weight:700;color:#111;margin-bottom:4px;'>" + (p.valor ? "USD " + Number(p.valor).toLocaleString("es-AR") : "Consultar") + "</div>"
+      + "<div style='font-size:14px;font-weight:600;color:#111;margin-bottom:2px;'>" + (p.titulo || "Sin título") + "</div>"
+      + "<div style='font-size:13px;color:#777;margin-bottom:8px;'>" + (p.artista || "Artista") + " · " + (p.tecnica || "") + " · " + (p.anio || "") + "</div>"
+      + "<a href='/obra.html?id=" + p.id + "' onclick='event.stopPropagation()' style='display:block;background:#8B1A2A;color:#fff;text-align:center;padding:10px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;'>Ver obra</a>";
 
-      card.onclick = (e) => {
-        if (e.target.closest(".btn-mas-detalles")) return;
-        window.location = "/obra.html?id=" + p.id;
-      };
-
-      card.innerHTML = `
-        <div style="position:relative;">
-          <img src="${p.imagen || 'https://via.placeholder.com/600x400?text=Sin+imagen'}"
-               loading="lazy"
-               decoding="async"
-               style="width:100%;height:180px;object-fit:cover;display:block;" />
-
-          <span style="position:absolute;top:10px;left:10px;background:rgba(255,255,255,0.92);color:#111;font-size:10px;font-weight:600;padding:3px 8px;border-radius:4px;">
-            Destacada
-          </span>
-
-          <span style="position:absolute;top:10px;right:10px;background:#c11b36;color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;">
-            ${p.tipo_obra || "OBRA"}
-          </span>
-        </div>
-
-        <div style="padding:14px;">
-
-          <div style="font-size:18px;font-weight:700;color:#111;margin-bottom:4px;">
-            ${p.valor ? "USD " + Number(p.valor).toLocaleString("es-AR") : "Consultar"}
-          </div>
-
-          <div style="font-size:14px;font-weight:600;color:#111;margin-bottom:2px;">
-            ${p.titulo || "Sin título"}
-          </div>
-
-          <div style="font-size:13px;color:#777;margin-bottom:8px;">
-            ${p.artista || "Artista"} · ${p.tecnica || ""} · ${p.anio || ""}
-          </div>
-
-          <a href="/obra.html?id=${p.id}"
-             onclick="event.stopPropagation()"
-             style="display:block;background:#c11b36;color:#fff;text-align:center;padding:10px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">
-            Ver obra
-          </a>
-
-        </div>
-      `;
-
-      track.appendChild(card);
-    });
-  }
+    card.appendChild(img);
+    card.appendChild(body);
+    track.appendChild(card);
+  });
+}
 
   renderCards();
 }
