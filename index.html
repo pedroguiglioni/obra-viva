@@ -1781,10 +1781,18 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
       
-      <div class="hero-centro">
-  <div style="padding:52px 24px 0;">
-  <p style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#8B1A2A;margin:0 0 16px;">Galería de arte · Argentina · Corrientes</p>
-  <h1 style="font-size:52px;font-weight:400;line-height:1.02;color:#111;margin:0;font-family:Georgia,serif;">Arte que <em style="font-style:italic;color:#AAA;">perdura.</em><br>Obras únicas.</h1>
+      <div class="hero-centro" style="padding:0;">
+  <div style="position:relative;height:440px;overflow:hidden;background:linear-gradient(145deg,#2a1a0e 0%,#4a2e18 25%,#7a5030 50%,#a87848 75%,#c89868 100%);">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.4) 55%,rgba(0,0,0,0.05) 100%);"></div>
+    <div style="position:absolute;inset:0;padding:0 48px 48px;display:flex;align-items:flex-end;justify-content:space-between;">
+      <div>
+        <p style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin:0 0 14px;">Galería de arte · Argentina · Corrientes</p>
+        <h1 style="font-family:Georgia,serif;font-size:50px;font-weight:400;line-height:1.02;color:#fff;margin:0 0 24px;">Arte que <em style="font-style:italic;color:rgba(255,255,255,0.55);">perdura.</em><br>Obras únicas.</h1>
+        <a href="#obras" style="display:inline-block;font-size:10px;letter-spacing:2px;text-transform:uppercase;background:#8B1A2A;color:#fff;padding:13px 32px;text-decoration:none;">Ver obras</a>
+      </div>
+      <div style="text-align:right;flex-shrink:0;" id="hero-obra-info"></div>
+    </div>
+  </div>
 </div>
 
   <div class="tabs-operacion">
