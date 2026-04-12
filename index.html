@@ -2842,7 +2842,6 @@ async function cargarObras(esCargaInicial = true) {
   const { data, error, count } = await db
     .from("obras")
     .select("*", { count: "exact" })
-    .eq("permuta", true)
     .order("destacado", { ascending: false })
     .order("id", { ascending: false })
     .range(desde, hasta);
