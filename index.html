@@ -1742,10 +1742,13 @@
 </nav>
 
 <script>
-document.querySelectorAll('.mega-item-nuevo').forEach(item => {
-  const panel = item.querySelector('.mega-nuevo');
-  item.addEventListener('mouseenter', () => { if(panel) panel.style.display = 'grid'; });
-  item.addEventListener('mouseleave', () => { if(panel) panel.style.display = 'none'; });
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.mega-item-nuevo').forEach(item => {
+    const panel = item.querySelector('.mega-nuevo');
+    if(panel) panel.style.display = 'none';
+    item.addEventListener('mouseenter', () => { if(panel) panel.style.display = 'grid'; });
+    item.addEventListener('mouseleave', () => { if(panel) panel.style.display = 'none'; });
+  });
 });
 </script>
 </div>
