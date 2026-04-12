@@ -2690,7 +2690,7 @@ async function cargarDestacadas() {
   if (!track) return;
 
   const { data, error } = await db
-    .from("propiedades")
+    .from("obras")
     .select("*")
     .eq("destacado", true)
     .order("id", { ascending: false });
