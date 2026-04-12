@@ -1813,7 +1813,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </button>
   </div>
 
-  <div id="subcategoriasOperacion" class="subcategorias-operacion"></div>
+  <div id="subcategoriasOperacion"></div>
 
   <div style="background:#fff;border-top:1px solid #E8E6E0;border-bottom:1px solid #E8E6E0;padding:20px 32px;">
     <div style="display:flex;align-items:flex-end;gap:20px;max-width:1350px;margin:0 auto;">
@@ -1896,6 +1896,17 @@ document.addEventListener('DOMContentLoaded', function() {
 </div> <!-- cierre filtros -->
 
 </header>
+
+<!-- CHIPS CATEGORÍAS -->
+<div style="background:#fff;border-bottom:1px solid #E8E6E0;padding:12px 32px;display:flex;gap:8px;align-items:center;overflow-x:auto;">
+  <button onclick="filtrarCategoria('todos')" style="font-size:11px;padding:6px 16px;border:1px solid #8B1A2A;border-radius:999px;background:#8B1A2A;color:#fff;cursor:pointer;white-space:nowrap;">Todas</button>
+  <button onclick="filtrarCategoria('pinturas')" style="font-size:11px;padding:6px 16px;border:1px solid #E8E6E0;border-radius:999px;background:#fff;color:#555;cursor:pointer;white-space:nowrap;">Pinturas</button>
+  <button onclick="filtrarCategoria('esculturas')" style="font-size:11px;padding:6px 16px;border:1px solid #E8E6E0;border-radius:999px;background:#fff;color:#555;cursor:pointer;white-space:nowrap;">Esculturas</button>
+  <button onclick="filtrarCategoria('orfebreria')" style="font-size:11px;padding:6px 16px;border:1px solid #E8E6E0;border-radius:999px;background:#fff;color:#555;cursor:pointer;white-space:nowrap;">Orfebrería</button>
+  <button onclick="filtrarCategoria('coleccionables')" style="font-size:11px;padding:6px 16px;border:1px solid #E8E6E0;border-radius:999px;background:#fff;color:#555;cursor:pointer;white-space:nowrap;">Coleccionables</button>
+  <button onclick="filtrarCategoria('antiguedades')" style="font-size:11px;padding:6px 16px;border:1px solid #E8E6E0;border-radius:999px;background:#fff;color:#555;cursor:pointer;white-space:nowrap;">Antigüedades</button>
+  <button onclick="filtrarCategoria('artistas')" style="font-size:11px;padding:6px 16px;border:1px solid #E8E6E0;border-radius:999px;background:#fff;color:#555;cursor:pointer;white-space:nowrap;">Artistas</button>
+</div>
 
 <!-- CTA PERMUTAS (AHORA ARTE / EXHIBICIÓN) -->
 <section style="background:#ffffff;padding:40px 0;">
