@@ -1807,43 +1807,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <div id="subcategoriasOperacion" class="subcategorias-operacion"></div>
 
-  <div style="display:flex;align-items:stretch;border-top:1px solid #E8E6E0;border-bottom:1px solid #E8E6E0;background:#fff;">
-    <div style="display:flex;flex:1;align-items:stretch;">
+  <div style="background:#fff;border-top:1px solid #E8E6E0;border-bottom:1px solid #E8E6E0;padding:20px 32px;">
+    <div style="display:flex;align-items:flex-end;gap:20px;max-width:1350px;margin:0 auto;">
 
-      <select id="filtroTipo">
-        <option value="">Tipo de obra</option>
-        <option value="pintura">Pintura</option>
-        <option value="escultura">Escultura</option>
-        <option value="orfebreria">Orfebrería</option>
-        <option value="coleccionable">Coleccionable</option>
-        <option value="antiguedad">Antigüedad</option>
-      </select>
+      <div style="display:flex;flex-direction:column;gap:6px;flex:1;">
+  <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;font-weight:600;">Categoría</span>
+  <select id="filtroTipo" style="border:none;border-bottom:1px solid #E8E6E0;background:transparent;outline:none;font-size:13px;color:#111;padding:8px 0;font-family:inherit;appearance:none;-webkit-appearance:none;cursor:pointer;">
+    <option value="">Todas</option>
+    <option value="pintura">Pinturas</option>
+    <option value="escultura">Esculturas</option>
+    <option value="orfebreria">Orfebrería</option>
+    <option value="coleccionable">Coleccionables</option>
+    <option value="antiguedad">Antigüedades</option>
+  </select>
+</div>
 
-      <select id="filtroCategoria">
-        <option value="">Estilo</option>
-        <option value="abstracto">Abstracto</option>
-        <option value="realista">Realista</option>
-        <option value="contemporaneo">Contemporáneo</option>
-        <option value="clasico">Clásico</option>
-      </select>
+      <div style="display:flex;flex-direction:column;gap:6px;flex:1;">
+  <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;font-weight:600;">Estilo</span>
+  <select id="filtroCategoria" style="border:none;border-bottom:1px solid #E8E6E0;background:transparent;outline:none;font-size:13px;color:#111;padding:8px 0;font-family:inherit;appearance:none;-webkit-appearance:none;cursor:pointer;">
+    <option value="">Todos</option>
+    <option value="abstracto">Abstracto</option>
+    <option value="realista">Realista</option>
+    <option value="contemporaneo">Contemporáneo</option>
+    <option value="clasico">Clásico</option>
+    <option value="moderno">Moderno</option>
+  </select>
+</div>
 
-      <select id="filtroCiudad">
-        <option value="">Origen</option>
-        <option value="argentina">Argentina</option>
-        <option value="internacional">Internacional</option>
-      </select>
+      <div style="display:flex;flex-direction:column;gap:6px;flex:1;">
+  <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;font-weight:600;">Precio</span>
+  <select id="filtroCiudad" style="border:none;border-bottom:1px solid #E8E6E0;background:transparent;outline:none;font-size:13px;color:#111;padding:8px 0;font-family:inherit;appearance:none;-webkit-appearance:none;cursor:pointer;">
+    <option value="">Cualquiera</option>
+    <option value="hasta1000">Hasta USD 1.000</option>
+    <option value="1000a5000">USD 1.000 – 5.000</option>
+    <option value="5000a20000">USD 5.000 – 20.000</option>
+    <option value="mas20000">Más de USD 20.000</option>
+  </select>
+</div>
 
-          <input
-  type="text"
-  id="busquedaTexto"
-  placeholder="Buscar obras, artistas o estilos"
-/>
+          <div style="display:flex;flex-direction:column;gap:6px;flex:2;">
+  <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8B1A2A;font-weight:600;">Buscar</span>
+  <input type="text" id="busquedaTexto" placeholder="Obras, artistas o técnicas…" style="border:none;border-bottom:1px solid #E8E6E0;background:transparent;outline:none;font-size:13px;color:#111;padding:8px 0;font-family:inherit;" />
+</div>
 
-<button type="button" class="btn-filtros-extra" onclick="toggleFiltrosExtra()">
-  Más filtros
-</button>
-
-<button onclick="aplicarFiltros()" style="background:#8B1A2A;">Buscar</button>
+<button onclick="aplicarFiltros()" style="font-size:10px;letter-spacing:2px;text-transform:uppercase;background:#8B1A2A;color:#fff;padding:12px 32px;border:none;cursor:pointer;white-space:nowrap;flex-shrink:0;border-radius:8px;align-self:flex-end;">Buscar</button>
 </div>
 
 <div id="filtrosExtra" style="display:none;">
