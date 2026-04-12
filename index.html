@@ -2567,16 +2567,6 @@ async function cargarMasObras() {
 
 
 
-if (data && data.length === OBRAS_POR_PAGINA) {
-  const wrapper = document.createElement("div");
-  wrapper.id = "cargar-mas-wrapper";
-  wrapper.style.cssText =
-    "display:flex;justify-content:center;margin:32px 0;grid-column:1/-1;";
-
-  wrapper.innerHTML = '<button onclick="cargarMasObras()" id="btn-cargar-mas" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border:1.5px solid #8B1A2A;border-radius:10px;background:#fff;color:#8B1A2A;cursor:pointer;font-size:14px;font-weight:500;">Cargar más obras</button>';
-
-  lista.parentNode.insertBefore(wrapper, lista.nextSibling);
-}
 
 renderSubcategorias("obras");
 cargarDestacadas();
