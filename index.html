@@ -2564,7 +2564,8 @@ async function cargarMasObras() {
 
 
 
-    
+
+
 
 if (data && data.length === OBRAS_POR_PAGINA) {
   const wrapper = document.createElement("div");
@@ -2572,15 +2573,7 @@ if (data && data.length === OBRAS_POR_PAGINA) {
   wrapper.style.cssText =
     "display:flex;justify-content:center;margin:32px 0;grid-column:1/-1;";
 
-  wrapper.innerHTML = `
-    <button onclick="cargarMasObras()" id="btn-cargar-mas"
-      style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border:1.5px solid #c11b36;border-radius:10px;background:#fff;color:#c11b36;cursor:pointer;font-size:14px;font-weight:500;">
-      Cargar más obras
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M12 5v14M5 12l7 7 7-7"/>
-      </svg>
-    </button>
-  `;
+  wrapper.innerHTML = '<button onclick="cargarMasObras()" id="btn-cargar-mas" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border:1.5px solid #8B1A2A;border-radius:10px;background:#fff;color:#8B1A2A;cursor:pointer;font-size:14px;font-weight:500;">Cargar más obras</button>';
 
   lista.parentNode.insertBefore(wrapper, lista.nextSibling);
 }
