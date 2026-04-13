@@ -1225,20 +1225,7 @@ if (obra.imagen) {
                     : ""
                 }
 
-                          <p style="margin:0 0 8px;font-size:14px;color:#888;font-weight:500;">
-  ${(obra.tipo_obra || "obra").charAt(0).toUpperCase() + (obra.tipo_obra || "obra").slice(1)}
-  ${obra.estilo ? " · " + obra.estilo : ""}
-</p>
-
-<h2>${obra.titulo || "Sin título"}</h2>
-
-<div class="precio">
-  ${
-    obra.valor
-      ? "USD " + Number(obra.valor).toLocaleString("es-AR")
-      : "Consultar"
-  }
-</div>
+                          
 
                          <div class="detalle-layout">
                   <div class="detalle-izquierda">
@@ -1262,59 +1249,25 @@ if (obra.imagen) {
   </span>
 </div>
 
-                    <h3 style="margin:0 0 12px;font-size:14px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:1px;">Ficha de la obra</h3>
-<div class="grilla-caracteristicas" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:24px;">
-  <div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;">
-    <div style="width:34px;height:34px;border-radius:8px;background:#fff3f5;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.5"><path d="M12 3v18M3 12h18"/></svg>
-    </div>
-    <div>
-      <div style="font-size:11px;color:#888;">Artista</div>
-      <div style="font-size:15px;font-weight:600;color:#111;">${obra.artista || "No informado"}</div>
-    </div>
-  </div>
+                    <h3 style="margin:0 0 20px;font-size:12px;font-weight:600;color:#8a7f73;text-transform:uppercase;letter-spacing:1.6px;">Acerca de la obra</h3>
 
-  <div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;">
-    <div style="width:34px;height:34px;border-radius:8px;background:#fff3f5;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.5"><circle cx="12" cy="12" r="8"/></svg>
-    </div>
-    <div>
-      <div style="font-size:11px;color:#888;">Tipo</div>
-      <div style="font-size:15px;font-weight:600;color:#111;">${obra.tipo_obra || "No informado"}</div>
-    </div>
-  </div>
+<div class="grilla-caracteristicas" style="display:grid;grid-template-columns:160px 1fr;column-gap:28px;row-gap:14px;padding:0 0 28px;margin-bottom:30px;border-bottom:1px solid #ece6dc;">
+  <div style="font-size:12px;color:#8a7f73;">Artista</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.artista || "No informado"}</div>
 
-  <div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;">
-    <div style="width:34px;height:34px;border-radius:8px;background:#fff3f5;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.5"><path d="M4 19h16M6 17V5M18 17V9"/></svg>
-    </div>
-    <div>
-      <div style="font-size:11px;color:#888;">Técnica</div>
-      <div style="font-size:15px;font-weight:600;color:#111;">${obra.tecnica || "No informada"}</div>
-    </div>
-  </div>
+  <div style="font-size:12px;color:#8a7f73;">Tipo de obra</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.tipo_obra || "No informado"}</div>
 
-  <div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;">
-    <div style="width:34px;height:34px;border-radius:8px;background:#fff3f5;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.5"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg>
-    </div>
-    <div>
-      <div style="font-size:11px;color:#888;">Año</div>
-      <div style="font-size:15px;font-weight:600;color:#111;">${obra.anio || "No informado"}</div>
-    </div>
-  </div>
+  <div style="font-size:12px;color:#8a7f73;">Técnica</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.tecnica || "No informada"}</div>
 
-  <div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #ececec;border-radius:10px;">
-    <div style="width:34px;height:34px;border-radius:8px;background:#fff3f5;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c11b36" stroke-width="1.5"><path d="M3 12h18M12 3v18"/></svg>
-    </div>
-    <div>
-      <div style="font-size:11px;color:#888;">Estilo</div>
-      <div style="font-size:15px;font-weight:600;color:#111;">${obra.estilo || "No informado"}</div>
-    </div>
-  </div>
+  <div style="font-size:12px;color:#8a7f73;">Año</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.anio || "No informado"}</div>
+
+  <div style="font-size:12px;color:#8a7f73;">Estilo</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.estilo || "No informado"}</div>
 </div>
-<h3 style="margin:0 0 12px;font-size:14px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:1px;">Detalles destacados</h3>
+<h3 style="margin:8px 0 18px;font-size:13px;font-weight:600;color:#8a7f73;text-transform:uppercase;letter-spacing:1.4px;">Detalles destacados</h3>
 <div class="extras">
   ${obra.destacado ? `<span class="extra-destacada">⭐ Obra destacada</span>` : ""}
   ${obra.exclusiva ? `<span class="extra-destacada" style="background:#eef4ff;color:#1f5ea8;border-color:#cfe0ff;">◆ Pieza exclusiva</span>` : ""}
@@ -1328,14 +1281,14 @@ if (obra.imagen) {
                       <div class="descripcion">${obra.descripcion || "Sin descripción"}</div>
 
                       <div class="similares" id="similares">
-  <h3>Obras similares</h3>
+  <h3>Obras en el mismo estilo</h3>
   <div class="similares-grid" id="similares-grid"></div>
 </div>
 
                          </div>
                     <div class="detalle-panel">
-                      <p style="margin:0 0 8px;font-size:11px;color:#8a7f73;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;">
-  Consulta de obra
+                      <p style="margin:0 0 10px;font-size:11px;color:#8a7f73;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;">
+  Pieza seleccionada
 </p>
 
 <div class="detalle-panel-precio">
@@ -1351,7 +1304,7 @@ if (obra.imagen) {
 </p>
                 <div class="acciones">
   <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px;">
-   <a class="boton" style="flex:1;height:56px;font-size:16px;font-weight:700;line-height:1.1;padding:0 18px;white-space:nowrap;" href="https://wa.me/5493794026276?text=${encodeURIComponent(
+   <a class="boton" style="flex:1;height:56px;font-size:15px;font-weight:600;line-height:1.1;padding:0 18px;white-space:nowrap;background:#1e1a17;border:1px solid #1e1a17;color:#fff;border-radius:12px;letter-spacing:0.2px;box-shadow:none;" href="https://wa.me/5493794026276?text=${encodeURIComponent(
   `Hola, me interesa esta obra:
 Título: ${obra.titulo || "Sin título"}
 Artista: ${obra.artista || "No informado"}
@@ -1364,8 +1317,10 @@ Link: ${window.location.origin}/obra.html?id=${obra.id}`,
 )}"
       target="_blank"
     >
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Consultar por WhatsApp
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+      Consultar disponibilidad
     </a>
 
     <div style="position:relative;flex-shrink:0;">
@@ -1488,13 +1443,9 @@ Link: ${window.location.origin}/obra.html?id=${obra.id}`,
        await cargarSimilares(obra);
 
 if (window.innerWidth <= 700) {
-  const barra = document.getElementById("barra-wpp-mobile");
-  if (barra) {
-    barra.style.display = "flex";
-    const link = document.getElementById("barra-wpp-link");
-    if (link) {
-      link.href = `https://wa.me/5493794026276?text=${encodeURIComponent(`Hola, me interesa esta obra:\nTítulo: ${obra.titulo || ""}\nArtista: ${obra.artista || ""}\nLink: ${window.location.origin}/obra.html?id=${obra.id}`)}`;
-    }
+  const link = document.getElementById("barra-wpp-link");
+  if (link) {
+    link.href = `https://wa.me/5493794026276?text=${encodeURIComponent(`Hola, me interesa esta obra:\nTítulo: ${obra.titulo || ""}\nArtista: ${obra.artista || ""}\nLink: ${window.location.origin}/obra.html?id=${obra.id}`)}`;
   }
 }
 }
@@ -1545,25 +1496,12 @@ if (window.innerWidth <= 700) {
       cargarObra();
 
       if (window.innerWidth <= 700) {
-        const barra = document.getElementById("barra-wpp-mobile");
-        if (barra) barra.style.display = "flex";
-      }
+}
     </script>
     <div
       id="barra-wpp-mobile"
       style="
         display: none;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: #fff;
-        border-top: 1px solid #eee;
-        padding: 10px 16px;
-        z-index: 9999;
-        gap: 10px;
-        align-items: center;
-        box-sizing: border-box;
       "
     >
       <a
