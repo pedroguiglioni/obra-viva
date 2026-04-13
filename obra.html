@@ -1199,7 +1199,7 @@ if (Array.isArray(obra.imagenes) && obra.imagenes.length > 0) {
                 ${
                   imagenes.length > 1
                     ? `
-                    <div id="miniaturas-strip" style="display:${window.innerWidth <= 700 ? "flex" : "none"};gap:8px;overflow-x:auto;scrollbar-width:none;padding:10px 16px;background:#fff;border-bottom:1px solid #eee;">
+                    <div id="miniaturas-strip" style="display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:12px 0 0;background:transparent;border-bottom:none;">
                      ${imagenes
                         .map(
                           (img, i) => `
