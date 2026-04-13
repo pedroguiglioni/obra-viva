@@ -1277,8 +1277,10 @@ if (obra.imagen) {
 </div>
                     
 
-                          <h3 class="descripcion-titulo">Sobre la obra</h3>
-                      <div class="descripcion">${obra.descripcion || "Sin descripción"}</div>
+                          <h3 style="margin:4px 0 16px;font-size:12px;font-weight:600;color:#8a7f73;text-transform:uppercase;letter-spacing:1.6px;">Sobre la obra</h3>
+<div style="max-width:760px;margin:0 0 34px;font-size:17px;line-height:1.9;color:#3f372f;">
+  ${obra.descripcion || "Descripción curatorial no disponible por el momento."}
+</div>
 
                       <div class="similares" id="similares">
   <h3>Obras en el mismo estilo</h3>
