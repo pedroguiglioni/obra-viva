@@ -124,8 +124,11 @@
             <input type="number" id="valor" placeholder="Ej: 4200" />
           </div>
           <div class="campo">
-            <label for="imagen">Imagen de la obra</label>
-            <input type="file" id="imagen" accept="image/*" />
+            <label for="imagen">Imágenes de la obra</label>
+<input type="file" id="imagen" accept="image/*" multiple />
+<small style="color:#777;font-size:12px;margin-top:6px;">
+  Podés seleccionar una o varias imágenes. La primera será la portada principal.
+</small>
           </div>
         </div>
  
@@ -257,38 +260,46 @@
         e.preventDefault();
         mostrarMensaje("Guardando...", "ok");
  
-        const files = document.getElementById("imagen").files;
-        let imagenUrl = undefined;
- 
-       if (files.length > 0) {
+        const files = Array.from(document.getElementById("imagen").files || []);
+let imagenUrl = undefined;
+let imagenesUrls = undefined;
+
+if (files.length > 0) {
   try {
-    mostrarMensaje("Subiendo imagen...", "ok");
-    const fileOpt = await comprimirImagen(files[0]);
-    const safeName =
-  fileOpt.name
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/[^a-zA-Z0-9._-]/g, "");
+    mostrarMensaje(`Subiendo ${files.length} imagen${files.length > 1 ? "es" : ""}...`, "ok");
 
-const fileName = Date.now() + "-" + safeName;
+    imagenesUrls = [];
 
-    const { error: uploadError } = await db.storage
-      .from("obras")
-      .upload(fileName, fileOpt);
+    for (let i = 0; i < files.length; i++) {
+      const fileOpt = await comprimirImagen(files[i]);
 
-    if (uploadError) {
-      mostrarMensaje("Error subiendo imagen: " + uploadError.message, "error");
-      return;
+      const safeName = fileOpt.name
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/[^a-zA-Z0-9._-]/g, "");
+
+      const fileName = `${Date.now()}-${i + 1}-${safeName}`;
+
+      const { error: uploadError } = await db.storage
+        .from("obras")
+        .upload(fileName, fileOpt);
+
+      if (uploadError) {
+        mostrarMensaje("Error subiendo imagen: " + uploadError.message, "error");
+        return;
+      }
+
+      const { data: publicUrl } = db.storage
+        .from("obras")
+        .getPublicUrl(fileName);
+
+      imagenesUrls.push(publicUrl.publicUrl);
     }
 
-    const { data: publicUrl } = db.storage
-      .from("obras")
-      .getPublicUrl(fileName);
-
-    imagenUrl = publicUrl.publicUrl;
+    imagenUrl = imagenesUrls[0];
   } catch (err) {
-    mostrarMensaje("Error con la imagen: " + err.message, "error");
+    mostrarMensaje("Error con las imágenes: " + err.message, "error");
     return;
   }
 }
@@ -311,7 +322,10 @@ const fileName = Date.now() + "-" + safeName;
           internacional: document.getElementById("internacional").checked,
         };
  
-        if (imagenUrl !== undefined) payload.imagen = imagenUrl;
+        if (imagenUrl !== undefined) {
+  payload.imagen = imagenUrl;
+  payload.imagenes = imagenesUrls;
+}
  
         let error;
         if (obraId) {
