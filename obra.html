@@ -1313,7 +1313,10 @@ if (obra.imagen) {
                           <h3 class="descripcion-titulo">Sobre la obra</h3>
                       <div class="descripcion">${obra.descripcion || "Sin descripción"}</div>
 
-                      
+                      <div class="similares" id="similares">
+  <h3>Obras similares</h3>
+  <div class="similares-grid" id="similares-grid"></div>
+</div>
 
                          </div>
                     <div class="detalle-panel">
@@ -1331,8 +1334,8 @@ if (obra.imagen) {
 </div>
 <p class="detalle-panel-ciudad">${obra.artista || "Artista no informado"}</p>
                 <div class="acciones">
-                  <div style="display:flex;gap:8px;align-items:center;">
-                  <a class="boton" style="flex:1;" href="https://wa.me/5493794026276?text=${encodeURIComponent(
+  <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px;">
+    <a class="boton" style="flex:1;height:56px;font-size:18px;font-weight:700;line-height:1.1;" href="https://wa.me/5493794026276?text=${encodeURIComponent(
   `Hola, me interesa esta obra:
 Título: ${obra.titulo || "Sin título"}
 Artista: ${obra.artista || "No informado"}
@@ -1343,55 +1346,54 @@ Precio: ${
 }
 Link: ${window.location.origin}/obra.html?id=${obra.id}`,
 )}"
-              target="_blank"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Consultar obra por WhatsApp
-      </a>
-     <div style="position:relative;flex-shrink:0;">
-  <button type="button" class="boton boton-secundario" onclick="document.getElementById('share-menu-${obra.id}').style.display = document.getElementById('share-menu-${obra.id}').style.display === 'block' ? 'none' : 'block'" style="display:flex;align-items:center;justify-content:center;width:50px;height:50px;padding:0;flex-shrink:0;">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-  </button>
-
-  <div id="share-menu-${obra.id}" style="display:none;position:absolute;bottom:54px;right:0;left:auto;min-width:160px;background:#fff;border:1px solid #e0e0e0;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.1);z-index:100;overflow:hidden;">
-    <a onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('Link copiado');document.getElementById('share-menu-${obra.id}').style.display='none'})" style="display:flex;align-items:center;gap:10px;padding:12px 16px;font-size:14px;color:#111;text-decoration:none;cursor:pointer;border-bottom:1px solid #f0f0f0;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-      Copiar link
+      target="_blank"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Consultar por WhatsApp
     </a>
 
-    <a href="https://wa.me/?text=${encodeURIComponent(`Mirá esta obra:\n${obra.titulo || ""}\n${window.location.origin}/obra.html?id=${obra.id}`)}" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;font-size:14px;color:#111;text-decoration:none;border-bottom:1px solid #f0f0f0;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp
-    </a>
+    <div style="position:relative;flex-shrink:0;">
+      <button type="button" class="boton boton-secundario" onclick="document.getElementById('share-menu-${obra.id}').style.display = document.getElementById('share-menu-${obra.id}').style.display === 'block' ? 'none' : 'block'" style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;padding:0;flex-shrink:0;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      </button>
 
-    <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${window.location.origin}/obra.html?id=${obra.id}`)}" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;font-size:14px;color:#111;text-decoration:none;border-bottom:1px solid #f0f0f0;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      Facebook
-    </a>
+      <div id="share-menu-${obra.id}" style="display:none;position:absolute;bottom:60px;right:0;left:auto;min-width:170px;background:#fff;border:1px solid #e0e0e0;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.1);z-index:100;overflow:hidden;">
+        <a onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('Link copiado');document.getElementById('share-menu-${obra.id}').style.display='none'})" style="display:flex;align-items:center;gap:10px;padding:12px 16px;font-size:14px;color:#111;text-decoration:none;cursor:pointer;border-bottom:1px solid #f0f0f0;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copiar link
+        </a>
 
-    <a href="mailto:?subject=${encodeURIComponent(`Obra: ${obra.titulo || ""}`)}&body=${encodeURIComponent(`Mirá esta obra:\n${window.location.origin}/obra.html?id=${obra.id}`)}" style="display:flex;align-items:center;gap:10px;padding:12px 16px;font-size:14px;color:#111;text-decoration:none;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      Mail
-    </a>
+        <a href="https://wa.me/?text=${encodeURIComponent(`Mirá esta obra:\n${obra.titulo || ""}\n${window.location.origin}/obra.html?id=${obra.id}`)}" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;font-size:14px;color:#111;text-decoration:none;border-bottom:1px solid #f0f0f0;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${window.location.origin}/obra.html?id=${obra.id}`)}" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;font-size:14px;color:#111;text-decoration:none;border-bottom:1px solid #f0f0f0;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+
+        <a href="mailto:?subject=${encodeURIComponent(`Obra: ${obra.titulo || ""}`)}&body=${encodeURIComponent(`Mirá esta obra:\n${window.location.origin}/obra.html?id=${obra.id}`)}" style="display:flex;align-items:center;gap:10px;padding:12px 16px;font-size:14px;color:#111;text-decoration:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Mail
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1px solid #f0f0f0;">
+    <div style="width:44px;height:44px;border-radius:50%;background:#8B1A2A;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700;flex-shrink:0;">OV</div>
+    <div style="display:flex;flex-direction:column;gap:2px;">
+      <div style="font-size:13px;font-weight:700;color:#111;">OBRA VIVA</div>
+      <div style="font-size:12px;color:#888;">+54 9 379 402-6276</div>
+    </div>
   </div>
 </div>
 
-        <div style="height:1px;background:#f0f0f0;margin:4px 0;"></div>
-
-        <div style="display:flex;align-items:center;gap:10px;padding:4px 0;">
-  <div style="width:38px;height:38px;border-radius:50%;background:#8B1A2A;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;flex-shrink:0;">OV</div>
-  <div>
-    <div style="font-size:13px;font-weight:600;color:#111;">OBRA VIVA</div>
-    <div style="font-size:11px;color:#888;">+54 9 379 402-6276</div>
-  </div>
-</div>
+        
   </div>
 </div>
 
-<div class="similares" id="similares">
-  <h3>Obras similares</h3>
-  <div class="similares-grid" id="similares-grid"></div>
-</div>
 `;
 
         const imagenPrincipal = document.getElementById("imagen-principal");
