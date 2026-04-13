@@ -1267,13 +1267,13 @@ if (obra.imagen) {
   <div style="font-size:12px;color:#8a7f73;">Estilo</div>
   <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.estilo || "No informado"}</div>
 </div>
-<h3 style="margin:8px 0 18px;font-size:13px;font-weight:600;color:#8a7f73;text-transform:uppercase;letter-spacing:1.4px;">Detalles destacados</h3>
-<div class="extras">
-  ${obra.destacado ? `<span class="extra-destacada">⭐ Obra destacada</span>` : ""}
-  ${obra.exclusiva ? `<span class="extra-destacada" style="background:#eef4ff;color:#1f5ea8;border-color:#cfe0ff;">◆ Pieza exclusiva</span>` : ""}
-  ${obra.coleccion ? `<span class="extra">✓ Pertenece a colección</span>` : ""}
-  ${obra.edicion_limitada ? `<span class="extra">✓ Edición limitada</span>` : ""}
-  ${obra.internacional ? `<span class="extra">✓ Proyección internacional</span>` : ""}
+<h3 style="margin:4px 0 18px;font-size:12px;font-weight:600;color:#8a7f73;text-transform:uppercase;letter-spacing:1.6px;">Detalles destacados</h3>
+<div class="extras" style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 30px;padding:0 0 28px;border-bottom:1px solid #ece6dc;">
+  ${obra.destacado ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Obra destacada</span>` : ""}
+  ${obra.exclusiva ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Pieza exclusiva</span>` : ""}
+  ${obra.coleccion ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Pertenece a colección</span>` : ""}
+  ${obra.edicion_limitada ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Edición limitada</span>` : ""}
+  ${obra.internacional ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Proyección internacional</span>` : ""}
 </div>
                     
 
