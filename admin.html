@@ -260,20 +260,38 @@
         const files = document.getElementById("imagen").files;
         let imagenUrl = undefined;
  
-        if (files.length > 0) {
-          try {
-            mostrarMensaje("Subiendo imagen...", "ok");
-            const fileOpt = await comprimirImagen(files[0]);
-            const fileName = Date.now() + "-" + fileOpt.name;
-            const { error: uploadError } = await db.storage.from("propiedades").upload(fileName, fileOpt);
-            if (uploadError) { mostrarMensaje("Error subiendo imagen: " + uploadError.message, "error"); return; }
-            const { data: publicUrl } = db.storage.from("propiedades").getPublicUrl(fileName);
-            imagenUrl = publicUrl.publicUrl;
-          } catch (err) {
-            mostrarMensaje("Error con la imagen: " + err.message, "error");
-            return;
-          }
-        }
+       if (files.length > 0) {
+  try {
+    mostrarMensaje("Subiendo imagen...", "ok");
+    const fileOpt = await comprimirImagen(files[0]);
+    const safeName =
+  fileOpt.name
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/[^a-zA-Z0-9._-]/g, "");
+
+const fileName = Date.now() + "-" + safeName;
+
+    const { error: uploadError } = await db.storage
+      .from("obras")
+      .upload(fileName, fileOpt);
+
+    if (uploadError) {
+      mostrarMensaje("Error subiendo imagen: " + uploadError.message, "error");
+      return;
+    }
+
+    const { data: publicUrl } = db.storage
+      .from("obras")
+      .getPublicUrl(fileName);
+
+    imagenUrl = publicUrl.publicUrl;
+  } catch (err) {
+    mostrarMensaje("Error con la imagen: " + err.message, "error");
+    return;
+  }
+}
  
         const obraId = document.getElementById("obra-id").value;
  
