@@ -1158,10 +1158,15 @@ contenido.innerHTML = `<div class="mensaje">No se indicó una obra.</div>`;     
           contenido.innerHTML = `<div class="mensaje">No se encontró la obra.</div>`;
           return;
         }
+        console.log("obra.imagenes:", obra.imagenes);
+console.log("Array.isArray(obra.imagenes):", Array.isArray(obra.imagenes));
+console.log("typeof obra.imagenes:", typeof obra.imagenes);
 
         let imagenes = [];
 
-if (obra.imagen) {
+if (Array.isArray(obra.imagenes) && obra.imagenes.length > 0) {
+  imagenes = obra.imagenes;
+} else if (obra.imagen) {
   imagenes = [obra.imagen];
 }
 
