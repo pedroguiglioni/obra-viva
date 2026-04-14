@@ -1236,19 +1236,16 @@ if (Array.isArray(obra.imagenes) && obra.imagenes.length > 0) {
   ${obra.tecnica || "Técnica no informada"}${obra.anio ? " · " + obra.anio : ""}
 </p>
 
-<div style="display:flex;flex-direction:column;gap:6px;margin:0 0 18px;">
-  ${obra.medidas ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.medidas}</div>` : ""}
-  ${obra.medidas_con_marco ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.medidas_con_marco}</div>` : ""}
-  ${obra.obra_unica ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">Obra única</div>` : (obra.tipo_pieza ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.tipo_pieza}</div>` : "")}
-  ${obra.certificado ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.autenticacion_detalle || "Incluye certificado de autenticidad"}</div>` : ""}
+<div style="display:flex;flex-direction:column;gap:5px;margin:0 0 14px;">
+  ${(obra.medidas || obra.medidas_con_marco) ? `
+    <div style="font-size:14px;line-height:1.45;color:#1e1a17;">
+      ${obra.medidas || ""}${obra.medidas && obra.medidas_con_marco ? " · " : ""}${obra.medidas_con_marco || ""}
+    </div>
+  ` : ""}
+  ${obra.obra_unica ? `<div style="font-size:14px;line-height:1.45;color:#1e1a17;">Obra única</div>` : (obra.tipo_pieza ? `<div style="font-size:14px;line-height:1.45;color:#1e1a17;">${obra.tipo_pieza}</div>` : "")}
+  ${obra.certificado ? `<div style="font-size:14px;line-height:1.45;color:#1e1a17;">${obra.autenticacion_detalle || "Incluye certificado de autenticidad"}</div>` : ""}
+  ${obra.curaduria_breve ? `<div style="font-size:14px;line-height:1.5;color:#5f5448;margin-top:4px;">${obra.curaduria_breve}</div>` : ""}
 </div>
-
-${obra.curaduria_breve ? `
-  <div style="margin:0 0 20px;padding:14px 0 0;border-top:1px solid #ece6dc;">
-    <div style="font-size:13px;font-weight:600;line-height:1.5;color:#1e1a17;margin:0 0 6px;">Selección de curadores</div>
-    <div style="font-size:14px;line-height:1.65;color:#5f5448;">${obra.curaduria_breve}</div>
-  </div>
-` : ""}
 
 <div class="detalle-panel-precio">
   ${
