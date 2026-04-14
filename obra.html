@@ -103,16 +103,15 @@
       }
 
       .contenedor {
-        max-width: 1350px;
-
-        margin: 32px auto;
-        background: #ffffff;
-        padding: 24px;
-        border-radius: 16px;
-        box-shadow: 0 4px 16px rgba(17, 17, 17, 0.05);
-        border: 1px solid #eeeeee;
-        color: #111;
-      }
+  max-width: 1200px;
+  margin: 32px auto 56px;
+  background: #ffffff;
+  padding: 14px 24px 40px;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  color: #111;
+}
 
      .galeria-principal { 
   position: relative;
@@ -417,13 +416,14 @@
       }
 
       .detalle-panel {
-  border: 1px solid #eeeeee;
-  border-radius: 18px;
-  padding: 28px;
-  background: #fff;
-  box-shadow: 0 8px 24px rgba(17, 17, 17, 0.07);
+  border: none;
+  border-radius: 0;
+  padding: 12px 0 0;
+  background: transparent;
+  box-shadow: none;
   position: sticky;
-  top: 20px;
+  top: 24px;
+  align-self: start;
 }
 
       .detalle-panel-precio {
@@ -1171,7 +1171,7 @@ if (Array.isArray(obra.imagenes) && obra.imagenes.length > 0) {
         let touchEndX = 0;
 
         contenido.innerHTML = `
-                    <div style="display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:38px;align-items:start;margin-bottom:34px;">
+       <div style="display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:44px;align-items:start;margin-bottom:42px;">
   <div>
     <div class="galeria-wrap">
       <div class="galeria-principal">
@@ -1196,7 +1196,7 @@ if (Array.isArray(obra.imagenes) && obra.imagenes.length > 0) {
     ${
       imagenes.length > 1
         ? `
-        <div id="miniaturas-strip" style="display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding:14px 0 0;background:transparent;border-bottom:none;">
+       <div id="miniaturas-strip" style="display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:16px 0 0;background:transparent;border-bottom:none;">
           ${imagenes
             .map(
               (img, i) => `
@@ -1207,7 +1207,7 @@ if (Array.isArray(obra.imagenes) && obra.imagenes.length > 0) {
               onclick="window.actualizarImagen(${i})"
               loading="lazy"
               decoding="async"
-              style="width:120px;height:84px;object-fit:cover;border-radius:10px;cursor:pointer;border:${i === 0 ? "2px solid #1e1a17" : "1px solid #ddd6cc"};flex-shrink:0;opacity:${i === 0 ? "1" : "0.9"};background:#f3f0ea;"
+              style="width:88px;height:88px;object-fit:cover;border-radius:4px;cursor:pointer;border:${i === 0 ? "1px solid #1e1a17" : "1px solid #e7e2d9"};flex-shrink:0;opacity:${i === 0 ? "1" : "0.88"};background:#f7f4ee;"
             />
           `,
             )
@@ -1232,11 +1232,16 @@ if (Array.isArray(obra.imagenes) && obra.imagenes.length > 0) {
       ${obra.artista || "Artista no informado"}
     </p>
 
-    <p style="margin:0 0 22px;font-size:14px;line-height:1.6;color:#6a5f55;">
-      ${obra.tecnica || "Técnica no informada"}${obra.anio ? " · " + obra.anio : ""}${obra.estilo ? " · " + obra.estilo : ""}
-    </p>
+    <p style="margin:0 0 14px;font-size:14px;line-height:1.6;color:#6a5f55;">
+  ${obra.tecnica || "Técnica no informada"}${obra.anio ? " · " + obra.anio : ""}${obra.estilo ? " · " + obra.estilo : ""}
+</p>
 
-    <div class="detalle-panel-precio">
+<div style="display:flex;flex-direction:column;gap:8px;margin:0 0 20px;">
+  <div style="font-size:14px;line-height:1.5;color:#1e1a17;">Obra original disponible</div>
+  <div style="font-size:14px;line-height:1.5;color:#1e1a17;">Incluye certificado de autenticidad</div>
+</div>
+
+<div class="detalle-panel-precio">
       ${
         obra.valor
           ? "USD " + Number(obra.valor).toLocaleString("es-AR")
@@ -1301,14 +1306,23 @@ Link: ${window.location.origin}/obra.html?id=${obra.id}`,
         </div>
       </div>
 
-      <div style="display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1px solid #f0f0f0;">
-        <div style="width:44px;height:44px;border-radius:50%;background:#8B1A2A;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700;flex-shrink:0;">OV</div>
-        <div style="display:flex;flex-direction:column;gap:2px;">
-          <div style="font-size:13px;font-weight:700;color:#111;">OBRA VIVA</div>
-          <div style="font-size:12px;color:#888;">+54 9 379 402-6276</div>
-        </div>
-      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;padding-top:14px;border-top:1px solid #f0f0f0;">
+  <a
+    href="https://wa.me/5493794026276?text=${encodeURIComponent(`Hola, quisiera más información sobre esta obra:\nTítulo: ${obra.titulo || "Sin título"}\nArtista: ${obra.artista || "No informado"}\nLink: ${window.location.origin}/obra.html?id=${obra.id}`)}"
+    target="_blank"
+    style="display:flex;align-items:center;justify-content:center;height:48px;border:1px solid #d9d2c7;border-radius:12px;background:#fff;color:#1e1a17;text-decoration:none;font-size:14px;font-weight:600;"
+  >
+    Solicitar más información
+  </a>
+
+  <div style="display:flex;align-items:center;gap:12px;padding-top:4px;">
+    <div style="width:44px;height:44px;border-radius:50%;background:#8B1A2A;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700;flex-shrink:0;">OV</div>
+    <div style="display:flex;flex-direction:column;gap:2px;">
+      <div style="font-size:13px;font-weight:700;color:#111;">OBRA VIVA</div>
+      <div style="font-size:12px;color:#888;">+54 9 379 402-6276</div>
     </div>
+  </div>
+</div>
   </div>
 
   <div class="detalle-layout">
