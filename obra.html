@@ -1232,30 +1232,21 @@ if (Array.isArray(obra.imagenes) && obra.imagenes.length > 0) {
       ${obra.artista || "Artista no informado"}
     </p>
 
-    <p style="margin:0 0 10px;font-size:14px;line-height:1.6;color:#6a5f55;">
-  ${obra.tecnica || "Técnica no informada"}${obra.anio ? " · " + obra.anio : ""}${obra.estilo ? " · " + obra.estilo : ""}
+    <p style="margin:0 0 12px;font-size:14px;line-height:1.6;color:#6a5f55;">
+  ${obra.tecnica || "Técnica no informada"}${obra.anio ? " · " + obra.anio : ""}
 </p>
 
-<div style="display:flex;flex-direction:column;gap:8px;margin:0 0 18px;">
+<div style="display:flex;flex-direction:column;gap:6px;margin:0 0 18px;">
   ${obra.medidas ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.medidas}</div>` : ""}
   ${obra.medidas_con_marco ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.medidas_con_marco}</div>` : ""}
-  ${obra.tipo_pieza ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.tipo_pieza}</div>` : ""}
-  ${obra.condicion ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.condicion}</div>` : ""}
-  ${obra.disponible ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">Disponible</div>` : ""}
+  ${obra.obra_unica ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">Obra única</div>` : (obra.tipo_pieza ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.tipo_pieza}</div>` : "")}
   ${obra.certificado ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.autenticacion_detalle || "Incluye certificado de autenticidad"}</div>` : ""}
 </div>
 
 ${obra.curaduria_breve ? `
-  <div style="margin:0 0 18px;padding:14px 0 0;border-top:1px solid #ece6dc;">
-    <div style="font-size:13px;font-weight:600;line-height:1.5;color:#1e1a17;margin:0 0 6px;">Curaduría</div>
+  <div style="margin:0 0 20px;padding:14px 0 0;border-top:1px solid #ece6dc;">
+    <div style="font-size:13px;font-weight:600;line-height:1.5;color:#1e1a17;margin:0 0 6px;">Selección de curadores</div>
     <div style="font-size:14px;line-height:1.65;color:#5f5448;">${obra.curaduria_breve}</div>
-  </div>
-` : ""}
-
-${obra.bio_artista_breve ? `
-  <div style="margin:0 0 22px;padding:14px 0 0;border-top:1px solid #ece6dc;">
-    <div style="font-size:13px;font-weight:600;line-height:1.5;color:#1e1a17;margin:0 0 6px;">Sobre el artista</div>
-    <div style="font-size:14px;line-height:1.65;color:#5f5448;">${obra.bio_artista_breve}</div>
   </div>
 ` : ""}
 
@@ -1269,8 +1260,8 @@ ${obra.bio_artista_breve ? `
 
 <div class="acciones" style="margin-top:22px;">
   <div style="display:flex;gap:10px;align-items:center;">
-    <a class="boton" style="flex:1;height:56px;font-size:15px;font-weight:600;line-height:1.1;padding:0 18px;white-space:nowrap;background:#1e1a17;border:1px solid #1e1a17;color:#fff;border-radius:12px;letter-spacing:0.2px;box-shadow:none;" href="https://wa.me/5493794026276?text=${encodeURIComponent(
-      `Hola, me interesa esta obra:
+  <a class="boton" style="flex:1;height:56px;font-size:15px;font-weight:600;line-height:1.1;padding:0 18px;white-space:nowrap;background:#1e1a17;border:1px solid #1e1a17;color:#fff;border-radius:12px;letter-spacing:0.2px;box-shadow:none;" href="https://wa.me/5493794026276?text=${encodeURIComponent(
+    `Hola, me interesa esta obra:
 Título: ${obra.titulo || "Sin título"}
 Artista: ${obra.artista || "No informado"}
 Precio: ${
@@ -1279,16 +1270,12 @@ Precio: ${
     : "Consultar"
 }
 Link: ${window.location.origin}/obra.html?id=${obra.id}`,
-    )}"
-      target="_blank"
-    >
-      Comprar / consultar
-    </a>
-
-    <button type="button" class="boton boton-secundario" style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;padding:0;flex-shrink:0;">
-      ♡
-    </button>
-  </div>
+  )}"
+    target="_blank"
+  >
+    Comprar / consultar
+  </a>
+</div>
 
   ${obra.acepta_oferta ? `
   <a
