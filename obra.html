@@ -1297,47 +1297,75 @@ Link: ${window.location.origin}/obra.html?id=${obra.id}`,
                   
 
 <div class="grilla-caracteristicas" style="display:grid;grid-template-columns:180px 1fr;column-gap:28px;row-gap:14px;padding:0 0 28px;margin-bottom:30px;border-bottom:1px solid #ece6dc;">
-  <div style="font-size:12px;color:#8a7f73;">Artista</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.artista || "No informado"}</div>
+  ${obra.artista ? `
+    <div style="font-size:12px;color:#8a7f73;">Artista</div>
+    <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.artista}</div>
+  ` : ""}
 
-  <div style="font-size:12px;color:#8a7f73;">Tipo de obra</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.tipo_obra || "No informado"}</div>
+  ${obra.tipo_obra ? `
+    <div style="font-size:12px;color:#8a7f73;">Tipo de obra</div>
+    <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.tipo_obra}</div>
+  ` : ""}
 
-  <div style="font-size:12px;color:#8a7f73;">Tipo de pieza</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.tipo_pieza || "No informado"}</div>
+  ${obra.tipo_pieza ? `
+    <div style="font-size:12px;color:#8a7f73;">Tipo de pieza</div>
+    <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.tipo_pieza}</div>
+  ` : ""}
 
-  <div style="font-size:12px;color:#8a7f73;">Técnica</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.tecnica || "No informada"}</div>
+  ${obra.tecnica ? `
+    <div style="font-size:12px;color:#8a7f73;">Técnica</div>
+    <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.tecnica}</div>
+  ` : ""}
 
-  <div style="font-size:12px;color:#8a7f73;">Medidas</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.medidas || "No informadas"}</div>
+  ${obra.medidas ? `
+    <div style="font-size:12px;color:#8a7f73;">Medidas</div>
+    <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.medidas}</div>
+  ` : ""}
 
-  <div style="font-size:12px;color:#8a7f73;">Medidas con marco</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.medidas_con_marco || "No informadas"}</div>
+  ${obra.medidas_con_marco ? `
+    <div style="font-size:12px;color:#8a7f73;">Medidas con marco</div>
+    <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.medidas_con_marco}</div>
+  ` : ""}
 
-  <div style="font-size:12px;color:#8a7f73;">Soporte</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.soporte || "No informado"}</div>
+  ${obra.soporte ? `
+    <div style="font-size:12px;color:#8a7f73;">Soporte</div>
+    <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.soporte}</div>
+  ` : ""}
 
-  <div style="font-size:12px;color:#8a7f73;">Marco</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.marco || "No informado"}</div>
+  ${obra.marco ? `
+    <div style="font-size:12px;color:#8a7f73;">Marco</div>
+    <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.marco}</div>
+  ` : ""}
 
-  <div style="font-size:12px;color:#8a7f73;">Firma</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.firma || "No informada"}</div>
+  ${obra.firma ? `
+    <div style="font-size:12px;color:#8a7f73;">Firma</div>
+    <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.firma}</div>
+  ` : ""}
 
-  <div style="font-size:12px;color:#8a7f73;">Condición</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.condicion || "No informada"}</div>
+  ${obra.condicion ? `
+    <div style="font-size:12px;color:#8a7f73;">Condición</div>
+    <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.condicion}</div>
+  ` : ""}
 
-  <div style="font-size:12px;color:#8a7f73;">Procedencia</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.procedencia || "No informada"}</div>
+  ${obra.procedencia ? `
+    <div style="font-size:12px;color:#8a7f73;">Procedencia</div>
+    <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.procedencia}</div>
+  ` : ""}
 
-  <div style="font-size:12px;color:#8a7f73;">Ubicación de la obra</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.ubicacion_obra || "No informada"}</div>
+  ${obra.ubicacion_obra ? `
+    <div style="font-size:12px;color:#8a7f73;">Ubicación de la obra</div>
+    <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.ubicacion_obra}</div>
+  ` : ""}
 
-  <div style="font-size:12px;color:#8a7f73;">Tirada</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.tirada || "No informada"}</div>
+  ${obra.tirada ? `
+    <div style="font-size:12px;color:#8a7f73;">Tirada</div>
+    <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.tirada}</div>
+  ` : ""}
 
-  <div style="font-size:12px;color:#8a7f73;">Etiquetas</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.etiquetas || "No informadas"}</div>
+  ${obra.etiquetas ? `
+    <div style="font-size:12px;color:#8a7f73;">Etiquetas</div>
+    <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.etiquetas}</div>
+  ` : ""}
 </div>
 
                     
