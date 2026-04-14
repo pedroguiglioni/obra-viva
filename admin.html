@@ -133,11 +133,83 @@
         </div>
  
         <div class="campo">
-          <label for="descripcion">Descripción</label>
-          <textarea id="descripcion" placeholder="Describí la obra, su historia, técnica, dimensiones, etc."></textarea>
-        </div>
- 
-        <div class="seccion-titulo">Características</div>
+  <label for="descripcion">Descripción</label>
+  <textarea id="descripcion" placeholder="Describí la obra, su historia, técnica, dimensiones, etc."></textarea>
+</div>
+
+<div class="seccion-titulo">Ficha técnica y editorial</div>
+<div class="grid">
+  <div class="campo">
+    <label for="medidas">Medidas</label>
+    <input type="text" id="medidas" placeholder="Ej: 40 x 30 cm" />
+  </div>
+  <div class="campo">
+    <label for="medidas_con_marco">Medidas con marco</label>
+    <input type="text" id="medidas_con_marco" placeholder="Ej: 55 x 45 cm con marco" />
+  </div>
+  <div class="campo">
+    <label for="tipo_pieza">Tipo de pieza</label>
+    <input type="text" id="tipo_pieza" placeholder="Ej: Obra única" />
+  </div>
+  <div class="campo">
+    <label for="condicion">Condición</label>
+    <input type="text" id="condicion" placeholder="Ej: Muy buen estado general" />
+  </div>
+  <div class="campo">
+    <label for="autenticacion_detalle">Autenticación / certificado</label>
+    <input type="text" id="autenticacion_detalle" placeholder="Ej: Incluye certificado de autenticidad" />
+  </div>
+  <div class="campo">
+    <label for="curaduria_breve">Curaduría breve</label>
+    <input type="text" id="curaduria_breve" placeholder="Ej: Seleccionada por criterio curatorial de OBRA VIVA" />
+  </div>
+  <div class="campo">
+    <label for="soporte">Soporte</label>
+    <input type="text" id="soporte" placeholder="Ej: Papel, tela, madera" />
+  </div>
+  <div class="campo">
+    <label for="marco">Marco</label>
+    <input type="text" id="marco" placeholder="Ej: Con marco de madera" />
+  </div>
+  <div class="campo">
+    <label for="firma">Firma</label>
+    <input type="text" id="firma" placeholder="Ej: Firmada abajo a la derecha" />
+  </div>
+  <div class="campo">
+    <label for="procedencia">Procedencia</label>
+    <input type="text" id="procedencia" placeholder="Ej: Colección privada de Corrientes" />
+  </div>
+  <div class="campo">
+    <label for="ubicacion_obra">Ubicación de la obra</label>
+    <input type="text" id="ubicacion_obra" placeholder="Ej: Corrientes Capital, Argentina" />
+  </div>
+  <div class="campo">
+    <label for="etiquetas">Etiquetas</label>
+    <input type="text" id="etiquetas" placeholder="Ej: arte argentino, grabado, colección" />
+  </div>
+  <div class="campo">
+    <label for="tirada">Tirada</label>
+    <input type="text" id="tirada" placeholder="Ej: 1/10" />
+  </div>
+  <div class="campo">
+    <label for="bio_artista_breve">Bio breve del artista</label>
+    <input type="text" id="bio_artista_breve" placeholder="Ej: Artista contemporáneo argentino..." />
+  </div>
+</div>
+
+<div class="campo">
+  <label for="texto_curatorial_largo">Texto curatorial largo</label>
+  <textarea id="texto_curatorial_largo" placeholder="Desarrollá una lectura curatorial o una explicación más profunda sobre la obra."></textarea>
+</div>
+
+<div class="checks">
+  <label><input type="checkbox" id="certificado" /> Certificado de autenticidad</label>
+  <label><input type="checkbox" id="obra_unica" /> Obra única</label>
+  <label><input type="checkbox" id="acepta_oferta" /> Acepta oferta</label>
+  <label><input type="checkbox" id="disponible" /> Disponible</label>
+</div>
+
+<div class="seccion-titulo">Características</div>
         <div class="checks">
           <label><input type="checkbox" id="destacado" /> ⭐ Destacada</label>
           <label><input type="checkbox" id="exclusiva" /> 💎 Exclusiva</label>
@@ -307,20 +379,42 @@ if (files.length > 0) {
         const obraId = document.getElementById("obra-id").value;
  
         const payload = {
-          titulo: document.getElementById("titulo").value.trim(),
-          artista: document.getElementById("artista").value.trim() || null,
-          tipo_obra: document.getElementById("tipo_obra").value || null,
-          estilo: document.getElementById("estilo").value || null,
-          tecnica: document.getElementById("tecnica").value.trim() || null,
-          anio: document.getElementById("anio").value.trim() || null,
-          valor: document.getElementById("valor").value ? Number(document.getElementById("valor").value) : null,
-          descripcion: document.getElementById("descripcion").value.trim() || null,
-          destacado: document.getElementById("destacado").checked,
-          exclusiva: document.getElementById("exclusiva").checked,
-          coleccion: document.getElementById("coleccion").checked,
-          edicion_limitada: document.getElementById("edicion_limitada").checked,
-          internacional: document.getElementById("internacional").checked,
-        };
+  titulo: document.getElementById("titulo").value.trim(),
+  artista: document.getElementById("artista").value.trim() || null,
+  tipo_obra: document.getElementById("tipo_obra").value || null,
+  estilo: document.getElementById("estilo").value || null,
+  tecnica: document.getElementById("tecnica").value.trim() || null,
+  anio: document.getElementById("anio").value.trim() || null,
+  valor: document.getElementById("valor").value ? Number(document.getElementById("valor").value) : null,
+  descripcion: document.getElementById("descripcion").value.trim() || null,
+
+  medidas: document.getElementById("medidas").value.trim() || null,
+  medidas_con_marco: document.getElementById("medidas_con_marco").value.trim() || null,
+  tipo_pieza: document.getElementById("tipo_pieza").value.trim() || null,
+  condicion: document.getElementById("condicion").value.trim() || null,
+  autenticacion_detalle: document.getElementById("autenticacion_detalle").value.trim() || null,
+  curaduria_breve: document.getElementById("curaduria_breve").value.trim() || null,
+  soporte: document.getElementById("soporte").value.trim() || null,
+  marco: document.getElementById("marco").value.trim() || null,
+  firma: document.getElementById("firma").value.trim() || null,
+  procedencia: document.getElementById("procedencia").value.trim() || null,
+  ubicacion_obra: document.getElementById("ubicacion_obra").value.trim() || null,
+  etiquetas: document.getElementById("etiquetas").value.trim() || null,
+  tirada: document.getElementById("tirada").value.trim() || null,
+  bio_artista_breve: document.getElementById("bio_artista_breve").value.trim() || null,
+  texto_curatorial_largo: document.getElementById("texto_curatorial_largo").value.trim() || null,
+
+  certificado: document.getElementById("certificado").checked,
+  obra_unica: document.getElementById("obra_unica").checked,
+  acepta_oferta: document.getElementById("acepta_oferta").checked,
+  disponible: document.getElementById("disponible").checked,
+
+  destacado: document.getElementById("destacado").checked,
+  exclusiva: document.getElementById("exclusiva").checked,
+  coleccion: document.getElementById("coleccion").checked,
+  edicion_limitada: document.getElementById("edicion_limitada").checked,
+  internacional: document.getElementById("internacional").checked,
+};
  
         if (imagenUrl !== undefined) {
   payload.imagen = imagenUrl;
@@ -383,18 +477,40 @@ if (files.length > 0) {
  
         document.getElementById("obra-id").value = data.id;
         document.getElementById("titulo").value = data.titulo || "";
-        document.getElementById("artista").value = data.artista || "";
-        document.getElementById("tipo_obra").value = data.tipo_obra || "";
-        document.getElementById("estilo").value = data.estilo || "";
-        document.getElementById("tecnica").value = data.tecnica || "";
-        document.getElementById("anio").value = data.anio || "";
-        document.getElementById("valor").value = data.valor || "";
-        document.getElementById("descripcion").value = data.descripcion || "";
-        document.getElementById("destacado").checked = data.destacado || false;
-        document.getElementById("exclusiva").checked = data.exclusiva || false;
-        document.getElementById("coleccion").checked = data.coleccion || false;
-        document.getElementById("edicion_limitada").checked = data.edicion_limitada || false;
-        document.getElementById("internacional").checked = data.internacional || false;
+document.getElementById("artista").value = data.artista || "";
+document.getElementById("tipo_obra").value = data.tipo_obra || "";
+document.getElementById("estilo").value = data.estilo || "";
+document.getElementById("tecnica").value = data.tecnica || "";
+document.getElementById("anio").value = data.anio || "";
+document.getElementById("valor").value = data.valor || "";
+document.getElementById("descripcion").value = data.descripcion || "";
+
+document.getElementById("medidas").value = data.medidas || "";
+document.getElementById("medidas_con_marco").value = data.medidas_con_marco || "";
+document.getElementById("tipo_pieza").value = data.tipo_pieza || "";
+document.getElementById("condicion").value = data.condicion || "";
+document.getElementById("autenticacion_detalle").value = data.autenticacion_detalle || "";
+document.getElementById("curaduria_breve").value = data.curaduria_breve || "";
+document.getElementById("soporte").value = data.soporte || "";
+document.getElementById("marco").value = data.marco || "";
+document.getElementById("firma").value = data.firma || "";
+document.getElementById("procedencia").value = data.procedencia || "";
+document.getElementById("ubicacion_obra").value = data.ubicacion_obra || "";
+document.getElementById("etiquetas").value = data.etiquetas || "";
+document.getElementById("tirada").value = data.tirada || "";
+document.getElementById("bio_artista_breve").value = data.bio_artista_breve || "";
+document.getElementById("texto_curatorial_largo").value = data.texto_curatorial_largo || "";
+
+document.getElementById("certificado").checked = data.certificado || false;
+document.getElementById("obra_unica").checked = data.obra_unica || false;
+document.getElementById("acepta_oferta").checked = data.acepta_oferta || false;
+document.getElementById("disponible").checked = data.disponible || false;
+
+document.getElementById("destacado").checked = data.destacado || false;
+document.getElementById("exclusiva").checked = data.exclusiva || false;
+document.getElementById("coleccion").checked = data.coleccion || false;
+document.getElementById("edicion_limitada").checked = data.edicion_limitada || false;
+document.getElementById("internacional").checked = data.internacional || false;
  
         document.getElementById("titulo-form").textContent = "Editando: " + (data.titulo || "obra");
         window.scrollTo({ top: 0, behavior: "smooth" });
