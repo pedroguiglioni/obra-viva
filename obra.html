@@ -1232,14 +1232,32 @@ if (Array.isArray(obra.imagenes) && obra.imagenes.length > 0) {
       ${obra.artista || "Artista no informado"}
     </p>
 
-    <p style="margin:0 0 14px;font-size:14px;line-height:1.6;color:#6a5f55;">
+    <p style="margin:0 0 10px;font-size:14px;line-height:1.6;color:#6a5f55;">
   ${obra.tecnica || "Técnica no informada"}${obra.anio ? " · " + obra.anio : ""}${obra.estilo ? " · " + obra.estilo : ""}
 </p>
 
-<div style="display:flex;flex-direction:column;gap:8px;margin:0 0 20px;">
-  <div style="font-size:14px;line-height:1.5;color:#1e1a17;">Obra original disponible</div>
-  <div style="font-size:14px;line-height:1.5;color:#1e1a17;">Incluye certificado de autenticidad</div>
+<div style="display:flex;flex-direction:column;gap:8px;margin:0 0 18px;">
+  ${obra.medidas ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.medidas}</div>` : ""}
+  ${obra.medidas_con_marco ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.medidas_con_marco}</div>` : ""}
+  ${obra.tipo_pieza ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.tipo_pieza}</div>` : ""}
+  ${obra.condicion ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.condicion}</div>` : ""}
+  ${obra.disponible ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">Disponible</div>` : ""}
+  ${obra.certificado ? `<div style="font-size:14px;line-height:1.5;color:#1e1a17;">${obra.autenticacion_detalle || "Incluye certificado de autenticidad"}</div>` : ""}
 </div>
+
+${obra.curaduria_breve ? `
+  <div style="margin:0 0 18px;padding:14px 0 0;border-top:1px solid #ece6dc;">
+    <div style="font-size:13px;font-weight:600;line-height:1.5;color:#1e1a17;margin:0 0 6px;">Curaduría</div>
+    <div style="font-size:14px;line-height:1.65;color:#5f5448;">${obra.curaduria_breve}</div>
+  </div>
+` : ""}
+
+${obra.bio_artista_breve ? `
+  <div style="margin:0 0 22px;padding:14px 0 0;border-top:1px solid #ece6dc;">
+    <div style="font-size:13px;font-weight:600;line-height:1.5;color:#1e1a17;margin:0 0 6px;">Sobre el artista</div>
+    <div style="font-size:14px;line-height:1.65;color:#5f5448;">${obra.bio_artista_breve}</div>
+  </div>
+` : ""}
 
 <div class="detalle-panel-precio">
   ${
@@ -1272,6 +1290,7 @@ Link: ${window.location.origin}/obra.html?id=${obra.id}`,
     </button>
   </div>
 
+  ${obra.acepta_oferta ? `
   <a
     href="https://wa.me/5493794026276?text=${encodeURIComponent(`Hola, quisiera hacer una oferta por esta obra:\nTítulo: ${obra.titulo || "Sin título"}\nArtista: ${obra.artista || "No informado"}\nPrecio publicado: ${
       obra.valor
@@ -1283,47 +1302,86 @@ Link: ${window.location.origin}/obra.html?id=${obra.id}`,
   >
     Hacer una oferta
   </a>
+` : ""}
 </div>
   </div>
 
   <div class="detalle-layout">
     <div class="detalle-izquierda">
-      <h3 style="margin:0 0 20px;font-size:12px;font-weight:600;color:#8a7f73;text-transform:uppercase;letter-spacing:1.6px;">Acerca de la obra</h3>
+      <h3 style="margin:0 0 18px;font-size:11px;font-weight:600;color:#8a7f73;text-transform:uppercase;letter-spacing:1.8px;">Ficha de la obra</h3>
 
                   
 
-<div class="grilla-caracteristicas" style="display:grid;grid-template-columns:160px 1fr;column-gap:28px;row-gap:14px;padding:0 0 28px;margin-bottom:30px;border-bottom:1px solid #ece6dc;">
+<div class="grilla-caracteristicas" style="display:grid;grid-template-columns:180px 1fr;column-gap:28px;row-gap:14px;padding:0 0 28px;margin-bottom:30px;border-bottom:1px solid #ece6dc;">
   <div style="font-size:12px;color:#8a7f73;">Artista</div>
   <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.artista || "No informado"}</div>
 
   <div style="font-size:12px;color:#8a7f73;">Tipo de obra</div>
   <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.tipo_obra || "No informado"}</div>
 
+  <div style="font-size:12px;color:#8a7f73;">Tipo de pieza</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.tipo_pieza || "No informado"}</div>
+
   <div style="font-size:12px;color:#8a7f73;">Técnica</div>
   <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.tecnica || "No informada"}</div>
 
-  <div style="font-size:12px;color:#8a7f73;">Año</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.anio || "No informado"}</div>
+  <div style="font-size:12px;color:#8a7f73;">Medidas</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.medidas || "No informadas"}</div>
 
-  <div style="font-size:12px;color:#8a7f73;">Estilo</div>
-  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.estilo || "No informado"}</div>
+  <div style="font-size:12px;color:#8a7f73;">Medidas con marco</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.medidas_con_marco || "No informadas"}</div>
+
+  <div style="font-size:12px;color:#8a7f73;">Soporte</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.soporte || "No informado"}</div>
+
+  <div style="font-size:12px;color:#8a7f73;">Marco</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.marco || "No informado"}</div>
+
+  <div style="font-size:12px;color:#8a7f73;">Firma</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.firma || "No informada"}</div>
+
+  <div style="font-size:12px;color:#8a7f73;">Condición</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.condicion || "No informada"}</div>
+
+  <div style="font-size:12px;color:#8a7f73;">Procedencia</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.procedencia || "No informada"}</div>
+
+  <div style="font-size:12px;color:#8a7f73;">Ubicación de la obra</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.ubicacion_obra || "No informada"}</div>
+
+  <div style="font-size:12px;color:#8a7f73;">Tirada</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.tirada || "No informada"}</div>
+
+  <div style="font-size:12px;color:#8a7f73;">Etiquetas</div>
+  <div style="font-size:16px;color:#1e1a17;font-weight:500;">${obra.etiquetas || "No informadas"}</div>
 </div>
-<h3 style="margin:4px 0 18px;font-size:12px;font-weight:600;color:#8a7f73;text-transform:uppercase;letter-spacing:1.6px;">Detalles destacados</h3>
-<div class="extras" style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 30px;padding:0 0 28px;border-bottom:1px solid #ece6dc;">
-  ${obra.destacado ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Obra destacada</span>` : ""}
-  ${obra.exclusiva ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Pieza exclusiva</span>` : ""}
-  ${obra.coleccion ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Pertenece a colección</span>` : ""}
-  ${obra.edicion_limitada ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Edición limitada</span>` : ""}
-  ${obra.internacional ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Proyección internacional</span>` : ""}
-</div>
+
                     
 
-                          <h3 style="margin:4px 0 16px;font-size:12px;font-weight:600;color:#8a7f73;text-transform:uppercase;letter-spacing:1.6px;">Sobre la obra</h3>
+                          <h3 style="margin:8px 0 16px;font-size:11px;font-weight:600;color:#8a7f73;text-transform:uppercase;letter-spacing:1.8px;">Contexto de la obra</h3>
 <div style="max-width:760px;margin:0 0 34px;font-size:17px;line-height:1.9;color:#3f372f;">
-  ${obra.descripcion || "Descripción curatorial no disponible por el momento."}
+  ${obra.texto_curatorial_largo || obra.descripcion || "Descripción curatorial no disponible por el momento."}
 </div>
 
-                      <div class="similares" id="similares">
+${obra.bio_artista_breve ? `
+  <h3 style="margin:0 0 16px;font-size:11px;font-weight:600;color:#8a7f73;text-transform:uppercase;letter-spacing:1.8px;">Sobre el artista</h3>
+  <div style="max-width:760px;margin:0 0 36px;font-size:16px;line-height:1.85;color:#4a4138;">
+    ${obra.bio_artista_breve}
+  </div>
+` : ""}
+
+<h3 style="margin:4px 0 18px;font-size:12px;font-weight:600;color:#8a7f73;text-transform:uppercase;letter-spacing:1.6px;">Detalles destacados</h3>
+<div class="extras" style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 30px;padding:0 0 28px;border-bottom:1px solid #ece6dc;">
+  ${obra.disponible ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Disponible</span>` : ""}
+  ${obra.obra_unica ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Obra única</span>` : ""}
+  ${obra.certificado ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Certificado de autenticidad</span>` : ""}
+  ${obra.acepta_oferta ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Acepta oferta</span>` : ""}
+  ${obra.destacado ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Obra destacada</span>` : ""}
+  ${obra.exclusiva ? `<span style="display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #e7ddd2;border-radius:999px;font-size:13px;color:#5f5448;background:#fcfaf7;">Pieza exclusiva</span>` : ""}
+</div>
+
+
+<div class="similares" id="similares">
   <h3>Obras en el mismo estilo</h3>
   <div class="similares-grid" id="similares-grid"></div>
 </div>
